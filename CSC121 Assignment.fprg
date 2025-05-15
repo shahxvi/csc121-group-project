@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="CSC121 Assignment"/>
+        <attribute name="authors" value="Eli"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-05-15 11:53:43 PM"/>
+        <attribute name="created" value="RWxpO1gxLUNBUkJPTjsyMDI1LTA1LTE1OzExOjUyOjI5IFBNOzIxODU="/>
+        <attribute name="edited" value="RWxpO1gxLUNBUkJPTjsyMDI1LTA1LTE1OzExOjUzOjQzIFBNOzI7MjI5MQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="shippingQuantity" type="Integer" array="False" size=""/>
+        </body>
+    </function>
+</flowgorithm>
