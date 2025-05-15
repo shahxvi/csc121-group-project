@@ -1,2 +1,2 @@
-# csc121-group-project
+# RCDCS1101A Group 3 CSC121 Group Project
 
