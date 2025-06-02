@@ -2,19 +2,19 @@
 <flowgorithm fileversion="4.2">
     <attributes>
         <attribute name="name" value="CSC121 Assignment"/>
-        <attribute name="authors" value="Group 3"/>
-        <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-03 12:17:12 AM"/>
+        <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM"/>
+        <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
+        <attribute name="saved" value="2025-06-03 12:46:34 AM"/>
         <attribute name="created" value="RWxpO1gxLUNBUkJPTjsyMDI1LTA1LTE1OzExOjUyOjI5IFBNOzIxODU="/>
         <attribute name="edited" value="RWxpO1gxLUNBUkJPTjsyMDI1LTA1LTE1OzExOjUzOjQzIFBNOzI7MjI5MQ=="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMjoxNzoxMiBBTTszMTsyNDI3"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMjo0NjozNCBBTTszNjsyNDM4"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
             <comment text="Initialization"/>
-            <declare name="origin, originBlock, destination, destinationBlock" type="Integer" array="False" size=""/>
-            <declare name="senderName, senderNumber, blockNameSender, recipientName, recipientNumber, blockNameRecipient" type="String" array="False" size=""/>
+            <declare name="origin, originBlock, destination, destinationBlock, itemTypeID" type="Integer" array="False" size=""/>
+            <declare name="senderName, senderNumber, blockNameSender, recipientName, recipientNumber, blockNameRecipient, itemType" type="String" array="False" size=""/>
             <comment text="Greetings"/>
             <output expression="&quot;Welcome to University Parcel System&quot;" newline="True"/>
             <output expression="&quot;----------------------------&quot;" newline="True"/>
@@ -330,6 +330,51 @@
                         </else>
                     </if>
                 </else>
+            </if>
+            <comment text="Item Type"/>
+            <output expression="&quot;What's your item type?&quot;" newline="True"/>
+            <output expression="&quot;1 - Glass&quot;" newline="True"/>
+            <output expression="&quot;2 - Electronic&quot;" newline="True"/>
+            <output expression="&quot;3 - Food / Drinks&quot;" newline="True"/>
+            <output expression="&quot;4 - Others&quot;" newline="True"/>
+            <output expression="&quot;Please enter in your item type (1 - 4): &quot;" newline="True"/>
+            <input variable="itemTypeID"/>
+            <while expression="itemTypeID &lt; 1 || itemTypeID &gt; 4">
+                <output expression="&quot;Please enter a valid item type (1 - 4): &quot;" newline="True"/>
+                <input variable="itemTypeID"/>
+            </while>
+            <if expression="itemTypeID == 1">
+                <then>
+                    <assign variable="itemType" expression="&quot;Glass&quot;"/>
+                </then>
+                <else>
+                    <if expression="itemTypeID == 2">
+                        <then>
+                            <assign variable="itemType" expression="&quot;Electronic&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="itemTypeID == 3">
+                                <then>
+                                    <assign variable="itemType" expression="&quot;Food / Drinks&quot;"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Please enter your item type: &quot;" newline="True"/>
+                                    <input variable="itemType"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;What's your item condition?&quot;" newline="True"/>
+            <output expression="&quot;1 - Fragile&quot;" newline="True"/>
+            <output expression="&quot;2 - Perishable&quot;" newline="True"/>
+            <output expression="&quot;3 - Flammable&quot;" newline="True"/>
+            <output expression="&quot;4 - Keep Up-Right&quot;" newline="True"/>
+            <output expression="&quot;5 - Confidential Material&quot;" newline="True"/>
+            <if expression="itemCondition == &quot;Glass&quot;">
+                <then/>
+                <else/>
             </if>
             <output expression="&quot;Thank you for using University Parcel System&quot;" newline="True"/>
         </body>
