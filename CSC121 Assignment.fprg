@@ -4,19 +4,50 @@
         <attribute name="name" value="CSC121 Assignment"/>
         <attribute name="authors" value="Group 3"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-02 08:45:48 PM"/>
+        <attribute name="saved" value="2025-06-02 09:15:13 PM"/>
         <attribute name="created" value="RWxpO1gxLUNBUkJPTjsyMDI1LTA1LTE1OzExOjUyOjI5IFBNOzIxODU="/>
         <attribute name="edited" value="RWxpO1gxLUNBUkJPTjsyMDI1LTA1LTE1OzExOjUzOjQzIFBNOzI7MjI5MQ=="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMjswODo0NTo0OCBQTTsxMjsyNDU1"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMjswOToxNToxMyBQTTsxNjsyNDQ5"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="destination, block, blockNumber" type="Integer" array="False" size=""/>
-            <declare name="blockNameRecipient" type="String" array="False" size=""/>
+            <declare name="origin, destination, block, blockNumber" type="Integer" array="False" size=""/>
+            <declare name="senderName, senderNumber, blockNameRecipient" type="String" array="False" size=""/>
             <comment text="Greetings"/>
             <output expression="&quot;Welcome to University Parcel System&quot;" newline="True"/>
-            <comment text="Display Selection Option"/>
+            <output expression="&quot;----------------------------&quot;" newline="True"/>
+            <comment text="Sender's Name"/>
+            <output expression="&quot;Sender's Details&quot;" newline="True"/>
+            <output expression="&quot;----------------------------&quot;" newline="True"/>
+            <output expression="&quot;Please enter your name: &quot;" newline="True"/>
+            <input variable="senderName"/>
+            <comment text="Sender's Phone Number"/>
+            <output expression="&quot;Please enter your phone number: &quot;" newline="True"/>
+            <input variable="senderNumber"/>
+            <comment text="Delivery Selection Option"/>
+            <output expression="&quot;Where do you want to ship from?&quot;" newline="True"/>
+            <output expression="&quot;1 - Cengal&quot;" newline="True"/>
+            <output expression="&quot;2 - Dahlia&quot;" newline="True"/>
+            <output expression="&quot;3 - Kesinai&quot;" newline="True"/>
+            <output expression="&quot;4 - Bringin&quot;" newline="True"/>
+            <output expression="&quot;Please enter (1 - 4): &quot;" newline="True"/>
+            <input variable="origin"/>
+            <while expression="origin &lt; 1 || origin &gt; 4">
+                <output expression="&quot;Please enter the correct origin of desination (1 - 4): &quot;" newline="True"/>
+                <input variable="origin"/>
+            </while>
+            <comment text="Recipient's Details"/>
+            <output expression="&quot;----------------------------&quot;" newline="True"/>
+            <output expression="&quot;Recipient's Details&quot;" newline="True"/>
+            <output expression="&quot;----------------------------&quot;" newline="True"/>
+            <comment text="Recipient's Name"/>
+            <output expression="&quot;Enter recipient's name: &quot;" newline="True"/>
+            <input variable="recipientName"/>
+            <comment text="Recipient's Number"/>
+            <output expression="&quot;Please enter the recipient's phone number: &quot;" newline="True"/>
+            <input variable="recepientNumber"/>
+            <comment text="Delivery Selection Option"/>
             <output expression="&quot;Delivery to:&quot;" newline="True"/>
             <output expression="&quot;1 - Cengal&quot;" newline="True"/>
             <output expression="&quot;2 - Dahlia&quot;" newline="True"/>
@@ -26,7 +57,7 @@
             <output expression="&quot;Please enter your delivery desination:&quot;" newline="True"/>
             <input variable="destination"/>
             <while expression="destination &lt; 1 || destination &gt; 4">
-                <output expression="&quot;Please enter your delivery desination:&quot;" newline="True"/>
+                <output expression="&quot;Please enter the correct delivery desination (1 - 4):&quot;" newline="True"/>
                 <input variable="destination"/>
             </while>
             <comment text="College Block Selection"/>
