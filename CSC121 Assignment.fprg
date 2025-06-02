@@ -4,10 +4,10 @@
         <attribute name="name" value="CSC121 Assignment"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-03 12:46:34 AM"/>
+        <attribute name="saved" value="2025-06-03 12:51:30 AM"/>
         <attribute name="created" value="RWxpO1gxLUNBUkJPTjsyMDI1LTA1LTE1OzExOjUyOjI5IFBNOzIxODU="/>
         <attribute name="edited" value="RWxpO1gxLUNBUkJPTjsyMDI1LTA1LTE1OzExOjUzOjQzIFBNOzI7MjI5MQ=="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMjo0NjozNCBBTTszNjsyNDM4"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMjo1MTozMCBBTTszODsyNDMy"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -17,7 +17,7 @@
             <declare name="senderName, senderNumber, blockNameSender, recipientName, recipientNumber, blockNameRecipient, itemType" type="String" array="False" size=""/>
             <comment text="Greetings"/>
             <output expression="&quot;Welcome to University Parcel System&quot;" newline="True"/>
-            <output expression="&quot;----------------------------&quot;" newline="True"/>
+            <output expression="&quot;----------------------------------------------&quot;" newline="True"/>
             <comment text="Sender's Name (Input)"/>
             <output expression="&quot;Sender's Details:&quot;" newline="True"/>
             <output expression="&quot;Please enter your name: &quot;" newline="True"/>
@@ -372,10 +372,6 @@
             <output expression="&quot;3 - Flammable&quot;" newline="True"/>
             <output expression="&quot;4 - Keep Up-Right&quot;" newline="True"/>
             <output expression="&quot;5 - Confidential Material&quot;" newline="True"/>
-            <if expression="itemCondition == &quot;Glass&quot;">
-                <then/>
-                <else/>
-            </if>
             <output expression="&quot;Thank you for using University Parcel System&quot;" newline="True"/>
         </body>
     </function>
