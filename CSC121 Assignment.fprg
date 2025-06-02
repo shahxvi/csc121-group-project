@@ -2,16 +2,69 @@
 <flowgorithm fileversion="4.2">
     <attributes>
         <attribute name="name" value="CSC121 Assignment"/>
-        <attribute name="authors" value="Eli"/>
+        <attribute name="authors" value="Group 3"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-05-15 11:53:43 PM"/>
+        <attribute name="saved" value="2025-06-02 01:01:37 PM"/>
         <attribute name="created" value="RWxpO1gxLUNBUkJPTjsyMDI1LTA1LTE1OzExOjUyOjI5IFBNOzIxODU="/>
         <attribute name="edited" value="RWxpO1gxLUNBUkJPTjsyMDI1LTA1LTE1OzExOjUzOjQzIFBNOzI7MjI5MQ=="/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMjswMTowMTozNyBQTTsyOzIzODk="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="shippingQuantity" type="Integer" array="False" size=""/>
+            <declare name="destination" type="Integer" array="False" size=""/>
+            <output expression="&quot;Welcome to University Parcel System&quot;" newline="True"/>
+            <output expression="&quot;Delivery to:&quot;" newline="True"/>
+            <output expression="&quot;1 - Cengal&quot;" newline="True"/>
+            <output expression="&quot;2 - Dahlia&quot;" newline="True"/>
+            <output expression="&quot;3 - Kesinai&quot;" newline="True"/>
+            <output expression="&quot;4 - Bringin&quot;" newline="True"/>
+            <comment text="College Selection"/>
+            <output expression="&quot;Please enter your delivery desination:&quot;" newline="True"/>
+            <input variable="destination"/>
+            <while expression="destination &lt; 1 || destination &gt; 4">
+                <output expression="&quot;Please enter your delivery desination:&quot;" newline="True"/>
+                <input variable="destination"/>
+            </while>
+            <comment text="College Block Selection"/>
+            <if expression="destination == 1">
+                <then>
+                    <comment text="Cengal Block Selection"/>
+                    <output expression="&quot;Which Cengal do you want to deliver to?&quot;" newline="True"/>
+                    <output expression="&quot;Cengal 1&quot;" newline="True"/>
+                    <output expression="&quot;Cengal 2&quot;" newline="True"/>
+                    <output expression="&quot;Cengal 3&quot;" newline="True"/>
+                    <output expression="&quot;Cengal 4&quot;" newline="True"/>
+                    <output expression="&quot;Cengal 5&quot;" newline="True"/>
+                    <output expression="&quot;Cengal 6&quot;" newline="True"/>
+                    <output expression="&quot;Cengal 7&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="destination == 2">
+                        <then>
+                            <comment text="Dahlia Block Selection"/>
+                            <output expression="&quot;Which Dahlia do you want to deliver to?&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="destination == 3">
+                                <then>
+                                    <comment text="Kesinai Block Selection"/>
+                                    <output expression="&quot;Which Kesinai do you want to deliver to?&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="destination == 4">
+                                        <then/>
+                                        <else/>
+                                    </if>
+                                    <comment text="Beringin Block Selection"/>
+                                    <output expression="&quot;Which Beringin do you want to deliver to?&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Thank you for using University Parcel System&quot;" newline="True"/>
         </body>
     </function>
 </flowgorithm>
