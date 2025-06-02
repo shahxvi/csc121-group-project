@@ -1,4 +1,5 @@
-# RCDCS1101A Group 3 CSC121 Group Project
+# University Parcel System
+RCDCS1101A Group 3 CSC121 Group Project
 
 1. IRFAN SHAH BIN MAIZUL HISHAM
 2. MUHAMMAD HANIF BIN AMIR HAMZAH
