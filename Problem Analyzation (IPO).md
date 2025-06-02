@@ -1,4 +1,4 @@
-### Input:
+# Input:
 Sender's Name
 
 Sender's Phone Number
