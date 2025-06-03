@@ -4,10 +4,10 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="Shah"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-03 12:38:30 PM"/>
+        <attribute name="saved" value="2025-06-03 11:04:15 PM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMToxNjowNyBBTTs4O0VsaTtYMS1DQVJCT047MjAyNS0wNS0xNTsxMTo1MjoyOSBQTTtDU0MxMjEgQXNzaWdubWVudCB2MS4wLmZwcmc7NjkwNA=="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMjozODozMCBQTTsxMTsyNDQz"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowNDoxNSBQTTsxMjsyNDM5"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -228,31 +228,37 @@
                 </then>
                 <else/>
             </if>
-            <if expression="shipmentTypeID == 4">
+            <if expression="shipmentCategoryID == 4">
                 <then>
-                    <output expression="&quot;Please type in your shipment type: &quot;" newline="True"/>
-                    <input variable="shipmentType"/>
+                    <output expression="&quot;Please type in your shipment category: &quot;" newline="True"/>
+                    <input variable="shipmentCategory"/>
                 </then>
                 <else/>
             </if>
             <comment text="Shipment Condition"/>
-            <output expression="&quot;Shipment Condition:&quot;" newline="True"/>
-            <if expression="shipmentTypeID == 1">
+            <output expression="&quot;Shipment Conditions:&quot;" newline="True"/>
+            <output expression="&quot;1 - Fragile&quot;" newline="True"/>
+            <output expression="&quot;2 - Liquid&quot;" newline="True"/>
+            <output expression="&quot;3 - Perishable&quot;" newline="True"/>
+            <output expression="&quot;4 - Flammable&quot;" newline="True"/>
+            <output expression="&quot;5 - Keep Up-Right&quot;" newline="True"/>
+            <output expression="&quot;6 - Confidential Material&quot;" newline="True"/>
+            <comment text="Determining shipmentCondition based on shipmentCategory"/>
+            <if expression="shipmentCategoryID == 1 || shipmentCategoryID == 2">
                 <then>
                     <output expression="&quot;Your shipment is Fragile!&quot;" newline="True"/>
                     <assign variable="shipmentCondition" expression="&quot;Fragile&quot;"/>
                     <output expression="&quot;You will be charged RM5.00 for proper handling&quot;" newline="True"/>
                     <assign variable="charge" expression="5.00"/>
                 </then>
-                <else>
-                    <if expression="shipmentTypeID == 2">
-                        <then>
-                            <output expression="&quot;Your shipment is Fragile and Delicate&quot;" newline="True"/>
-                            <output expression="&quot;You will be charged RM5.00 for proper handling&quot;" newline="True"/>
-                        </then>
-                        <else/>
-                    </if>
-                </else>
+                <else/>
+            </if>
+            <if expression="shipmentCategoryID == 3">
+                <then>
+                    <output expression="&quot;Your shipment is perishable!&quot;" newline="True"/>
+                    <assign variable="shipmentCondition" expression="&quot;Perishable&quot;"/>
+                </then>
+                <else/>
             </if>
         </body>
     </function>
