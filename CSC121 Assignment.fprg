@@ -4,10 +4,10 @@
         <attribute name="name" value="CSC121 Assignment"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-03 12:51:30 AM"/>
+        <attribute name="saved" value="2025-06-03 10:47:35 AM"/>
         <attribute name="created" value="RWxpO1gxLUNBUkJPTjsyMDI1LTA1LTE1OzExOjUyOjI5IFBNOzIxODU="/>
         <attribute name="edited" value="RWxpO1gxLUNBUkJPTjsyMDI1LTA1LTE1OzExOjUzOjQzIFBNOzI7MjI5MQ=="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMjo1MTozMCBBTTszODsyNDMy"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMDo0NzozNSBBTTszOTsyNDQx"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -15,6 +15,7 @@
             <comment text="Initialization"/>
             <declare name="origin, originBlock, destination, destinationBlock, itemTypeID" type="Integer" array="False" size=""/>
             <declare name="senderName, senderNumber, blockNameSender, recipientName, recipientNumber, blockNameRecipient, itemType" type="String" array="False" size=""/>
+            <declare name="" type="Integer" array="False" size=""/>
             <comment text="Greetings"/>
             <output expression="&quot;Welcome to University Parcel System&quot;" newline="True"/>
             <output expression="&quot;----------------------------------------------&quot;" newline="True"/>
@@ -77,44 +78,43 @@
                         <then>
                             <assign variable="blockNameSender" expression="&quot;Cengal 1&quot;"/>
                         </then>
-                        <else>
-                            <if expression="originBlock == 2">
-                                <then>
-                                    <assign variable="blockNameSender" expression="&quot;Cengal 2&quot;"/>
-                                </then>
-                                <else>
-                                    <if expression="originBlock == 3">
-                                        <then>
-                                            <assign variable="blockNameSender" expression="&quot;Cengal 3&quot;"/>
-                                        </then>
-                                        <else>
-                                            <if expression="originBlock == 4">
-                                                <then>
-                                                    <assign variable="blockNameSender" expression="&quot;Cengal 4&quot;"/>
-                                                </then>
-                                                <else>
-                                                    <if expression="originBlock == 5">
-                                                        <then>
-                                                            <assign variable="blockNameSender" expression="&quot;Cengal 5&quot;"/>
-                                                        </then>
-                                                        <else>
-                                                            <if expression="originBlock == 6">
-                                                                <then>
-                                                                    <assign variable="blockNameSender" expression="&quot;Cengal 6&quot;"/>
-                                                                </then>
-                                                                <else>
-                                                                    <assign variable="blockNameSender" expression="&quot;Cengal 7&quot;"/>
-                                                                </else>
-                                                            </if>
-                                                        </else>
-                                                    </if>
-                                                </else>
-                                            </if>
-                                        </else>
-                                    </if>
-                                </else>
-                            </if>
-                        </else>
+                        <else/>
+                    </if>
+                    <if expression="originBlock == 2">
+                        <then>
+                            <assign variable="blockNameSender" expression="&quot;Cengal 2&quot;"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="originBlock == 3">
+                        <then>
+                            <assign variable="blockNameSender" expression="&quot;Cengal 3&quot;"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="originBlock == 4">
+                        <then>
+                            <assign variable="blockNameSender" expression="&quot;Cengal 4&quot;"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="originBlock == 5">
+                        <then>
+                            <assign variable="blockNameSender" expression="&quot;Cengal 5&quot;"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="originBlock == 6">
+                        <then>
+                            <assign variable="blockNameSender" expression="&quot;Cengal 6&quot;"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="originBlock == 7">
+                        <then>
+                            <assign variable="blockNameSender" expression="&quot;Cengal 7&quot;"/>
+                        </then>
+                        <else/>
                     </if>
                 </then>
                 <else>
@@ -144,23 +144,25 @@
                                         <then>
                                             <assign variable="blockNameSender" expression="&quot;Kesinai 1&quot;"/>
                                         </then>
-                                        <else>
-                                            <if expression="originBlock == 2">
-                                                <then>
-                                                    <assign variable="blockNameSender" expression="&quot;Kesinai 2&quot;"/>
-                                                </then>
-                                                <else>
-                                                    <if expression="originBlock == 3">
-                                                        <then>
-                                                            <assign variable="blockNameSender" expression="&quot;Kesinai 3&quot;"/>
-                                                        </then>
-                                                        <else>
-                                                            <assign variable="blockNameSender" expression="&quot;Kesinai 4&quot;"/>
-                                                        </else>
-                                                    </if>
-                                                </else>
-                                            </if>
-                                        </else>
+                                        <else/>
+                                    </if>
+                                    <if expression="originBlock == 2">
+                                        <then>
+                                            <assign variable="blockNameSender" expression="&quot;Kesinai 2&quot;"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                    <if expression="originBlock == 3">
+                                        <then>
+                                            <assign variable="blockNameSender" expression="&quot;Kesinai 3&quot;"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                    <if expression="originBlock == 4">
+                                        <then>
+                                            <assign variable="blockNameSender" expression="&quot;Kesinai 4&quot;"/>
+                                        </then>
+                                        <else/>
                                     </if>
                                 </then>
                                 <else>
@@ -234,44 +236,43 @@
                         <then>
                             <assign variable="blockNameRecipient" expression="&quot;Cengal 1&quot;"/>
                         </then>
-                        <else>
-                            <if expression="destinationBlock == 2">
-                                <then>
-                                    <assign variable="blockNameRecipient" expression="&quot;Cengal 2&quot;"/>
-                                </then>
-                                <else>
-                                    <if expression="destinationBlock == 3">
-                                        <then>
-                                            <assign variable="blockNameRecipient" expression="&quot;Cengal 3&quot;"/>
-                                        </then>
-                                        <else>
-                                            <if expression="destinationBlock == 4">
-                                                <then>
-                                                    <assign variable="blockNameRecipient" expression="&quot;Cengal 4&quot;"/>
-                                                </then>
-                                                <else>
-                                                    <if expression="destinationBlock == 5">
-                                                        <then>
-                                                            <assign variable="blockNameRecipient" expression="&quot;Cengal 5&quot;"/>
-                                                        </then>
-                                                        <else>
-                                                            <if expression="destinationBlock == 6">
-                                                                <then>
-                                                                    <assign variable="blockNameRecipient" expression="&quot;Cengal 6&quot;"/>
-                                                                </then>
-                                                                <else>
-                                                                    <assign variable="blockNameRecipient" expression="&quot;Cengal 7&quot;"/>
-                                                                </else>
-                                                            </if>
-                                                        </else>
-                                                    </if>
-                                                </else>
-                                            </if>
-                                        </else>
-                                    </if>
-                                </else>
-                            </if>
-                        </else>
+                        <else/>
+                    </if>
+                    <if expression="destinationBlock == 2">
+                        <then>
+                            <assign variable="blockNameRecipient" expression="&quot;Cengal 2&quot;"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="destinationBlock == 3">
+                        <then>
+                            <assign variable="blockNameRecipient" expression="&quot;Cengal 3&quot;"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="destinationBlock == 4">
+                        <then>
+                            <assign variable="blockNameRecipient" expression="&quot;Cengal 4&quot;"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="destinationBlock == 5">
+                        <then>
+                            <assign variable="blockNameRecipient" expression="&quot;Cengal 5&quot;"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="destinationBlock == 6">
+                        <then>
+                            <assign variable="blockNameRecipient" expression="&quot;Cengal 6&quot;"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="destinationBlock == 7">
+                        <then>
+                            <assign variable="blockNameRecipient" expression="&quot;Cengal 7&quot;"/>
+                        </then>
+                        <else/>
                     </if>
                 </then>
                 <else>
@@ -303,23 +304,25 @@
                                         <then>
                                             <assign variable="blockNameRecipient" expression="&quot;Kesinai 1&quot;"/>
                                         </then>
-                                        <else>
-                                            <if expression="destinationBlock == 2">
-                                                <then>
-                                                    <assign variable="blockNameRecipient" expression="&quot;Kesinai 2&quot;"/>
-                                                </then>
-                                                <else>
-                                                    <if expression="destinationBlock == 3">
-                                                        <then>
-                                                            <assign variable="blockNameRecipient" expression="&quot;Kesinai 3&quot;"/>
-                                                        </then>
-                                                        <else>
-                                                            <assign variable="blockNameRecipient" expression="&quot;Kesinai 4&quot;"/>
-                                                        </else>
-                                                    </if>
-                                                </else>
-                                            </if>
-                                        </else>
+                                        <else/>
+                                    </if>
+                                    <if expression="destinationBlock == 2">
+                                        <then>
+                                            <assign variable="blockNameRecipient" expression="&quot;Kesinai 2&quot;"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                    <if expression="destinationBlock == 3">
+                                        <then>
+                                            <assign variable="blockNameRecipient" expression="&quot;Kesinai 3&quot;"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                    <if expression="destinationBlock == 4">
+                                        <then>
+                                            <assign variable="blockNameRecipient" expression="&quot;Kesinai 4&quot;"/>
+                                        </then>
+                                        <else/>
                                     </if>
                                 </then>
                                 <else>
@@ -373,6 +376,52 @@
             <output expression="&quot;4 - Keep Up-Right&quot;" newline="True"/>
             <output expression="&quot;5 - Confidential Material&quot;" newline="True"/>
             <output expression="&quot;Thank you for using University Parcel System&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="distance" type="None" variable="distance">
+        <parameters/>
+        <body>
+            <declare name="distance" type="Real" array="False" size=""/>
+            <if expression="originBlock == 1">
+                <then>
+                    <if expression="destinationBlock == 1">
+                        <then>
+                            <assign variable="distance" expression="1"/>
+                        </then>
+                        <else>
+                            <if expression="destinationBlock == 2">
+                                <then/>
+                                <else>
+                                    <if expression="destinationBlock == 3">
+                                        <then/>
+                                        <else>
+                                            <if expression="destinationBlock == 4">
+                                                <then/>
+                                                <else>
+                                                    <if expression="destinationBlock == 5">
+                                                        <then/>
+                                                        <else>
+                                                            <if expression="destinationBlock == 6">
+                                                                <then/>
+                                                                <else/>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else/>
+            </if>
+            <if expression="originBlock == 2">
+                <then/>
+                <else/>
+            </if>
         </body>
     </function>
 </flowgorithm>
