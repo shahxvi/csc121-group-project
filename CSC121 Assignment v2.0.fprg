@@ -4,10 +4,10 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="Shah"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-03 11:49:49 AM"/>
+        <attribute name="saved" value="2025-06-03 12:37:05 PM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMToxNjowNyBBTTs4O0VsaTtYMS1DQVJCT047MjAyNS0wNS0xNTsxMTo1MjoyOSBQTTtDU0MxMjEgQXNzaWdubWVudCB2MS4wLmZwcmc7NjkwNA=="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTo0OTo0OSBBTTs5OzIzOTg="/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMjozNzowNSBQTTsxMDsyNDQz"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -210,24 +210,49 @@
                     </if>
                 </else>
             </if>
-            <comment text="Shipment Type"/>
-            <output expression="&quot;What is your shipment/item type?&quot;" newline="True"/>
+            <comment text="Shipment Category"/>
+            <output expression="&quot;What is your shipment/item category?&quot;" newline="True"/>
             <output expression="&quot;1 - Glass&quot;" newline="True"/>
             <output expression="&quot;2 - Electronic&quot;" newline="True"/>
             <output expression="&quot;3 - Food / Drinks&quot;" newline="True"/>
             <output expression="&quot;4 - Others&quot;" newline="True"/>
-            <output expression="&quot;Please enter your shipment type (1 - 4): &quot;" newline="True"/>
+            <output expression="&quot;Please enter your shipment category (1 - 4): &quot;" newline="True"/>
             <input variable="shipmentTypeID"/>
             <while expression="shipmentType &lt; 1 || shipmentType &gt; 4">
                 <output expression="&quot;Please enter valid shipment type (1 - 4): &quot;" newline="True"/>
                 <input variable="shipmentTypeID"/>
             </while>
-            <if expression="shipmentType == 4">
+            <if expression="shipmentTypeID == 3">
+                <then>
+                    <assign variable="shipmentType" expression="&quot;Food / Drinks&quot;"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="shipmentTypeID == 4">
                 <then>
                     <output expression="&quot;Please type in your shipment type: &quot;" newline="True"/>
                     <input variable="shipmentType"/>
                 </then>
                 <else/>
+            </if>
+            <comment text="Shipment Condition"/>
+            <output expression="&quot;Shipment Condition:&quot;" newline="True"/>
+            <if expression="shipmentTypeID == 1">
+                <then>
+                    <output expression="&quot;Your shipment is Fragile!&quot;" newline="True"/>
+                    <assign variable="shipmentCondition" expression="&quot;Fragile&quot;"/>
+                    <output expression="&quot;You will be charged RM5.00 for proper handling&quot;" newline="True"/>
+                    <assign variable="charge" expression="5.00"/>
+                </then>
+                <else>
+                    <if expression="shipmentTypeID == 2">
+                        <then>
+                            <output expression="&quot;Your shipment is Fragile and Delicate&quot;" newline="True"/>
+                            <output expression="&quot;You will be charged RM5.00 for proper handling&quot;" newline="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                </else>
             </if>
         </body>
     </function>
