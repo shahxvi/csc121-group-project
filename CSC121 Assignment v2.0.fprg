@@ -4,10 +4,10 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="Shah"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-03 12:37:05 PM"/>
+        <attribute name="saved" value="2025-06-03 12:38:30 PM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMToxNjowNyBBTTs4O0VsaTtYMS1DQVJCT047MjAyNS0wNS0xNTsxMTo1MjoyOSBQTTtDU0MxMjEgQXNzaWdubWVudCB2MS4wLmZwcmc7NjkwNA=="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMjozNzowNSBQTTsxMDsyNDQz"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMjozODozMCBQTTsxMTsyNDQz"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -217,12 +217,12 @@
             <output expression="&quot;3 - Food / Drinks&quot;" newline="True"/>
             <output expression="&quot;4 - Others&quot;" newline="True"/>
             <output expression="&quot;Please enter your shipment category (1 - 4): &quot;" newline="True"/>
-            <input variable="shipmentTypeID"/>
-            <while expression="shipmentType &lt; 1 || shipmentType &gt; 4">
+            <input variable="shipmentCategoryID"/>
+            <while expression="shipmentCategoryID &lt; 1 || shipmentCategoryID &gt; 4">
                 <output expression="&quot;Please enter valid shipment type (1 - 4): &quot;" newline="True"/>
-                <input variable="shipmentTypeID"/>
+                <input variable="shipmentCategoryID"/>
             </while>
-            <if expression="shipmentTypeID == 3">
+            <if expression="shipmentCategoryID == 3">
                 <then>
                     <assign variable="shipmentType" expression="&quot;Food / Drinks&quot;"/>
                 </then>
