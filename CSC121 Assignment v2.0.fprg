@@ -4,10 +4,10 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="Shah"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-03 11:35:49 AM"/>
+        <attribute name="saved" value="2025-06-03 11:49:49 AM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMToxNjowNyBBTTs4O0VsaTtYMS1DQVJCT047MjAyNS0wNS0xNTsxMTo1MjoyOSBQTTtDU0MxMjEgQXNzaWdubWVudCB2MS4wLmZwcmc7NjkwNA=="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTozNTo0OSBBTTs4OzIzOTI="/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTo0OTo0OSBBTTs5OzIzOTg="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -84,7 +84,7 @@
                     </if>
                 </else>
             </if>
-            <comment text="College Block Name &amp; Distance Initialization"/>
+            <comment text="College Block Name &amp; Distance (m) Initialization"/>
             <if expression="destination == 1">
                 <then>
                     <comment text="Cengal College"/>
@@ -209,6 +209,25 @@
                         </else>
                     </if>
                 </else>
+            </if>
+            <comment text="Shipment Type"/>
+            <output expression="&quot;What is your shipment/item type?&quot;" newline="True"/>
+            <output expression="&quot;1 - Glass&quot;" newline="True"/>
+            <output expression="&quot;2 - Electronic&quot;" newline="True"/>
+            <output expression="&quot;3 - Food / Drinks&quot;" newline="True"/>
+            <output expression="&quot;4 - Others&quot;" newline="True"/>
+            <output expression="&quot;Please enter your shipment type (1 - 4): &quot;" newline="True"/>
+            <input variable="shipmentTypeID"/>
+            <while expression="shipmentType &lt; 1 || shipmentType &gt; 4">
+                <output expression="&quot;Please enter valid shipment type (1 - 4): &quot;" newline="True"/>
+                <input variable="shipmentTypeID"/>
+            </while>
+            <if expression="shipmentType == 4">
+                <then>
+                    <output expression="&quot;Please type in your shipment type: &quot;" newline="True"/>
+                    <input variable="shipmentType"/>
+                </then>
+                <else/>
             </if>
         </body>
     </function>

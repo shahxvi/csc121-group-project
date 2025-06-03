@@ -1,5 +1,5 @@
 # Input:
-Sender's Name, Sender's Phone Number, Sender's Block, Sender's Block Number
+Sender's Name, Sender's Phone Number
 
 
 Recipient's Name, Sender's Phone Number, Sender's Block, Sender's Block Number
