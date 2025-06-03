@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="CSC121 Assignment v2.0"/>
+        <attribute name="authors" value="Shah"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-06-03 11:10:59 AM"/>
+        <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowOTozNyBBTTsxO0VsaTtYMS1DQVJCT047MjAyNS0wNS0xNTsxMTo1MjoyOSBQTTtDU0MxMjEgQXNzaWdubWVudCB2MS4wLmZwcmc7NjkwMg=="/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMToxMDo1OSBBTTsyOzIzODA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Initialization"/>
+            <declare name="senderName, senderNumber" type="String" array="False" size=""/>
+            <comment text="Display Greetings"/>
+            <output expression="&quot;Welcome to University Parcel System&quot;" newline="True"/>
+            <output expression="&quot;----------------------------------------------&quot;" newline="True"/>
+            <comment text="Sender's Name (Input)"/>
+            <output expression="&quot;Sender's Details:&quot;" newline="True"/>
+            <output expression="&quot;Please enter your name: &quot;" newline="True"/>
+            <input variable="senderName"/>
+            <comment text="Sender's Phone Number (Input)"/>
+            <output expression="&quot;Please enter your phone number: &quot;" newline="True"/>
+            <input variable="senderNumber"/>
+            <output expression="&quot;Shipping from: UniStorage, Anjung Siswa&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
