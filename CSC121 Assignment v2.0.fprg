@@ -4,17 +4,20 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="Shah"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-03 11:24:56 AM"/>
+        <attribute name="saved" value="2025-06-03 11:35:49 AM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMToxNjowNyBBTTs4O0VsaTtYMS1DQVJCT047MjAyNS0wNS0xNTsxMTo1MjoyOSBQTTtDU0MxMjEgQXNzaWdubWVudCB2MS4wLmZwcmc7NjkwNA=="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMToyNDo1NiBBTTs3OzIzODc="/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTozNTo0OSBBTTs4OzIzOTI="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
             <comment text="Initialization"/>
-            <declare name="senderName, senderNumber, recipientName, recipientNumber, blockNameRecipient" type="String" array="False" size=""/>
+            <declare name="senderName, senderNumber" type="String" array="False" size=""/>
+            <declare name="recipientName, recipientNumber, blockNameRecipient" type="String" array="False" size=""/>
             <declare name="destination, destinationBlock" type="Integer" array="False" size=""/>
+            <comment text="Distance in meters"/>
+            <declare name="distance" type="Real" array="False" size=""/>
             <comment text="Display Greetings"/>
             <output expression="&quot;Welcome to University Parcel System&quot;" newline="True"/>
             <output expression="&quot;Shipping from: UniStorage, Anjung Siswa&quot;" newline="True"/>
@@ -93,42 +96,49 @@
                     <if expression="destinationBlock == 1">
                         <then>
                             <assign variable="blockNameRecipient" expression="&quot;Cengal 1&quot;"/>
+                            <assign variable="distance" expression="100"/>
                         </then>
                         <else/>
                     </if>
                     <if expression="destinationBlock == 2">
                         <then>
                             <assign variable="blockNameRecipient" expression="&quot;Cengal 2&quot;"/>
+                            <assign variable="distance" expression="200"/>
                         </then>
                         <else/>
                     </if>
                     <if expression="destinationBlock == 3">
                         <then>
                             <assign variable="blockNameRecipient" expression="&quot;Cengal 3&quot;"/>
+                            <assign variable="distance" expression="220"/>
                         </then>
                         <else/>
                     </if>
                     <if expression="destinationBlock == 4">
                         <then>
                             <assign variable="blockNameRecipient" expression="&quot;Cengal 4&quot;"/>
+                            <assign variable="distance" expression="210"/>
                         </then>
                         <else/>
                     </if>
                     <if expression="destinationBlock == 5">
                         <then>
                             <assign variable="blockNameRecipient" expression="&quot;Cengal 5&quot;"/>
+                            <assign variable="distance" expression="160"/>
                         </then>
                         <else/>
                     </if>
                     <if expression="destinationBlock == 6">
                         <then>
                             <assign variable="blockNameRecipient" expression="&quot;Cengal 6&quot;"/>
+                            <assign variable="distance" expression="85"/>
                         </then>
                         <else/>
                     </if>
                     <if expression="destinationBlock == 7">
                         <then>
                             <assign variable="blockNameRecipient" expression="&quot;Cengal 7&quot;"/>
+                            <assign variable="distance" expression="150"/>
                         </then>
                         <else/>
                     </if>
@@ -145,9 +155,11 @@
                             <if expression="destinationBlock == 1">
                                 <then>
                                     <assign variable="blockNameRecipient" expression="&quot;Dahlia 1&quot;"/>
+                                    <assign variable="distance" expression="330"/>
                                 </then>
                                 <else>
                                     <assign variable="blockNameRecipient" expression="&quot;Dahlia 2&quot;"/>
+                                    <assign variable="distance" expression="345"/>
                                 </else>
                             </if>
                         </then>
@@ -163,30 +175,35 @@
                                     <if expression="destinationBlock == 1">
                                         <then>
                                             <assign variable="blockNameRecipient" expression="&quot;Kesinai 1&quot;"/>
+                                            <assign variable="distance" expression="80"/>
                                         </then>
                                         <else/>
                                     </if>
                                     <if expression="destinationBlock == 2">
                                         <then>
                                             <assign variable="blockNameRecipient" expression="&quot;Kesinai 2&quot;"/>
+                                            <assign variable="distance" expression="155"/>
                                         </then>
                                         <else/>
                                     </if>
                                     <if expression="destinationBlock == 3">
                                         <then>
                                             <assign variable="blockNameRecipient" expression="&quot;Kesinai 3&quot;"/>
+                                            <assign variable="distance" expression="195"/>
                                         </then>
                                         <else/>
                                     </if>
                                     <if expression="destinationBlock == 4">
                                         <then>
                                             <assign variable="blockNameRecipient" expression="&quot;Kesinai 4&quot;"/>
+                                            <assign variable="distance" expression="135"/>
                                         </then>
                                         <else/>
                                     </if>
                                 </then>
                                 <else>
                                     <assign variable="blockNameRecipient" expression="&quot;Beringin&quot;"/>
+                                    <assign variable="distance" expression="400"/>
                                 </else>
                             </if>
                         </else>
