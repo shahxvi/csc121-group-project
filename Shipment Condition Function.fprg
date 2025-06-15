@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Shipment Condition Function"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-06-16 12:29:59 AM"/>
+        <attribute name="created" value="VXNlcjtMQVBUT1AtSTU5TEo0MUw7MjAyNS0wNi0xNTsxMTo0NzowMCBQTTsyNzEy"/>
+        <attribute name="edited" value="VXNlcjtMQVBUT1AtSTU5TEo0MUw7MjAyNS0wNi0xNjsxMjoyOTo1OSBBTTsxOzI4MjE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="choice" type="Integer" array="False" size=""/>
+            <declare name="shipmentCondition" type="String" array="False" size=""/>
+            <declare name="conditionCost" type="Real" array="False" size=""/>
+            <output expression="&quot;1 - Fragile&quot;" newline="True"/>
+            <output expression="&quot;2 - Delicate&quot;" newline="True"/>
+            <output expression="&quot;3 - Liquid&quot;" newline="True"/>
+            <output expression="&quot;4 - Perishable&quot;" newline="True"/>
+            <output expression="&quot;5 -  Flammable&quot;" newline="True"/>
+            <output expression="&quot;6 - Keep Up-Right&quot;" newline="True"/>
+            <output expression="&quot;7 - Confindential Material&quot;" newline="True"/>
+            <output expression="&quot;Enter shipment condition (1 - 7 ): &quot;" newline="True"/>
+            <input variable="choice"/>
+            <if expression="choice == 1">
+                <then>
+                    <assign variable="shipmentCondition" expression="&quot;Fragile&quot;"/>
+                    <assign variable="conditionCost" expression="5"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="choice ==2">
+                <then>
+                    <assign variable="shipmentCondition" expression="&quot;Delicate&quot;"/>
+                    <assign variable="conditionCost" expression="3"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="choice == 3">
+                <then>
+                    <assign variable="shipmentCondition" expression="&quot;Liquid&quot;"/>
+                    <assign variable="conditionCost" expression="2"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="choice ==4">
+                <then>
+                    <assign variable="shipmentCondition" expression="&quot;Perishable&quot;"/>
+                    <assign variable="conditionCost" expression="4"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="choice ==5">
+                <then>
+                    <assign variable="shipmentCondition" expression="&quot;Flammable&quot;"/>
+                    <assign variable="conditionCost" expression="8"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="choice ==6">
+                <then>
+                    <assign variable="shipmentCondition" expression="&quot;Keep Up-Right&quot;"/>
+                    <assign variable="conditionCost" expression="9"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="choice ==7">
+                <then>
+                    <assign variable="shipmentCondition" expression="&quot;Confindential Matarial&quot;"/>
+                    <assign variable="conditionCost" expression="10"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
