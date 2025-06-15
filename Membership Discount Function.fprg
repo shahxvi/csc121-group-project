@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Membership Discount Function"/>
+        <attribute name="authors" value="User-PC"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-06-16 12:22:06 AM"/>
+        <attribute name="created" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xNjsxMjoyMToyMiBBTTsyMjkz"/>
+        <attribute name="edited" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xNjsxMjoyMjowNiBBTTsxOzI0MDQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Do you have a membership&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
