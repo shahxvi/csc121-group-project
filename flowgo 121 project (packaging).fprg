@@ -4,10 +4,10 @@
         <attribute name="name" value="flowgo 121 project"/>
         <attribute name="authors" value="User-PC"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-15 11:53:18 PM"/>
+        <attribute name="saved" value="2025-06-16 12:17:42 AM"/>
         <attribute name="created" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xNDswNzo0NjoxNiBQTTsyMzIw"/>
-        <attribute name="edited" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xNTsxMTo0MTozOCBQTTszOzI0MjU="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNTsxMTo1MzoxOCBQTTsxOzIzOTk="/>
+        <attribute name="edited" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xNjsxMjoxNzo0MiBBTTs0OzI0MTE="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -22,33 +22,33 @@
             <output expression="&quot;5 - Others&quot;" newline="True"/>
             <output expression="&quot;Please choose your packaging type (1 - 5): &quot;" newline="True"/>
             <input variable="choice"/>
-            <if expression="packagingType == 1">
+            <if expression="choice == 1">
                 <then>
                     <comment text="Cardboard Box"/>
                     <assign variable="packagingType" expression="&quot;Cardboard Box&quot;"/>
                 </then>
                 <else>
-                    <if expression="packagingType == 2">
+                    <if expression="choice == 2">
                         <then>
                             <comment text="Plastic Box"/>
-                            <assign variable="packagingType" expression="&quot;Cardboard Box&quot;"/>
+                            <assign variable="packagingType" expression="&quot;Plastic Box&quot;"/>
                         </then>
                         <else>
-                            <if expression="packagingType == 3">
+                            <if expression="choice == 3">
                                 <then>
                                     <comment text="Plastic Film"/>
-                                    <assign variable="packagingType" expression="&quot;Cardboard Box&quot;"/>
+                                    <assign variable="packagingType" expression="&quot;Plastic Film&quot;"/>
                                 </then>
                                 <else>
-                                    <if expression="packagingType == 4">
+                                    <if expression="choice == 4">
                                         <then>
                                             <comment text="Envelope"/>
-                                            <assign variable="packagingType" expression="&quot;Cardboard Box&quot;"/>
+                                            <assign variable="packagingType" expression="&quot;Envelope&quot;"/>
                                         </then>
                                         <else>
                                             <comment text="Others"/>
                                             <output expression="&quot;Please enter your packaging type&quot;" newline="True"/>
-                                            <input variable="packgagingType"/>
+                                            <input variable="packagingType"/>
                                         </else>
                                     </if>
                                 </else>
