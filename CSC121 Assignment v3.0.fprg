@@ -4,10 +4,10 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="Shah"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-16 01:08:05 AM"/>
+        <attribute name="saved" value="2025-06-16 01:15:24 AM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMToxNjowNyBBTTs4O0VsaTtYMS1DQVJCT047MjAyNS0wNS0xNTsxMTo1MjoyOSBQTTtDU0MxMjEgQXNzaWdubWVudCB2MS4wLmZwcmc7NjkwNA=="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjswMTowODowNSBBTTsxMzsyNDMx"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjswMToxNToyNCBBTTsxNDsyNDMx"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -47,8 +47,8 @@
             <input variable="destination"/>
             <comment text="College Selection"/>
             <assign variable="destinationBlock" expression="setDestination(destination)"/>
-            <call expression="setBlockNameAndDistance(destination, destinationBlock)"/>
             <comment text="College Block Name &amp; Distance (m) Initialization"/>
+            <call expression="setBlockNameAndDistance(destination, destinationBlock)"/>
             <comment text="Shipment Category"/>
             <output expression="&quot;What is your shipment/item category?&quot;" newline="True"/>
             <output expression="&quot;1 - Glass&quot;" newline="True"/>
