@@ -4,15 +4,15 @@
         <attribute name="name" value="flowgo 121 project"/>
         <attribute name="authors" value="User-PC"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-16 12:17:42 AM"/>
+        <attribute name="saved" value="2025-06-16 01:17:49 AM"/>
         <attribute name="created" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xNDswNzo0NjoxNiBQTTsyMzIw"/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNTsxMTo1MzoxOCBQTTsxOzIzOTk="/>
         <attribute name="edited" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xNjsxMjoxNzo0MiBBTTs0OzI0MTE="/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjswMToxNzo0OSBBTTsyOzIzODk="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="choice, quantity" type="Integer" array="False" size=""/>
+            <declare name="choice" type="Integer" array="False" size=""/>
             <declare name="packagingType" type="String" array="False" size=""/>
             <output expression="&quot;Packaging Type: &quot;" newline="True"/>
             <output expression="&quot;1 - Cardboard Box&quot;" newline="True"/>
@@ -22,6 +22,10 @@
             <output expression="&quot;5 - Others&quot;" newline="True"/>
             <output expression="&quot;Please choose your packaging type (1 - 5): &quot;" newline="True"/>
             <input variable="choice"/>
+            <while expression="choice &lt; 1 || choice &gt; 4">
+                <output expression="&quot;Please choose correct packaging type (1 - 5): &quot;" newline="True"/>
+                <input variable="choice"/>
+            </while>
             <if expression="choice == 1">
                 <then>
                     <comment text="Cardboard Box"/>
@@ -57,8 +61,6 @@
                     </if>
                 </else>
             </if>
-            <output expression="&quot;Enter quantity: &quot;" newline="True"/>
-            <input variable="quantity"/>
         </body>
     </function>
 </flowgorithm>
