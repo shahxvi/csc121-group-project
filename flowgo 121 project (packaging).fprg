@@ -4,43 +4,61 @@
         <attribute name="name" value="flowgo 121 project"/>
         <attribute name="authors" value="User-PC"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-15 11:41:38 PM"/>
+        <attribute name="saved" value="2025-06-15 11:53:18 PM"/>
         <attribute name="created" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xNDswNzo0NjoxNiBQTTsyMzIw"/>
         <attribute name="edited" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xNTsxMTo0MTozOCBQTTszOzI0MjU="/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNTsxMTo1MzoxOCBQTTsxOzIzOTk="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="choice, packagingType" type="String" array="False" size=""/>
-            <declare name="quantity" type="Integer" array="False" size=""/>
-            <declare name="Y, N" type="String" array="False" size=""/>
-            <output expression="&quot;Do you want to start?: (Y/N) &quot;" newline="True"/>
+            <declare name="choice, quantity" type="Integer" array="False" size=""/>
+            <declare name="packagingType" type="String" array="False" size=""/>
+            <output expression="&quot;Packaging Type: &quot;" newline="True"/>
+            <output expression="&quot;1 - Cardboard Box&quot;" newline="True"/>
+            <output expression="&quot;2 - Plastic Box&quot;" newline="True"/>
+            <output expression="&quot;3 - Plastic Film&quot;" newline="True"/>
+            <output expression="&quot;4 - Envelope&quot;" newline="True"/>
+            <output expression="&quot;5 - Others&quot;" newline="True"/>
+            <output expression="&quot;Please choose your packaging type (1 - 5): &quot;" newline="True"/>
             <input variable="choice"/>
-            <if expression="choice == &quot;Y&quot; or choice == &quot;y&quot;">
+            <if expression="packagingType == 1">
                 <then>
-                    <output expression="&quot;What is your type of packaging? : (cardboardbox/plasticbox/envelope) &quot;" newline="True"/>
-                    <input variable="packagingType"/>
-                    <if expression="packagingType == &quot;carboardbox&quot;">
+                    <comment text="Cardboard Box"/>
+                    <assign variable="packagingType" expression="&quot;Cardboard Box&quot;"/>
+                </then>
+                <else>
+                    <if expression="packagingType == 2">
                         <then>
-                            <output expression="&quot;Enter quantity: &quot;" newline="True"/>
-                            <input variable="quantity"/>
+                            <comment text="Plastic Box"/>
+                            <assign variable="packagingType" expression="&quot;Cardboard Box&quot;"/>
                         </then>
                         <else>
-                            <if expression="packagingType == &quot;plasticbox&quot;">
+                            <if expression="packagingType == 3">
                                 <then>
-                                    <output expression="&quot;Enter quantity: &quot;" newline="True"/>
-                                    <input variable="quantity"/>
+                                    <comment text="Plastic Film"/>
+                                    <assign variable="packagingType" expression="&quot;Cardboard Box&quot;"/>
                                 </then>
-                                <else/>
+                                <else>
+                                    <if expression="packagingType == 4">
+                                        <then>
+                                            <comment text="Envelope"/>
+                                            <assign variable="packagingType" expression="&quot;Cardboard Box&quot;"/>
+                                        </then>
+                                        <else>
+                                            <comment text="Others"/>
+                                            <output expression="&quot;Please enter your packaging type&quot;" newline="True"/>
+                                            <input variable="packgagingType"/>
+                                        </else>
+                                    </if>
+                                </else>
                             </if>
                         </else>
                     </if>
-                </then>
-                <else>
-                    <output expression="&quot;Thank You&quot;" newline="True"/>
-                    <breakpoint expression="" always="True"/>
                 </else>
             </if>
+            <output expression="&quot;Enter quantity: &quot;" newline="True"/>
+            <input variable="quantity"/>
         </body>
     </function>
 </flowgorithm>
