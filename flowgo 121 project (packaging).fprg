@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="flowgo 121 project"/>
+        <attribute name="authors" value="User-PC"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-06-15 11:41:38 PM"/>
+        <attribute name="created" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xNDswNzo0NjoxNiBQTTsyMzIw"/>
+        <attribute name="edited" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xNTsxMTo0MTozOCBQTTszOzI0MjU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="choice, packagingType" type="String" array="False" size=""/>
+            <declare name="quantity" type="Integer" array="False" size=""/>
+            <declare name="Y, N" type="String" array="False" size=""/>
+            <output expression="&quot;Do you want to start?: (Y/N) &quot;" newline="True"/>
+            <input variable="choice"/>
+            <if expression="choice == &quot;Y&quot; or choice == &quot;y&quot;">
+                <then>
+                    <output expression="&quot;What is your type of packaging? : (cardboardbox/plasticbox/envelope) &quot;" newline="True"/>
+                    <input variable="packagingType"/>
+                    <if expression="packagingType == &quot;carboardbox&quot;">
+                        <then>
+                            <output expression="&quot;Enter quantity: &quot;" newline="True"/>
+                            <input variable="quantity"/>
+                        </then>
+                        <else>
+                            <if expression="packagingType == &quot;plasticbox&quot;">
+                                <then>
+                                    <output expression="&quot;Enter quantity: &quot;" newline="True"/>
+                                    <input variable="quantity"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;Thank You&quot;" newline="True"/>
+                    <breakpoint expression="" always="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
