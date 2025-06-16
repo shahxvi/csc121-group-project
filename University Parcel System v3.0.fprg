@@ -4,12 +4,13 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="Shah"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-17 02:11:47 AM"/>
+        <attribute name="saved" value="2025-06-17 02:18:55 AM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMToxNjowNyBBTTs4O0VsaTtYMS1DQVJCT047MjAyNS0wNS0xNTsxMTo1MjoyOSBQTTtDU0MxMjEgQXNzaWdubWVudCB2MS4wLmZwcmc7NjkwNA=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjswMToxOToyNSBBTTsyO1VzZXItUEM7REFOSUFMOzIwMjUtMDYtMTQ7MDc6NDY6MTYgUE07UGFja2FnaW5nIEZ1bmN0aW9uIChuaWFsY2hvdCArIHNoYWh4dmkpLmZwcmc7ODkwNA=="/>
         <attribute name="edited" value="c2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjsxMToxMjoxNiBQTTsxOzI0MjU="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswMjoxMTo0NyBBTTsxOTsyNDM5"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswMjoxNDoxNyBBTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTY7MTE6NTU6NDAgUE07U2hpcG1lbnQgQ2F0ZWdvcnkgRnVuY3Rpb24uZnByZzs3ODM4"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswMjoxODo1NSBBTTsyMDsyNDM3"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -68,6 +69,8 @@
             <output expression="&quot;3 - Food / Drinks&quot;" newline="True"/>
             <output expression="&quot;4 - Others&quot;" newline="True"/>
             <output expression="&quot;Please enter your shipment category (1 - 4): &quot;" newline="True"/>
+            <input variable="shipmentCategoryID"/>
+            <assign variable="shipmentCategory[4]" expression="shipmentCategory(shipmentCategoryID)"/>
             <comment text="Packaging"/>
             <output expression="&quot;Packaging Type: &quot;" newline="True"/>
             <output expression="&quot;1 - Cardboard Box&quot;" newline="True"/>
@@ -452,27 +455,75 @@
             </if>
         </body>
     </function>
-    <function name="setShipmentCategory" type="String" variable="shipmentCategory">
+    <function name="shipmentCategory" type="String" variable="shipmentCategory">
         <parameters>
-            <parameter name="ID" type="Integer" array="False"/>
+            <parameter name="shipmentCategoryID" type="Integer" array="False"/>
         </parameters>
         <body>
+            <declare name="choice" type="String" array="False" size=""/>
             <declare name="shipmentCategory" type="String" array="True" size="4"/>
-            <assign variable="shipmentCategory[0]" expression="&quot;Glass&quot;"/>
-            <if expression="ID == 1">
-                <then/>
-                <else/>
+            <declare name="shipmentCategoryID" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <assign variable="choice" expression="&quot;y&quot;"/>
+            <while expression="choice == &quot;Y&quot; || choice == &quot;y&quot;">
+                <if expression="shipmentCategoryID == 1">
+                    <then>
+                        <assign variable="shipmentCategory[i]" expression="&quot;Glass&quot;"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="shipmentCategoryID == 2">
+                    <then>
+                        <assign variable="shipmentCategory[i]" expression="&quot;Electronic&quot;"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="shipmentCategoryID == 3">
+                    <then>
+                        <assign variable="shipmentCategory[i]" expression="&quot;Food / Drinks&quot;"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="shipmentCategoryID == 4">
+                    <then>
+                        <output expression="&quot;Please type in your shipment category&quot;" newline="True"/>
+                        <input variable="shipmentCategory[i]"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="i" expression="i + 1"/>
+                <output expression="&quot;Do you wish to add more attributes? (Y/N)&quot;" newline="True"/>
+                <input variable="choice"/>
+            </while>
+            <if expression="i == 1">
+                <then>
+                    <output expression="shipmentCategory[0]" newline="True"/>
+                </then>
+                <else>
+                    <if expression="i == 2">
+                        <then>
+                            <output expression="shipmentCategory[0]" newline="True"/>
+                            <output expression="shipmentCategory[1]" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="i == 3">
+                                <then>
+                                    <output expression="shipmentCategory[0]" newline="True"/>
+                                    <output expression="shipmentCategory[1]" newline="True"/>
+                                    <output expression="shipmentCategory[2]" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="shipmentCategory[0]" newline="True"/>
+                                    <output expression="shipmentCategory[1]" newline="True"/>
+                                    <output expression="shipmentCategory[2]" newline="True"/>
+                                    <output expression="shipmentCategory[3]" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
             </if>
-            <if expression="ID == 2">
-                <then/>
-                <else/>
-            </if>
-            <output expression="&quot;What is your shipment/item category?&quot;" newline="True"/>
-            <output expression="&quot;1 - Glass&quot;" newline="True"/>
-            <output expression="&quot;2 - Electronic&quot;" newline="True"/>
-            <output expression="&quot;3 - Food / Drinks&quot;" newline="True"/>
-            <output expression="&quot;4 - Others&quot;" newline="True"/>
-            <output expression="&quot;Please enter your shipment category (1 - 4): &quot;" newline="True"/>
         </body>
     </function>
 </flowgorithm>
