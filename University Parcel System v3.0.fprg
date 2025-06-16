@@ -4,22 +4,24 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="Shah"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-17 02:05:41 AM"/>
+        <attribute name="saved" value="2025-06-17 02:11:47 AM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMToxNjowNyBBTTs4O0VsaTtYMS1DQVJCT047MjAyNS0wNS0xNTsxMTo1MjoyOSBQTTtDU0MxMjEgQXNzaWdubWVudCB2MS4wLmZwcmc7NjkwNA=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjswMToxOToyNSBBTTsyO1VzZXItUEM7REFOSUFMOzIwMjUtMDYtMTQ7MDc6NDY6MTYgUE07UGFja2FnaW5nIEZ1bmN0aW9uIChuaWFsY2hvdCArIHNoYWh4dmkpLmZwcmc7ODkwNA=="/>
         <attribute name="edited" value="c2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjsxMToxMjoxNiBQTTsxOzI0MjU="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswMjowNTo0MSBBTTsxODsyNDM1"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswMjoxMTo0NyBBTTsxOTsyNDM5"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
             <comment text="Declaration"/>
-            <declare name="choice" type="Integer" array="False" size=""/>
             <declare name="senderName, senderNumber" type="String" array="False" size=""/>
             <declare name="recipientName, recipientNumber" type="String" array="False" size=""/>
-            <declare name="collegeID, college, collegeBlock" type="Integer" array="False" size=""/>
+            <declare name="collegeID, collegeBlock" type="Integer" array="False" size=""/>
+            <declare name="college" type="String" array="False" size=""/>
             <declare name="distance" type="Real" array="False" size=""/>
+            <declare name="packagingTypeID" type="Integer" array="False" size=""/>
+            <declare name="packagingType" type="String" array="False" size=""/>
             <comment text="Display Greetings"/>
             <output expression="&quot;Welcome to University Parcel System&quot;" newline="True"/>
             <output expression="&quot;Shipping from: UniStorage, Anjung Siswa&quot;" newline="True"/>
@@ -75,7 +77,11 @@
             <output expression="&quot;5 - Others&quot;" newline="True"/>
             <output expression="&quot;Please choose your packaging type (1 - 5): &quot;" newline="True"/>
             <input variable="packagingTypeID"/>
-            <call expression="setPackaging(packagingTypeID)"/>
+            <while expression="packagingTypeID &lt; 1 || packagingTypeID &gt; 5">
+                <output expression="&quot;Please choose correct packaging type (1 - 5): &quot;" newline="True"/>
+                <input variable="packagingTypeID"/>
+            </while>
+            <assign variable="packagingType" expression="packagingType(packagingTypeID)"/>
         </body>
     </function>
     <function name="blockName" type="String" variable="blockName">
@@ -275,6 +281,7 @@
                                 </then>
                                 <else>
                                     <comment text="Beringin Block Selection"/>
+                                    <assign variable="collegeBlock" expression="1"/>
                                 </else>
                             </if>
                         </else>
@@ -402,35 +409,31 @@
             </if>
         </body>
     </function>
-    <function name="setPackaging" type="String" variable="packagingType">
+    <function name="packagingType" type="String" variable="packagingType">
         <parameters>
-            <parameter name="choice" type="Integer" array="False"/>
+            <parameter name="packagingTypeID" type="Integer" array="False"/>
         </parameters>
         <body>
             <declare name="packagingType" type="String" array="False" size=""/>
-            <while expression="choice &lt; 1 || choice &gt; 4">
-                <output expression="&quot;Please choose correct packaging type (1 - 5): &quot;" newline="True"/>
-                <input variable="choice"/>
-            </while>
-            <if expression="choice == 1">
+            <if expression="packagingTypeID == 1">
                 <then>
                     <comment text="Cardboard Box"/>
                     <assign variable="packagingType" expression="&quot;Cardboard Box&quot;"/>
                 </then>
                 <else>
-                    <if expression="choice == 2">
+                    <if expression="packagingTypeID == 2">
                         <then>
                             <comment text="Plastic Box"/>
                             <assign variable="packagingType" expression="&quot;Plastic Box&quot;"/>
                         </then>
                         <else>
-                            <if expression="choice == 3">
+                            <if expression="packagingTypeID == 3">
                                 <then>
                                     <comment text="Plastic Film"/>
                                     <assign variable="packagingType" expression="&quot;Plastic Film&quot;"/>
                                 </then>
                                 <else>
-                                    <if expression="choice == 4">
+                                    <if expression="packagingTypeID == 4">
                                         <then>
                                             <comment text="Envelope"/>
                                             <assign variable="packagingType" expression="&quot;Envelope&quot;"/>
