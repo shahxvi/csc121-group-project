@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Shipment Category Function"/>
+        <attribute name="authors" value="Shah"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-06-17 01:07:52 AM"/>
+        <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjsxMTo1NTo0MCBQTTsyMjg5"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjsxMTo1NTo0MiBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMDM7MTE6MDg6MzcgQU07Q1NDMTIxIEFzc2lnbm1lbnQgdjMuMC5mcHJnOzcwMDk="/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswMTowNzo1MiBBTTsxOzIzODI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="choice" type="String" array="False" size=""/>
+            <declare name="shipmentCategory" type="String" array="True" size="4"/>
+            <declare name="shipmentCategoryID" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <assign variable="choice" expression="&quot;y&quot;"/>
+            <while expression="choice == &quot;Y&quot; || choice == &quot;y&quot;">
+                <output expression="&quot;What are your shipment categories?&quot;" newline="True"/>
+                <output expression="&quot;1 - Glass&quot;" newline="True"/>
+                <output expression="&quot;2 - Electronic&quot;" newline="True"/>
+                <output expression="&quot;3 - Food / Drinks&quot;" newline="True"/>
+                <output expression="&quot;4 - Others&quot;" newline="True"/>
+                <output expression="&quot;Please enter your shipment category (1 - 4): &quot;" newline="True"/>
+                <input variable="shipmentCategoryID"/>
+                <if expression="shipmentCategoryID == 1">
+                    <then>
+                        <assign variable="shipmentCategory[i]" expression="&quot;Glass&quot;"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="shipmentCategoryID == 2">
+                    <then>
+                        <assign variable="shipmentCategory[i]" expression="&quot;Electronic&quot;"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="shipmentCategoryID == 3">
+                    <then>
+                        <assign variable="shipmentCategory[i]" expression="&quot;Food / Drinks&quot;"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="shipmentCategoryID == 4">
+                    <then>
+                        <output expression="&quot;Please type in your shipment category&quot;" newline="True"/>
+                        <input variable="shipmentCategory[i]"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="i" expression="i + 1"/>
+                <output expression="&quot;Do you wish to add more attributes? (Y/N)&quot;" newline="True"/>
+                <input variable="choice"/>
+            </while>
+            <if expression="i == 1">
+                <then>
+                    <output expression="shipmentCategory[0]" newline="True"/>
+                </then>
+                <else>
+                    <if expression="i == 2">
+                        <then>
+                            <output expression="shipmentCategory[0]" newline="True"/>
+                            <output expression="shipmentCategory[1]" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="i == 3">
+                                <then>
+                                    <output expression="shipmentCategory[0]" newline="True"/>
+                                    <output expression="shipmentCategory[1]" newline="True"/>
+                                    <output expression="shipmentCategory[2]" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="shipmentCategory[0]" newline="True"/>
+                                    <output expression="shipmentCategory[1]" newline="True"/>
+                                    <output expression="shipmentCategory[2]" newline="True"/>
+                                    <output expression="shipmentCategory[3]" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

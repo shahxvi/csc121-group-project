@@ -4,12 +4,12 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="Shah"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-16 11:12:16 PM"/>
+        <attribute name="saved" value="2025-06-17 01:08:00 AM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMToxNjowNyBBTTs4O0VsaTtYMS1DQVJCT047MjAyNS0wNS0xNTsxMTo1MjoyOSBQTTtDU0MxMjEgQXNzaWdubWVudCB2MS4wLmZwcmc7NjkwNA=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjswMToxOToyNSBBTTsyO1VzZXItUEM7REFOSUFMOzIwMjUtMDYtMTQ7MDc6NDY6MTYgUE07UGFja2FnaW5nIEZ1bmN0aW9uIChuaWFsY2hvdCArIHNoYWh4dmkpLmZwcmc7ODkwNA=="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjswMTozMzo0MSBBTTsxNTsyNDMx"/>
         <attribute name="edited" value="c2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjsxMToxMjoxNiBQTTsxOzI0MjU="/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswMTowODowMCBBTTsxNzsyNDMx"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -410,13 +410,12 @@
         </parameters>
         <body>
             <declare name="shipmentCategory" type="String" array="True" size="4"/>
+            <assign variable="shipmentCategory[0]" expression="&quot;Glass&quot;"/>
             <if expression="ID == 1">
-                <then>
-                    <assign variable="shipmentCategory[0]" expression="&quot;Glass&quot;"/>
-                </then>
+                <then/>
                 <else/>
             </if>
-            <if expression="ID == 1">
+            <if expression="ID == 2">
                 <then/>
                 <else/>
             </if>
