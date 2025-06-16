@@ -4,11 +4,12 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="Shah"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-16 01:33:41 AM"/>
+        <attribute name="saved" value="2025-06-16 11:12:16 PM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMToxNjowNyBBTTs4O0VsaTtYMS1DQVJCT047MjAyNS0wNS0xNTsxMTo1MjoyOSBQTTtDU0MxMjEgQXNzaWdubWVudCB2MS4wLmZwcmc7NjkwNA=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjswMToxOToyNSBBTTsyO1VzZXItUEM7REFOSUFMOzIwMjUtMDYtMTQ7MDc6NDY6MTYgUE07UGFja2FnaW5nIEZ1bmN0aW9uIChuaWFsY2hvdCArIHNoYWh4dmkpLmZwcmc7ODkwNA=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjswMTozMzo0MSBBTTsxNTsyNDMx"/>
+        <attribute name="edited" value="c2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjsxMToxMjoxNiBQTTsxOzI0MjU="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -401,6 +402,30 @@
                     </if>
                 </else>
             </if>
+        </body>
+    </function>
+    <function name="setShipmentCategory" type="String" variable="shipmentCategory">
+        <parameters>
+            <parameter name="ID" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="shipmentCategory" type="String" array="True" size="4"/>
+            <if expression="ID == 1">
+                <then>
+                    <assign variable="shipmentCategory[0]" expression="&quot;Glass&quot;"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="ID == 1">
+                <then/>
+                <else/>
+            </if>
+            <output expression="&quot;What is your shipment/item category?&quot;" newline="True"/>
+            <output expression="&quot;1 - Glass&quot;" newline="True"/>
+            <output expression="&quot;2 - Electronic&quot;" newline="True"/>
+            <output expression="&quot;3 - Food / Drinks&quot;" newline="True"/>
+            <output expression="&quot;4 - Others&quot;" newline="True"/>
+            <output expression="&quot;Please enter your shipment category (1 - 4): &quot;" newline="True"/>
         </body>
     </function>
 </flowgorithm>
