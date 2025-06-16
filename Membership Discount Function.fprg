@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Membership Discount Function"/>
+        <attribute name="authors" value="User-PC"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-06-16 11:47:16 PM"/>
+        <attribute name="created" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xNjsxMjoyMToyMiBBTTsyMjkz"/>
+        <attribute name="edited" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xNjsxMTo0NzoxNiBQTTszOzI0Mjg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="discount" type="Real" array="False" size=""/>
+            <declare name="membershipstatus" type="String" array="False" size=""/>
+            <declare name="choice" type="String" array="False" size=""/>
+            <output expression="&quot;Do you have a membership?: (Y/N) &quot;" newline="True"/>
+            <input variable="choice"/>
+            <if expression="choice == &quot;Y&quot; or choice == &quot;y&quot;">
+                <then>
+                    <assign variable="membershipstatus" expression="&quot;Member&quot;"/>
+                    <assign variable="discount" expression="0.05"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+    <function name="applydiscount" type="Real" variable="">
+        <parameters/>
+        <body/>
+    </function>
+</flowgorithm>
