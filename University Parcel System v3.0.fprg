@@ -4,54 +4,61 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="Shah"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-17 01:08:00 AM"/>
+        <attribute name="saved" value="2025-06-17 02:05:41 AM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMToxNjowNyBBTTs4O0VsaTtYMS1DQVJCT047MjAyNS0wNS0xNTsxMTo1MjoyOSBQTTtDU0MxMjEgQXNzaWdubWVudCB2MS4wLmZwcmc7NjkwNA=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjswMToxOToyNSBBTTsyO1VzZXItUEM7REFOSUFMOzIwMjUtMDYtMTQ7MDc6NDY6MTYgUE07UGFja2FnaW5nIEZ1bmN0aW9uIChuaWFsY2hvdCArIHNoYWh4dmkpLmZwcmc7ODkwNA=="/>
         <attribute name="edited" value="c2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjsxMToxMjoxNiBQTTsxOzI0MjU="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswMTowODowMCBBTTsxNzsyNDMx"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswMjowNTo0MSBBTTsxODsyNDM1"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <comment text="Initialization"/>
+            <comment text="Declaration"/>
+            <declare name="choice" type="Integer" array="False" size=""/>
             <declare name="senderName, senderNumber" type="String" array="False" size=""/>
-            <declare name="recipientName, recipientNumber, blockNameRecipient" type="String" array="False" size=""/>
-            <declare name="destination, destinationBlock, packagingTypeID" type="Integer" array="False" size=""/>
-            <comment text="Distance in meters"/>
+            <declare name="recipientName, recipientNumber" type="String" array="False" size=""/>
+            <declare name="collegeID, college, collegeBlock" type="Integer" array="False" size=""/>
             <declare name="distance" type="Real" array="False" size=""/>
             <comment text="Display Greetings"/>
             <output expression="&quot;Welcome to University Parcel System&quot;" newline="True"/>
             <output expression="&quot;Shipping from: UniStorage, Anjung Siswa&quot;" newline="True"/>
             <output expression="&quot;----------------------------------------------&quot;" newline="True"/>
-            <comment text="Sender's Name (Input)"/>
+            <comment text="Sender's Details"/>
             <output expression="&quot;Sender's Details:&quot;" newline="True"/>
+            <comment text="Sender's Name"/>
             <output expression="&quot;Please enter your name: &quot;" newline="True"/>
             <input variable="senderName"/>
-            <comment text="Sender's Phone Number (Input)"/>
+            <comment text="Sender's Phone Number"/>
             <output expression="&quot;Please enter your phone number: &quot;" newline="True"/>
             <input variable="senderNumber"/>
             <output expression="&quot;----------------------------------------------&quot;" newline="True"/>
             <comment text="Recipient's Details"/>
             <output expression="&quot;Recipient's Details:&quot;" newline="True"/>
+            <comment text="Recipient's Name"/>
             <output expression="&quot;Enter recipient's name: &quot;" newline="True"/>
             <input variable="recipientName"/>
-            <comment text="Recipient's Number (Input)"/>
+            <comment text="Recipient's Number"/>
             <output expression="&quot;Please enter the recipient's phone number: &quot;" newline="True"/>
             <input variable="recipientNumber"/>
-            <comment text="Delivery Selection Option (Input)"/>
+            <comment text="College Delivery Selection"/>
             <output expression="&quot;Delivery to:&quot;" newline="True"/>
             <output expression="&quot;1 - Cengal&quot;" newline="True"/>
             <output expression="&quot;2 - Dahlia&quot;" newline="True"/>
             <output expression="&quot;3 - Kesinai&quot;" newline="True"/>
             <output expression="&quot;4 - Bringin&quot;" newline="True"/>
             <output expression="&quot;Please enter your delivery desination:&quot;" newline="True"/>
-            <input variable="destination"/>
-            <comment text="College Selection"/>
-            <assign variable="destinationBlock" expression="setDestination(destination)"/>
-            <comment text="College Block Name &amp; Distance (m) Initialization"/>
-            <assign variable="blockNameRecipient" expression="setBlockNameRecipient(destination, destinationBlock)"/>
-            <assign variable="distance" expression="setDistance(destination, destinationBlock)"/>
+            <input variable="collegeID"/>
+            <while expression="collegeID &lt; 1 || collegeID &gt; 4">
+                <output expression="&quot;Please enter a valid college (1 - 4): &quot;" newline="True"/>
+                <input variable="collegeID"/>
+            </while>
+            <comment text="College Initialization"/>
+            <assign variable="college" expression="college(collegeID)"/>
+            <comment text="College Block Initialization"/>
+            <assign variable="collegeBlock" expression="collegeBlock(college)"/>
+            <comment text="College Distance (meters) Initialization"/>
+            <assign variable="distance" expression="distance(college, collegeBlock)"/>
             <comment text="Shipment Category"/>
             <output expression="&quot;What is your shipment/item category?&quot;" newline="True"/>
             <output expression="&quot;1 - Glass&quot;" newline="True"/>
@@ -71,119 +78,119 @@
             <call expression="setPackaging(packagingTypeID)"/>
         </body>
     </function>
-    <function name="setBlockNameRecipient" type="String" variable="blockNameRecipient">
+    <function name="blockName" type="String" variable="blockName">
         <parameters>
-            <parameter name="destination" type="Integer" array="False"/>
-            <parameter name="destinationBlock" type="Integer" array="False"/>
+            <parameter name="college" type="Integer" array="False"/>
+            <parameter name="collegeBlock" type="Integer" array="False"/>
         </parameters>
         <body>
-            <declare name="blockNameRecipient" type="String" array="False" size=""/>
+            <declare name="blockName" type="String" array="False" size=""/>
             <declare name="distance" type="Real" array="False" size=""/>
-            <if expression="destination == 1">
+            <if expression="college == 1">
                 <then>
                     <comment text="Cengal College"/>
-                    <while expression="destinationBlock &lt; 1 || destinationBlock &gt; 7">
+                    <while expression="collegeBlock &lt; 1 || collegeBlock &gt; 7">
                         <comment text="Loop for Incorrect Cengal Block Selection"/>
                         <output expression="&quot;Please enter valid Cengal block number (1 - 7): &quot;" newline="True"/>
-                        <input variable="destinationBlock"/>
+                        <input variable="collegeBlock"/>
                     </while>
-                    <if expression="destinationBlock == 1">
+                    <if expression="collegeBlock == 1">
                         <then>
-                            <assign variable="blockNameRecipient" expression="&quot;Cengal 1&quot;"/>
+                            <assign variable="blockName" expression="&quot;Cengal 1&quot;"/>
                         </then>
                         <else/>
                     </if>
-                    <if expression="destinationBlock == 2">
+                    <if expression="collegeBlock == 2">
                         <then>
-                            <assign variable="blockNameRecipient" expression="&quot;Cengal 2&quot;"/>
+                            <assign variable="blockName" expression="&quot;Cengal 2&quot;"/>
                         </then>
                         <else/>
                     </if>
-                    <if expression="destinationBlock == 3">
+                    <if expression="collegeBlock == 3">
                         <then>
-                            <assign variable="blockNameRecipient" expression="&quot;Cengal 3&quot;"/>
+                            <assign variable="blockName" expression="&quot;Cengal 3&quot;"/>
                         </then>
                         <else/>
                     </if>
-                    <if expression="destinationBlock == 4">
+                    <if expression="collegeBlock == 4">
                         <then>
-                            <assign variable="blockNameRecipient" expression="&quot;Cengal 4&quot;"/>
+                            <assign variable="blockName" expression="&quot;Cengal 4&quot;"/>
                         </then>
                         <else/>
                     </if>
-                    <if expression="destinationBlock == 5">
+                    <if expression="collegeBlock == 5">
                         <then>
-                            <assign variable="blockNameRecipient" expression="&quot;Cengal 5&quot;"/>
+                            <assign variable="blockName" expression="&quot;Cengal 5&quot;"/>
                         </then>
                         <else/>
                     </if>
-                    <if expression="destinationBlock == 6">
+                    <if expression="collegeBlock == 6">
                         <then>
-                            <assign variable="blockNameRecipient" expression="&quot;Cengal 6&quot;"/>
+                            <assign variable="blockName" expression="&quot;Cengal 6&quot;"/>
                         </then>
                         <else/>
                     </if>
-                    <if expression="destinationBlock == 7">
+                    <if expression="collegeBlock == 7">
                         <then>
-                            <assign variable="blockNameRecipient" expression="&quot;Cengal 7&quot;"/>
+                            <assign variable="blockName" expression="&quot;Cengal 7&quot;"/>
                         </then>
                         <else/>
                     </if>
                 </then>
                 <else>
-                    <if expression="destination == 2">
+                    <if expression="college == 2">
                         <then>
                             <comment text="Dahlia College"/>
-                            <while expression="destinationBlock &lt; 1 || destinationBlock &gt; 2">
+                            <while expression="collegeBlock &lt; 1 || collegeBlock &gt; 2">
                                 <comment text="Loop for Incorrect Dahlia Block Selection"/>
                                 <output expression="&quot;Please enter valid Dahlia block number (1 - 2): &quot;" newline="True"/>
-                                <input variable="destinationBlock"/>
+                                <input variable="collegeBlock"/>
                             </while>
-                            <if expression="destinationBlock == 1">
+                            <if expression="collegeBlock == 1">
                                 <then>
-                                    <assign variable="blockNameRecipient" expression="&quot;Dahlia 1&quot;"/>
+                                    <assign variable="blockName" expression="&quot;Dahlia 1&quot;"/>
                                 </then>
                                 <else>
-                                    <assign variable="blockNameRecipient" expression="&quot;Dahlia 2&quot;"/>
+                                    <assign variable="blockName" expression="&quot;Dahlia 2&quot;"/>
                                 </else>
                             </if>
                         </then>
                         <else>
-                            <if expression="destination == 3">
+                            <if expression="college == 3">
                                 <then>
                                     <comment text="Kesinai College"/>
-                                    <while expression="destinationBlock &lt; 1 || destinationBlock &gt; 4">
+                                    <while expression="collegeBlock &lt; 1 || collegeBlock &gt; 4">
                                         <comment text="Loop for Incorrect Kesinai Block Selection"/>
                                         <output expression="&quot;Please enter valid Dahlia block number (1 - 4): &quot;" newline="True"/>
-                                        <input variable="destinationBlock"/>
+                                        <input variable="collegeBlock"/>
                                     </while>
-                                    <if expression="destinationBlock == 1">
+                                    <if expression="collegeBlock == 1">
                                         <then>
-                                            <assign variable="blockNameRecipient" expression="&quot;Kesinai 1&quot;"/>
+                                            <assign variable="blockName" expression="&quot;Kesinai 1&quot;"/>
                                         </then>
                                         <else/>
                                     </if>
-                                    <if expression="destinationBlock == 2">
+                                    <if expression="collegeBlock == 2">
                                         <then>
-                                            <assign variable="blockNameRecipient" expression="&quot;Kesinai 2&quot;"/>
+                                            <assign variable="blockName" expression="&quot;Kesinai 2&quot;"/>
                                         </then>
                                         <else/>
                                     </if>
-                                    <if expression="destinationBlock == 3">
+                                    <if expression="collegeBlock == 3">
                                         <then>
-                                            <assign variable="blockNameRecipient" expression="&quot;Kesinai 3&quot;"/>
+                                            <assign variable="blockName" expression="&quot;Kesinai 3&quot;"/>
                                         </then>
                                         <else/>
                                     </if>
-                                    <if expression="destinationBlock == 4">
+                                    <if expression="collegeBlock == 4">
                                         <then>
-                                            <assign variable="blockNameRecipient" expression="&quot;Kesinai 4&quot;"/>
+                                            <assign variable="blockName" expression="&quot;Kesinai 4&quot;"/>
                                         </then>
                                         <else/>
                                     </if>
                                 </then>
                                 <else>
-                                    <assign variable="blockNameRecipient" expression="&quot;Beringin&quot;"/>
+                                    <assign variable="blockName" expression="&quot;Beringin&quot;"/>
                                 </else>
                             </if>
                         </else>
@@ -192,41 +199,79 @@
             </if>
         </body>
     </function>
-    <function name="setDestination" type="Integer" variable="destinationBlock">
+    <function name="college" type="String" variable="college">
         <parameters>
-            <parameter name="destination" type="Integer" array="False"/>
+            <parameter name="collegeID" type="Integer" array="False"/>
         </parameters>
         <body>
-            <declare name="destinationBlock" type="Integer" array="False" size=""/>
-            <while expression="destination &lt; 1 || destination &gt; 4">
-                <output expression="&quot;Please enter the correct delivery desination (1 - 4):&quot;" newline="True"/>
-                <input variable="destination"/>
-            </while>
-            <if expression="destination == 1">
+            <declare name="college" type="String" array="False" size=""/>
+            <if expression="collegeID == 1">
+                <then>
+                    <assign variable="college" expression="&quot;Cengal&quot;"/>
+                </then>
+                <else>
+                    <if expression="collegeID == 2">
+                        <then>
+                            <assign variable="college" expression="&quot;Dahlia&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="collegeID == 3">
+                                <then>
+                                    <assign variable="college" expression="&quot;Kesinai&quot;"/>
+                                </then>
+                                <else>
+                                    <assign variable="college" expression="&quot;Beringin&quot;"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="collegeBlock" type="Integer" variable="collegeBlock">
+        <parameters>
+            <parameter name="college" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="collegeBlock" type="Integer" array="False" size=""/>
+            <if expression="college == &quot;Cengal&quot;">
                 <then>
                     <comment text="Cengal Block Selection"/>
                     <output expression="&quot;Which Cengal do you want to deliver to?&quot;" newline="True"/>
                     <output expression="&quot;Cengal 1 - 7&quot;" newline="True"/>
                     <output expression="&quot;Please enter Cengal block number (1 - 7): &quot;" newline="True"/>
-                    <input variable="destinationBlock"/>
+                    <input variable="collegeBlock"/>
+                    <while expression="collegeBlock &lt; 1 || collegeBlock &gt; 7">
+                        <output expression="&quot;Please enter a valid college block (1 - 7): &quot;" newline="True"/>
+                        <input variable="collegeBlock"/>
+                    </while>
                 </then>
                 <else>
-                    <if expression="destination == 2">
+                    <if expression="college == &quot;Dahlia&quot;">
                         <then>
                             <comment text="Dahlia Block Selection"/>
                             <output expression="&quot;Which Dahlia do you want to deliver to?&quot;" newline="True"/>
                             <output expression="&quot;Dahlia 1 - 2&quot;" newline="True"/>
                             <output expression="&quot;Please enter Dahlia block number (1 - 2): &quot;" newline="True"/>
-                            <input variable="destinationBlock"/>
+                            <input variable="collegeBlock"/>
+                            <while expression="collegeBlock &lt; 1 || collegeBlock &gt; 2">
+                                <output expression="&quot;Please enter a valid college block (1 - 2): &quot;" newline="True"/>
+                                <input variable="collegeBlock"/>
+                            </while>
                         </then>
                         <else>
-                            <if expression="destination == 3">
+                            <if expression="college == &quot;Kesinai&quot;">
                                 <then>
                                     <comment text="Kesinai Block Selection"/>
                                     <output expression="&quot;Which Kesinai do you want to deliver to?&quot;" newline="True"/>
                                     <output expression="&quot;Kesinai 1 - 4&quot;" newline="True"/>
                                     <output expression="&quot;Please enter Kesinai block number (1 - 4): &quot;" newline="True"/>
-                                    <input variable="destinationBlock"/>
+                                    <input variable="collegeBlock"/>
+                                    <while expression="collegeBlock &lt; 1 || collegeBlock &gt; 4">
+                                        <output expression="&quot;Please enter a valid college block (1 - 4): &quot;" newline="True"/>
+                                        <input variable="collegeBlock"/>
+                                    </while>
                                 </then>
                                 <else>
                                     <comment text="Beringin Block Selection"/>
@@ -238,59 +283,59 @@
             </if>
         </body>
     </function>
-    <function name="setDistance" type="Real" variable="distance">
+    <function name="distance" type="Real" variable="distance">
         <parameters>
-            <parameter name="destination" type="Integer" array="False"/>
-            <parameter name="destinationBlock" type="Integer" array="False"/>
+            <parameter name="college" type="String" array="False"/>
+            <parameter name="collegeBlock" type="Integer" array="False"/>
         </parameters>
         <body>
             <declare name="distance" type="Real" array="False" size=""/>
-            <if expression="destination == 1">
+            <if expression="college == &quot;Cengal&quot;">
                 <then>
                     <comment text="Cengal College"/>
-                    <if expression="destinationBlock == 1">
+                    <if expression="collegeBlock == 1">
                         <then>
                             <comment text="Cengal 1"/>
                             <assign variable="distance" expression="100"/>
                         </then>
                         <else/>
                     </if>
-                    <if expression="destinationBlock == 2">
+                    <if expression="collegeBlock == 2">
                         <then>
                             <comment text="Cengal 2"/>
                             <assign variable="distance" expression="200"/>
                         </then>
                         <else/>
                     </if>
-                    <if expression="destinationBlock == 3">
+                    <if expression="collegeBlock == 3">
                         <then>
                             <comment text="Cengal 3"/>
                             <assign variable="distance" expression="220"/>
                         </then>
                         <else/>
                     </if>
-                    <if expression="destinationBlock == 4">
+                    <if expression="collegeBlock == 4">
                         <then>
                             <comment text="Cengal 4"/>
                             <assign variable="distance" expression="210"/>
                         </then>
                         <else/>
                     </if>
-                    <if expression="destinationBlock == 5">
+                    <if expression="collegeBlock == 5">
                         <then>
                             <comment text="Cengal 5"/>
                             <assign variable="distance" expression="160"/>
                         </then>
                         <else/>
                     </if>
-                    <if expression="destinationBlock == 6">
+                    <if expression="collegeBlock == 6">
                         <then>
                             <comment text="Cengal 6"/>
                             <assign variable="distance" expression="85"/>
                         </then>
                         <else/>
                     </if>
-                    <if expression="destinationBlock == 7">
+                    <if expression="collegeBlock == 7">
                         <then>
                             <comment text="Cengal 7"/>
                             <assign variable="distance" expression="150"/>
@@ -299,10 +344,10 @@
                     </if>
                 </then>
                 <else>
-                    <if expression="destination == 2">
+                    <if expression="college == &quot;Dahlia&quot;">
                         <then>
                             <comment text="Dahlia College"/>
-                            <if expression="destinationBlock == 1">
+                            <if expression="collegeBlock == 1">
                                 <then>
                                     <comment text="Dahlia 1"/>
                                     <assign variable="distance" expression="330"/>
@@ -314,31 +359,31 @@
                             </if>
                         </then>
                         <else>
-                            <if expression="destination == 3">
+                            <if expression="college == &quot;Kesinai&quot;">
                                 <then>
                                     <comment text="Kesinai College"/>
-                                    <if expression="destinationBlock == 1">
+                                    <if expression="collegeBlock == 1">
                                         <then>
                                             <comment text="Kesinai 1"/>
                                             <assign variable="distance" expression="80"/>
                                         </then>
                                         <else/>
                                     </if>
-                                    <if expression="destinationBlock == 2">
+                                    <if expression="collegeBlock == 2">
                                         <then>
                                             <comment text="Kesinai 2"/>
                                             <assign variable="distance" expression="155"/>
                                         </then>
                                         <else/>
                                     </if>
-                                    <if expression="destinationBlock == 3">
+                                    <if expression="collegeBlock == 3">
                                         <then>
                                             <comment text="Kesinai 3"/>
                                             <assign variable="distance" expression="195"/>
                                         </then>
                                         <else/>
                                     </if>
-                                    <if expression="destinationBlock == 4">
+                                    <if expression="collegeBlock == 4">
                                         <then>
                                             <comment text="Kesinai 4"/>
                                             <assign variable="distance" expression="135"/>

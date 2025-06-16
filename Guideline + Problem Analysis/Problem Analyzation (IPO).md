@@ -1,7 +1,6 @@
 # Input:
 Sender's Name, Sender's Phone Number
 
-
 Recipient's Name, Sender's Phone Number, Sender's Block, Sender's Block Number
 
 Item Type (Glass, Electronic, Food, Drinks)
