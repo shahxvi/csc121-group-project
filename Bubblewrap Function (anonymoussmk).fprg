@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="bublewrap"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-06-16 10:11:41 PM"/>
+        <attribute name="created" value="VXNlcjtMQVBUT1AtSTU5TEo0MUw7MjAyNS0wNi0xNjsxMjozNjoxNCBBTTsyNzAy"/>
+        <attribute name="edited" value="VXNlcjtMQVBUT1AtSTU5TEo0MUw7MjAyNS0wNi0xNjsxMDoxMTo0MSBQTTsyOzI4MTc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="choice" type="String" array="False" size=""/>
+            <declare name="charge" type="Integer" array="False" size=""/>
+            <output expression="&quot;Do you have bublewrapping (y/N)&quot;" newline="True"/>
+            <input variable="choice"/>
+            <if expression="choice == &quot;y&quot; &amp;&amp; choice == &quot;y&quot;">
+                <then>
+                    <output expression="&quot;Thank you for your respond&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Do you want bublewraping (y/N)&quot;" newline="True"/>
+                    <input variable="choice"/>
+                    <if expression="choice == &quot;y&quot; &amp;&amp; choice == &quot;y&quot;">
+                        <then>
+                            <assign variable="charge" expression="1"/>
+                            <output expression="&quot;Bubble Wrap Charge : RM&quot; &amp; charge" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Thank you for your respond&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
