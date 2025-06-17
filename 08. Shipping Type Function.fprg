@@ -4,12 +4,33 @@
         <attribute name="name" value="08. Shipping Type Function"/>
         <attribute name="authors" value="Shah"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-17 09:16:47 AM"/>
+        <attribute name="saved" value="2025-06-17 10:24:35 PM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswOToxNjoyMCBBTTsyMjc3"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswOToxNjo0NyBBTTsxOzIzOTQ="/>
+        <attribute name="edited" value="VXNlcjtMQVBUT1AtSTU5TEo0MUw7MjAyNS0wNi0xNzsxMDoyNDozMiBQTTsxO1VzZXI7TEFQVE9QLUk1OUxKNDFMOzIwMjUtMDYtMTY7MTA6MjI6NDEgUE07c2hpcHBpbmcuZnByZzs2OTky"/>
+        <attribute name="edited" value="VXNlcjtMQVBUT1AtSTU5TEo0MUw7MjAyNS0wNi0xNzsxMDoyNDozNSBQTTsxOzI4MjQ="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
-        <body/>
+        <body>
+            <declare name="shippingID" type="Integer" array="False" size=""/>
+            <declare name="shippingType" type="String" array="False" size=""/>
+            <output expression="&quot;Please choose your shipping  (1 or 2)&quot;" newline="True"/>
+            <output expression="&quot;1 - Standard Shipping = RM3&quot;" newline="True"/>
+            <output expression="&quot;2 - Express Shipping = RM5&quot;" newline="True"/>
+            <input variable="shippingID"/>
+            <while expression="shippingID &lt; 1 or shippingID &gt; 2">
+                <output expression="&quot;Please enter the correct shipping Type&quot;" newline="True"/>
+                <input variable="shippingID"/>
+            </while>
+            <if expression="shippingID == 1">
+                <then>
+                    <assign variable="shippingType" expression="&quot;Standard shipping&quot;"/>
+                </then>
+                <else>
+                    <assign variable="shippingType" expression="&quot;Express shipping&quot;"/>
+                </else>
+            </if>
+        </body>
     </function>
 </flowgorithm>
