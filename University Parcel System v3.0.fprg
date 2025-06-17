@@ -4,13 +4,13 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="Shah"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-17 02:34:24 AM"/>
+        <attribute name="saved" value="2025-06-17 09:04:25 AM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMToxNjowNyBBTTs4O0VsaTtYMS1DQVJCT047MjAyNS0wNS0xNTsxMTo1MjoyOSBQTTtDU0MxMjEgQXNzaWdubWVudCB2MS4wLmZwcmc7NjkwNA=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjswMToxOToyNSBBTTsyO1VzZXItUEM7REFOSUFMOzIwMjUtMDYtMTQ7MDc6NDY6MTYgUE07UGFja2FnaW5nIEZ1bmN0aW9uIChuaWFsY2hvdCArIHNoYWh4dmkpLmZwcmc7ODkwNA=="/>
         <attribute name="edited" value="c2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjsxMToxMjoxNiBQTTsxOzI0MjU="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswMjoxNDoxNyBBTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTY7MTE6NTU6NDAgUE07U2hpcG1lbnQgQ2F0ZWdvcnkgRnVuY3Rpb24uZnByZzs3ODM4"/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswMjozNDoyNCBBTTsyMzsyNDM0"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswODo0MjozNyBBTTsxO1VzZXI7TEFQVE9QLUk1OUxKNDFMOzIwMjUtMDYtMTY7MTI6MzY6MTQgQU07QnViYmxld3JhcCBGdW5jdGlvbiAoYW5vbnltb3Vzc21rICsgc2hhaHh2aSkuZnByZzs5OTAz"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswOTowNDoyNSBBTTsyNDsyNDQw"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -26,7 +26,7 @@
             <comment text="Display Greetings"/>
             <output expression="&quot;Welcome to University Parcel System&quot;" newline="True"/>
             <output expression="&quot;Shipping from: UniStorage, Anjung Siswa&quot;" newline="True"/>
-            <output expression="&quot;----------------------------------------------&quot;" newline="True"/>
+            <output expression="&quot;-------------------------------------------------&quot;" newline="True"/>
             <comment text="Sender's Details"/>
             <output expression="&quot;Sender's Details:&quot;" newline="True"/>
             <comment text="Sender's Name"/>
@@ -35,7 +35,7 @@
             <comment text="Sender's Phone Number"/>
             <output expression="&quot;Please enter your phone number: &quot;" newline="True"/>
             <input variable="senderNumber"/>
-            <output expression="&quot;----------------------------------------------&quot;" newline="True"/>
+            <output expression="&quot;----------------------------------------------------&quot;" newline="True"/>
             <comment text="Recipient's Details"/>
             <output expression="&quot;Recipient's Details:&quot;" newline="True"/>
             <comment text="Recipient's Name"/>
@@ -110,35 +110,12 @@
                 <output expression="&quot;Do you wish to add more attributes? (Y/N)&quot;" newline="True"/>
                 <input variable="choice"/>
             </while>
-            <output expression="&quot;Your shipment is: &quot; &amp; shipmentCategory[0] &amp; &quot;, &quot; &amp; shipmentCategory[1] &amp; &quot;, &quot; &amp; shipmentCategory[2] &amp; &quot;, &quot; &amp; shipmentCategory[3]" newline="True"/>
-            <if expression="i == 1">
-                <then>
-                    <output expression="shipmentCategory[0]" newline="True"/>
-                </then>
-                <else>
-                    <if expression="i == 2">
-                        <then>
-                            <output expression="shipmentCategory[0]" newline="True"/>
-                            <output expression="shipmentCategory[1]" newline="True"/>
-                        </then>
-                        <else>
-                            <if expression="i == 3">
-                                <then>
-                                    <output expression="shipmentCategory[0]" newline="True"/>
-                                    <output expression="shipmentCategory[1]" newline="True"/>
-                                    <output expression="shipmentCategory[2]" newline="True"/>
-                                </then>
-                                <else>
-                                    <output expression="shipmentCategory[0]" newline="True"/>
-                                    <output expression="shipmentCategory[1]" newline="True"/>
-                                    <output expression="shipmentCategory[2]" newline="True"/>
-                                    <output expression="shipmentCategory[3]" newline="True"/>
-                                </else>
-                            </if>
-                        </else>
-                    </if>
-                </else>
-            </if>
+            <output expression="&quot;Your shipment is: &quot;" newline="True"/>
+            <output expression="shipmentCategory[0]" newline="True"/>
+            <output expression="shipmentCategory[1]" newline="True"/>
+            <output expression="shipmentCategory[2]" newline="True"/>
+            <output expression="shipmentCategory[3]" newline="True"/>
+            <output expression="&quot;----------------------------------------------&quot;" newline="True"/>
             <comment text="Packaging"/>
             <output expression="&quot;Packaging Type: &quot;" newline="True"/>
             <output expression="&quot;1 - Cardboard Box&quot;" newline="True"/>
@@ -153,6 +130,37 @@
                 <input variable="packagingTypeID"/>
             </while>
             <assign variable="packagingType" expression="packagingType(packagingTypeID)"/>
+            <declare name="bubbleWrapID" type="String" array="False" size=""/>
+            <declare name="bubbleWrapCharge" type="Integer" array="False" size=""/>
+            <output expression="&quot;Do you have Bubble Wrapping? (Y/N): &quot;" newline="True"/>
+            <input variable="bubbleWrapID"/>
+            <assign variable="bubbleWrapCharge" expression="bubbleWrapping(bubbleWrapID)"/>
+        </body>
+    </function>
+    <function name="bubbleWrapping" type="Real" variable="bubbleWrappingCharge">
+        <parameters>
+            <parameter name="choice" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="bubbleWrappingCharge" type="Real" array="False" size=""/>
+            <if expression="choice == &quot;y&quot; &amp;&amp; choice == &quot;y&quot;">
+                <then>
+                    <assign variable="bubbleWrappingCharge" expression="0"/>
+                </then>
+                <else>
+                    <output expression="&quot;Additional Bubble Wrap Charge: RM1&quot;" newline="True"/>
+                    <output expression="&quot;Would you like bubble wrapping? (Y/N): &quot;" newline="True"/>
+                    <input variable="choice"/>
+                    <if expression="choice == &quot;y&quot; &amp;&amp; choice == &quot;y&quot;">
+                        <then>
+                            <assign variable="bubbleWrappingCharge" expression="1.00"/>
+                        </then>
+                        <else>
+                            <assign variable="bubbleWrappingCharge" expression="0"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
         </body>
     </function>
     <function name="college" type="String" variable="college">
