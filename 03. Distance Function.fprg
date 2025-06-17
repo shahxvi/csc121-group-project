@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="03. Distance Function"/>
+        <attribute name="authors" value="Shah"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-06-17 09:13:05 AM"/>
+        <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswOToxMjoyMSBBTTsyMjc0"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswOToxMjoyNCBBTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMDM7MTE6MDg6MzcgQU07VW5pdmVyc2l0eSBQYXJjZWwgU3lzdGVtIHYzLjAuZnByZzs3OTQ3"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswOToxMzowNSBBTTsxOzIzODU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="college" type="String" array="False" size=""/>
+            <declare name="collegeBlock" type="Integer" array="False" size=""/>
+            <declare name="distance" type="Real" array="False" size=""/>
+            <if expression="college == &quot;Cengal&quot;">
+                <then>
+                    <comment text="Cengal College"/>
+                    <if expression="collegeBlock == 1">
+                        <then>
+                            <comment text="Cengal 1"/>
+                            <assign variable="distance" expression="100"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="collegeBlock == 2">
+                        <then>
+                            <comment text="Cengal 2"/>
+                            <assign variable="distance" expression="200"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="collegeBlock == 3">
+                        <then>
+                            <comment text="Cengal 3"/>
+                            <assign variable="distance" expression="220"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="collegeBlock == 4">
+                        <then>
+                            <comment text="Cengal 4"/>
+                            <assign variable="distance" expression="210"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="collegeBlock == 5">
+                        <then>
+                            <comment text="Cengal 5"/>
+                            <assign variable="distance" expression="160"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="collegeBlock == 6">
+                        <then>
+                            <comment text="Cengal 6"/>
+                            <assign variable="distance" expression="85"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="collegeBlock == 7">
+                        <then>
+                            <comment text="Cengal 7"/>
+                            <assign variable="distance" expression="150"/>
+                        </then>
+                        <else/>
+                    </if>
+                </then>
+                <else>
+                    <if expression="college == &quot;Dahlia&quot;">
+                        <then>
+                            <comment text="Dahlia College"/>
+                            <if expression="collegeBlock == 1">
+                                <then>
+                                    <comment text="Dahlia 1"/>
+                                    <assign variable="distance" expression="330"/>
+                                </then>
+                                <else>
+                                    <comment text="Dahlia 2"/>
+                                    <assign variable="distance" expression="345"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="college == &quot;Kesinai&quot;">
+                                <then>
+                                    <comment text="Kesinai College"/>
+                                    <if expression="collegeBlock == 1">
+                                        <then>
+                                            <comment text="Kesinai 1"/>
+                                            <assign variable="distance" expression="80"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                    <if expression="collegeBlock == 2">
+                                        <then>
+                                            <comment text="Kesinai 2"/>
+                                            <assign variable="distance" expression="155"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                    <if expression="collegeBlock == 3">
+                                        <then>
+                                            <comment text="Kesinai 3"/>
+                                            <assign variable="distance" expression="195"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                    <if expression="collegeBlock == 4">
+                                        <then>
+                                            <comment text="Kesinai 4"/>
+                                            <assign variable="distance" expression="135"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </then>
+                                <else>
+                                    <comment text="Beringin"/>
+                                    <assign variable="distance" expression="400"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

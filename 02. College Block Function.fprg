@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="02. College Block Function"/>
+        <attribute name="authors" value="Shah"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-06-17 09:11:34 AM"/>
+        <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswOToxMDoxMiBBTTsyMjcy"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswOToxMDo1MCBBTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMDM7MTE6MDg6MzcgQU07VW5pdmVyc2l0eSBQYXJjZWwgU3lzdGVtIHYzLjAuZnByZzs3OTQ0"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswOToxMTozNCBBTTsxOzIzODU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="college" type="String" array="False" size=""/>
+            <declare name="collegeBlock" type="Integer" array="False" size=""/>
+            <if expression="college == &quot;Cengal&quot;">
+                <then>
+                    <comment text="Cengal Block Selection"/>
+                    <output expression="&quot;Which Cengal do you want to deliver to?&quot;" newline="True"/>
+                    <output expression="&quot;Cengal 1 - 7&quot;" newline="True"/>
+                    <output expression="&quot;Please enter Cengal block number (1 - 7): &quot;" newline="True"/>
+                    <input variable="collegeBlock"/>
+                    <while expression="collegeBlock &lt; 1 || collegeBlock &gt; 7">
+                        <output expression="&quot;Please enter a valid college block (1 - 7): &quot;" newline="True"/>
+                        <input variable="collegeBlock"/>
+                    </while>
+                </then>
+                <else>
+                    <if expression="college == &quot;Dahlia&quot;">
+                        <then>
+                            <comment text="Dahlia Block Selection"/>
+                            <output expression="&quot;Which Dahlia do you want to deliver to?&quot;" newline="True"/>
+                            <output expression="&quot;Dahlia 1 - 2&quot;" newline="True"/>
+                            <output expression="&quot;Please enter Dahlia block number (1 - 2): &quot;" newline="True"/>
+                            <input variable="collegeBlock"/>
+                            <while expression="collegeBlock &lt; 1 || collegeBlock &gt; 2">
+                                <output expression="&quot;Please enter a valid college block (1 - 2): &quot;" newline="True"/>
+                                <input variable="collegeBlock"/>
+                            </while>
+                        </then>
+                        <else>
+                            <if expression="college == &quot;Kesinai&quot;">
+                                <then>
+                                    <comment text="Kesinai Block Selection"/>
+                                    <output expression="&quot;Which Kesinai do you want to deliver to?&quot;" newline="True"/>
+                                    <output expression="&quot;Kesinai 1 - 4&quot;" newline="True"/>
+                                    <output expression="&quot;Please enter Kesinai block number (1 - 4): &quot;" newline="True"/>
+                                    <input variable="collegeBlock"/>
+                                    <while expression="collegeBlock &lt; 1 || collegeBlock &gt; 4">
+                                        <output expression="&quot;Please enter a valid college block (1 - 4): &quot;" newline="True"/>
+                                        <input variable="collegeBlock"/>
+                                    </while>
+                                </then>
+                                <else>
+                                    <comment text="Beringin Block Selection"/>
+                                    <assign variable="collegeBlock" expression="1"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

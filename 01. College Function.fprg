@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="01. College Function"/>
+        <attribute name="authors" value="Shah"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-06-17 09:10:03 AM"/>
+        <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswOTowODozMyBBTTsyMjgy"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswOTowOToyMCBBTTsyO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMDM7MTE6MDg6MzcgQU07VW5pdmVyc2l0eSBQYXJjZWwgU3lzdGVtIHYzLjAuZnByZzs3OTUw"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswOToxMDowMyBBTTsxOzIzODA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="collegeID" type="Integer" array="False" size=""/>
+            <declare name="college" type="String" array="False" size=""/>
+            <output expression="&quot;Delivery to:&quot;" newline="True"/>
+            <output expression="&quot;1 - Cengal&quot;" newline="True"/>
+            <output expression="&quot;2 - Dahlia&quot;" newline="True"/>
+            <output expression="&quot;3 - Kesinai&quot;" newline="True"/>
+            <output expression="&quot;4 - Bringin&quot;" newline="True"/>
+            <output expression="&quot;Please enter your delivery desination:&quot;" newline="True"/>
+            <input variable="collegeID"/>
+            <while expression="collegeID &lt; 1 || collegeID &gt; 4">
+                <output expression="&quot;Please enter a valid college (1 - 4): &quot;" newline="True"/>
+                <input variable="collegeID"/>
+            </while>
+            <if expression="collegeID == 1">
+                <then>
+                    <assign variable="college" expression="&quot;Cengal&quot;"/>
+                </then>
+                <else>
+                    <if expression="collegeID == 2">
+                        <then>
+                            <assign variable="college" expression="&quot;Dahlia&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="collegeID == 3">
+                                <then>
+                                    <assign variable="college" expression="&quot;Kesinai&quot;"/>
+                                </then>
+                                <else>
+                                    <assign variable="college" expression="&quot;Beringin&quot;"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
