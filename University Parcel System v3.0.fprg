@@ -4,13 +4,13 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM, MUHAMMAD FIRDAUS BIN ZAMANEE, MUHAMMAD DANIAL IMAN BIN MOHAMAD"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-19 12:11:29 AM"/>
+        <attribute name="saved" value="2025-06-19 12:14:46 AM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOTowNzo0MyBQTTsyO1VzZXI7TEFQVE9QLUk1OUxKNDFMOzIwMjUtMDYtMTU7MTE6NDc6MDAgUE07MDUuIFNoaXBtZW50IENvbmRpdGlvbiBGdW5jdGlvbi5mcHJnOzg1NzA="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToxODoyMCBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTg7MDk6MTQ6MzggUE07NDc2Mg=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToyNzowMyBQTTsxO1VzZXItUEM7REFOSUFMOzIwMjUtMDYtMTY7MTI6MjE6MjIgQU07MDkuIE1lbWJlcnNoaXAgRGlzY291bnQgRnVuY3Rpb24uZnByZzs4MjU0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODsxMDowODo1OSBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTc7MDk6MTY6MjAgQU07MDguIFNoaXBwaW5nIFR5cGUgRnVuY3Rpb24uZnByZzs3NjE0"/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMjoxMToyOSBBTTszNzsyNDQy"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMjoxNDo0NiBBTTszODsyNDQ1"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -267,8 +267,29 @@
             </if>
             <output expression="&quot;Bubble Wrapping Charge: RM&quot; &amp; bubbleWrapCharge" newline="True"/>
             <output expression="&quot;Shipping Type &amp; Charge: &quot; &amp; shippingType &amp; &quot; - RM&quot; &amp; shippingCharge" newline="True"/>
-            <output expression="&quot;Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
-            <output expression="&quot;Total Cost: RM&quot; &amp; totalCost" newline="True"/>
+            <if expression="discount == 0.05">
+                <then>
+                    <output expression="&quot;Student Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="discount == 1">
+                        <then>
+                            <output expression="&quot;Staff Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="discount == 1">
+                <then>
+                    <output expression="&quot;Total Cost: FREE&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Total Cost: RM&quot; &amp; totalCost" newline="True"/>
+                </else>
+            </if>
         </body>
     </function>
     <function name="calcBubbleWrapCharge" type="Real" variable="bubbleWrapCharge">
