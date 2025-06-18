@@ -4,13 +4,13 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM, MUHAMMAD FIRDAUS BIN ZAMANEE, MUHAMMAD DANIAL IMAN BIN MOHAMAD"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-18 12:33:00 PM"/>
+        <attribute name="saved" value="2025-06-18 12:37:13 PM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="c2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNjsxMToxMjoxNiBQTTsxOzI0MjU="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswMjoxNDoxNyBBTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTY7MTE6NTU6NDAgUE07U2hpcG1lbnQgQ2F0ZWdvcnkgRnVuY3Rpb24uZnByZzs3ODM4"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xNzswODo0MjozNyBBTTsxO1VzZXI7TEFQVE9QLUk1OUxKNDFMOzIwMjUtMDYtMTY7MTI6MzY6MTQgQU07QnViYmxld3JhcCBGdW5jdGlvbiAoYW5vbnltb3Vzc21rICsgc2hhaHh2aSkuZnByZzs5OTAz"/>
         <attribute name="edited" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xNzsxMTo0MDoyNSBQTTsxOzI0MjA="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODsxMjozMzowMCBQTTsyNjsyNDQ3"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODsxMjozNzoxMyBQTTsyNzsyNDU2"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -52,7 +52,7 @@
             <output expression="&quot;4 - Bringin&quot;" newline="True"/>
             <output expression="&quot;Please enter your delivery desination:&quot;" newline="True"/>
             <input variable="collegeID"/>
-            <while expression="collegeID &lt; 1 || collegeID &gt; 4">
+            <while expression="collegeID &lt; 1 or collegeID &gt; 4">
                 <output expression="&quot;Please enter a valid college (1 - 4): &quot;" newline="True"/>
                 <input variable="collegeID"/>
             </while>
@@ -78,7 +78,7 @@
             <declare name="i" type="Integer" array="False" size=""/>
             <assign variable="i" expression="0"/>
             <assign variable="choice" expression="&quot;y&quot;"/>
-            <while expression="choice == &quot;Y&quot; || choice == &quot;y&quot;">
+            <while expression="choice == &quot;Y&quot; or choice == &quot;y&quot;">
                 <output expression="&quot;Please enter your shipment category (1 - 4): &quot;" newline="True"/>
                 <input variable="shipmentCategoryID"/>
                 <if expression="shipmentCategoryID == 1">
@@ -149,7 +149,7 @@
             <output expression="&quot;5 - Others&quot;" newline="True"/>
             <output expression="&quot;Please choose your packaging type (1 - 5): &quot;" newline="True"/>
             <input variable="packagingTypeID"/>
-            <while expression="packagingTypeID &lt; 1 || packagingTypeID &gt; 5">
+            <while expression="packagingTypeID &lt; 1 or packagingTypeID &gt; 5">
                 <output expression="&quot;Please choose correct packaging type (1 - 5): &quot;" newline="True"/>
                 <input variable="packagingTypeID"/>
             </while>
@@ -167,7 +167,7 @@
         </parameters>
         <body>
             <declare name="bubbleWrappingCharge" type="Real" array="False" size=""/>
-            <if expression="choice == &quot;y&quot; &amp;&amp; choice == &quot;y&quot;">
+            <if expression="choice == &quot;y&quot; and choice == &quot;y&quot;">
                 <then>
                     <assign variable="bubbleWrappingCharge" expression="0"/>
                 </then>
@@ -175,7 +175,7 @@
                     <output expression="&quot;Additional Bubble Wrap Charge: RM1&quot;" newline="True"/>
                     <output expression="&quot;Would you like bubble wrapping? (Y/N): &quot;" newline="True"/>
                     <input variable="choice"/>
-                    <if expression="choice == &quot;y&quot; &amp;&amp; choice == &quot;y&quot;">
+                    <if expression="choice == &quot;y&quot; and choice == &quot;y&quot;">
                         <then>
                             <assign variable="bubbleWrappingCharge" expression="1.00"/>
                         </then>
