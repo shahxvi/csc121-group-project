@@ -4,9 +4,10 @@
         <attribute name="name" value="Shipment Condition Function"/>
         <attribute name="authors" value="dauszzz"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2025-06-16 12:29:59 AM"/>
+        <attribute name="saved" value="2025-06-18 12:47:01 PM"/>
         <attribute name="created" value="VXNlcjtMQVBUT1AtSTU5TEo0MUw7MjAyNS0wNi0xNTsxMTo0NzowMCBQTTsyNzEy"/>
         <attribute name="edited" value="VXNlcjtMQVBUT1AtSTU5TEo0MUw7MjAyNS0wNi0xNjsxMjoyOTo1OSBBTTsxOzI4MjE="/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODsxMjo0NzowMSBQTTsyOzIzOTk="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -28,49 +29,50 @@
                     <assign variable="shipmentCondition" expression="&quot;Fragile&quot;"/>
                     <assign variable="conditionCost" expression="5"/>
                 </then>
-                <else/>
-            </if>
-            <if expression="choice ==2">
-                <then>
-                    <assign variable="shipmentCondition" expression="&quot;Delicate&quot;"/>
-                    <assign variable="conditionCost" expression="3"/>
-                </then>
-                <else/>
-            </if>
-            <if expression="choice == 3">
-                <then>
-                    <assign variable="shipmentCondition" expression="&quot;Liquid&quot;"/>
-                    <assign variable="conditionCost" expression="2"/>
-                </then>
-                <else/>
-            </if>
-            <if expression="choice ==4">
-                <then>
-                    <assign variable="shipmentCondition" expression="&quot;Perishable&quot;"/>
-                    <assign variable="conditionCost" expression="4"/>
-                </then>
-                <else/>
-            </if>
-            <if expression="choice ==5">
-                <then>
-                    <assign variable="shipmentCondition" expression="&quot;Flammable&quot;"/>
-                    <assign variable="conditionCost" expression="8"/>
-                </then>
-                <else/>
-            </if>
-            <if expression="choice ==6">
-                <then>
-                    <assign variable="shipmentCondition" expression="&quot;Keep Up-Right&quot;"/>
-                    <assign variable="conditionCost" expression="9"/>
-                </then>
-                <else/>
-            </if>
-            <if expression="choice ==7">
-                <then>
-                    <assign variable="shipmentCondition" expression="&quot;Confindential Matarial&quot;"/>
-                    <assign variable="conditionCost" expression="10"/>
-                </then>
-                <else/>
+                <else>
+                    <if expression="choice == 2">
+                        <then>
+                            <assign variable="shipmentCondition" expression="&quot;Delicate&quot;"/>
+                            <assign variable="conditionCost" expression="3"/>
+                        </then>
+                        <else>
+                            <if expression="choice == 3">
+                                <then>
+                                    <assign variable="shipmentCondition" expression="&quot;Liquid&quot;"/>
+                                    <assign variable="conditionCost" expression="2"/>
+                                </then>
+                                <else>
+                                    <if expression="choice == 4">
+                                        <then>
+                                            <assign variable="shipmentCondition" expression="&quot;Perishable&quot;"/>
+                                            <assign variable="conditionCost" expression="4"/>
+                                        </then>
+                                        <else>
+                                            <if expression="choice == 5">
+                                                <then>
+                                                    <assign variable="shipmentCondition" expression="&quot;Flammable&quot;"/>
+                                                    <assign variable="conditionCost" expression="8"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="choice == 6">
+                                                        <then>
+                                                            <assign variable="shipmentCondition" expression="&quot;Keep Up-Right&quot;"/>
+                                                            <assign variable="conditionCost" expression="9"/>
+                                                        </then>
+                                                        <else>
+                                                            <assign variable="shipmentCondition" expression="&quot;Confindential Matarial&quot;"/>
+                                                            <assign variable="conditionCost" expression="10"/>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
             </if>
         </body>
     </function>
