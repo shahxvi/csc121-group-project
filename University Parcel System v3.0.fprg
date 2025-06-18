@@ -1,0 +1,644 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="CSC121 Assignment v2.0"/>
+        <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM, MUHAMMAD FIRDAUS BIN ZAMANEE, MUHAMMAD DANIAL IMAN BIN MOHAMAD"/>
+        <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
+        <attribute name="saved" value="2025-06-19 12:27:11 AM"/>
+        <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOTowNzo0MyBQTTsyO1VzZXI7TEFQVE9QLUk1OUxKNDFMOzIwMjUtMDYtMTU7MTE6NDc6MDAgUE07MDUuIFNoaXBtZW50IENvbmRpdGlvbiBGdW5jdGlvbi5mcHJnOzg1NzA="/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToxODoyMCBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTg7MDk6MTQ6MzggUE07NDc2Mg=="/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToyNzowMyBQTTsxO1VzZXItUEM7REFOSUFMOzIwMjUtMDYtMTY7MTI6MjE6MjIgQU07MDkuIE1lbWJlcnNoaXAgRGlzY291bnQgRnVuY3Rpb24uZnByZzs4MjU0"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODsxMDowODo1OSBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTc7MDk6MTY6MjAgQU07MDguIFNoaXBwaW5nIFR5cGUgRnVuY3Rpb24uZnByZzs3NjE0"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMjoyNzoxMSBBTTs0MDsyNDM0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Declaration"/>
+            <declare name="senderName, senderNumber" type="String" array="False" size=""/>
+            <declare name="recipientName, recipientNumber" type="String" array="False" size=""/>
+            <declare name="collegeID, collegeBlock" type="Integer" array="False" size=""/>
+            <declare name="college" type="String" array="False" size=""/>
+            <declare name="distance" type="Real" array="False" size=""/>
+            <declare name="packagingTypeID" type="Integer" array="False" size=""/>
+            <declare name="packagingType" type="String" array="False" size=""/>
+            <comment text="Display Greetings"/>
+            <output expression="&quot;Welcome to University Parcel System&quot;" newline="True"/>
+            <output expression="&quot;Shipping from: UniStorage, Anjung Siswa&quot;" newline="True"/>
+            <output expression="&quot;-------------------------------------------------&quot;" newline="True"/>
+            <comment text="Sender's Details"/>
+            <output expression="&quot;Sender's Details:&quot;" newline="True"/>
+            <comment text="Sender's Name"/>
+            <output expression="&quot;Please enter your name: &quot;" newline="True"/>
+            <input variable="senderName"/>
+            <comment text="Sender's Phone Number"/>
+            <output expression="&quot;Please enter your phone number: &quot;" newline="True"/>
+            <input variable="senderNumber"/>
+            <output expression="&quot;----------------------------------------------------&quot;" newline="True"/>
+            <comment text="Recipient's Details"/>
+            <output expression="&quot;Recipient's Details:&quot;" newline="True"/>
+            <comment text="Recipient's Name"/>
+            <output expression="&quot;Enter recipient's name: &quot;" newline="True"/>
+            <input variable="recipientName"/>
+            <comment text="Recipient's Number"/>
+            <output expression="&quot;Please enter the recipient's phone number: &quot;" newline="True"/>
+            <input variable="recipientNumber"/>
+            <comment text="College Delivery Selection"/>
+            <output expression="&quot;Delivery to:&quot;" newline="True"/>
+            <output expression="&quot;1 - Cengal&quot;" newline="True"/>
+            <output expression="&quot;2 - Dahlia&quot;" newline="True"/>
+            <output expression="&quot;3 - Kesinai&quot;" newline="True"/>
+            <output expression="&quot;4 - Bringin&quot;" newline="True"/>
+            <output expression="&quot;Please enter your delivery desination:&quot;" newline="True"/>
+            <input variable="collegeID"/>
+            <comment text="College Initialization"/>
+            <assign variable="college" expression="setCollege(collegeID)"/>
+            <comment text="College Block Initialization"/>
+            <assign variable="collegeBlock" expression="setCollegeBlock(college)"/>
+            <comment text="College Distance (meters) Initialization"/>
+            <assign variable="distance" expression="calcDistance(college, collegeBlock)"/>
+            <comment text="Shipment Condition"/>
+            <output expression="&quot;What is your shipment condition?&quot;" newline="True"/>
+            <output expression="&quot;1 - Fragile&quot;" newline="True"/>
+            <output expression="&quot;2 - Delicate&quot;" newline="True"/>
+            <output expression="&quot;3 - Liquid&quot;" newline="True"/>
+            <output expression="&quot;4 - Perishable&quot;" newline="True"/>
+            <output expression="&quot;5 -  Flammable&quot;" newline="True"/>
+            <output expression="&quot;6 - Keep Up-Right&quot;" newline="True"/>
+            <output expression="&quot;7 - Confindential Material&quot;" newline="True"/>
+            <output expression="&quot;8 - Others&quot;" newline="True"/>
+            <declare name="shipmentConditionID" type="Integer" array="False" size=""/>
+            <declare name="choice" type="String" array="False" size=""/>
+            <declare name="shipmentCondition" type="String" array="True" size="8"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <assign variable="choice" expression="&quot;y&quot;"/>
+            <while expression="choice == &quot;Y&quot; or choice == &quot;y&quot;">
+                <output expression="&quot;Please enter your shipment condition (1 - 8): &quot;" newline="True"/>
+                <input variable="shipmentConditionID"/>
+                <while expression="shipmentConditionID &lt; 1 or shipmentConditionID &gt; 8">
+                    <output expression="&quot;Please enter a valid shipment category (1 - 4): &quot;" newline="True"/>
+                    <input variable="shipmentConditionID"/>
+                </while>
+                <if expression="shipmentConditionID == 1">
+                    <then>
+                        <assign variable="shipmentCondition[i]" expression="&quot;Fragile&quot;"/>
+                    </then>
+                    <else>
+                        <if expression="shipmentConditionID == 2">
+                            <then>
+                                <assign variable="shipmentCondition[i]" expression="&quot;Delicate&quot;"/>
+                            </then>
+                            <else>
+                                <if expression="shipmentConditionID == 3">
+                                    <then>
+                                        <assign variable="shipmentCondition[i]" expression="&quot;Liquid&quot;"/>
+                                    </then>
+                                    <else>
+                                        <if expression="shipmentConditionID == 4">
+                                            <then>
+                                                <assign variable="shipmentCondition[i]" expression="&quot;Perishable&quot;"/>
+                                            </then>
+                                            <else>
+                                                <if expression="shipmentConditionID == 5">
+                                                    <then>
+                                                        <assign variable="shipmentCondition[i]" expression="&quot;Flammable&quot;"/>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="shipmentConditionID == 6">
+                                                            <then>
+                                                                <assign variable="shipmentCondition[i]" expression="&quot;Keep Up-Right&quot;"/>
+                                                            </then>
+                                                            <else>
+                                                                <if expression="shipmentConditionID == 7">
+                                                                    <then>
+                                                                        <assign variable="shipmentCondition[i]" expression="&quot;Confindential Matarial&quot;"/>
+                                                                    </then>
+                                                                    <else>
+                                                                        <output expression="&quot;Please type in your shipment condition&quot;" newline="True"/>
+                                                                        <input variable="shipmentCondition[i]"/>
+                                                                    </else>
+                                                                </if>
+                                                            </else>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <assign variable="i" expression="i + 1"/>
+                <if expression="i == 8">
+                    <then>
+                        <assign variable="choice" expression="&quot;N&quot;"/>
+                        <comment text="To prevent array overflow"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Do you wish to add more attributes? (Y/N)&quot;" newline="True"/>
+                        <input variable="choice"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;----------------------------------------------&quot;" newline="True"/>
+            <comment text="Packaging Type"/>
+            <output expression="&quot;Packaging Type: &quot;" newline="True"/>
+            <output expression="&quot;1 - Cardboard Box&quot;" newline="True"/>
+            <output expression="&quot;2 - Plastic Box&quot;" newline="True"/>
+            <output expression="&quot;3 - Plastic Film&quot;" newline="True"/>
+            <output expression="&quot;4 - Envelope&quot;" newline="True"/>
+            <output expression="&quot;5 - Others&quot;" newline="True"/>
+            <output expression="&quot;Please choose your packaging type (1 - 5): &quot;" newline="True"/>
+            <input variable="packagingTypeID"/>
+            <assign variable="packagingType" expression="setPackagingType(packagingTypeID)"/>
+            <comment text="Bubble Wrapping"/>
+            <declare name="bubbleWrapID" type="String" array="False" size=""/>
+            <declare name="bubbleWrapCharge" type="Integer" array="False" size=""/>
+            <output expression="&quot;Do you have Bubble Wrapping? (Y/N): &quot;" newline="True"/>
+            <input variable="bubbleWrapID"/>
+            <assign variable="bubbleWrapCharge" expression="calcBubbleWrapCharge(bubbleWrapID)"/>
+            <comment text="Set Shipping Type"/>
+            <declare name="shippingTypeID" type="Integer" array="False" size=""/>
+            <declare name="shippingType" type="String" array="False" size=""/>
+            <output expression="&quot;Please choose your shipping  (1 or 2)&quot;" newline="True"/>
+            <output expression="&quot;1 - Standard Shipping = RM3&quot;" newline="True"/>
+            <output expression="&quot;2 - Express Shipping = RM5&quot;" newline="True"/>
+            <input variable="shippingTypeID"/>
+            <assign variable="shippingType" expression="setShippingType(shippingTypeID)"/>
+            <comment text="Calculate Shipping Price"/>
+            <declare name="shippingCharge" type="Real" array="False" size=""/>
+            <assign variable="shippingCharge" expression="calcShippingCharge(shippingType)"/>
+            <comment text="Discount"/>
+            <declare name="discount" type="Real" array="False" size=""/>
+            <assign variable="discount" expression="calcDiscount()"/>
+            <comment text="Total Cost"/>
+            <declare name="totalCost" type="Real" array="False" size=""/>
+            <assign variable="totalCost" expression="calcTotalCost(distance, shippingCharge, bubbleWrapCharge, discount)"/>
+            <comment text="Shipping Details Summary"/>
+            <output expression="&quot;Shipping Details Summary:&quot;" newline="True"/>
+            <output expression="&quot;Sender's Name: &quot; &amp; senderName" newline="True"/>
+            <output expression="&quot;Sender's Phone Number: &quot; &amp; senderNumber" newline="True"/>
+            <output expression="&quot;Recipient's Name: &quot; &amp; recipientName" newline="True"/>
+            <output expression="&quot;Recipient's Phone Number: &quot; &amp; recipientNumber" newline="True"/>
+            <output expression="&quot;Delivery Destination: &quot; &amp; college &amp; &quot; &quot; &amp; collegeBlock" newline="True"/>
+            <output expression="&quot;Total Distance from UniStorage to &quot; &amp; college &amp; &quot; &quot; &amp; collegeBlock &amp; &quot;: &quot; &amp; distance &amp; &quot;m&quot;" newline="True"/>
+            <output expression="&quot;Shipment Condition: &quot;" newline="False"/>
+            <if expression="i == 1">
+                <then>
+                    <output expression="shipmentCondition[0]" newline="True"/>
+                </then>
+                <else>
+                    <if expression="i == 2">
+                        <then>
+                            <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
+                            <output expression="shipmentCondition[1]" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="i == 3">
+                                <then>
+                                    <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
+                                    <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
+                                    <output expression="shipmentCondition[2]" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="i == 4">
+                                        <then>
+                                            <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
+                                            <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
+                                            <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
+                                            <output expression="shipmentCondition[3]" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="i == 5">
+                                                <then>
+                                                    <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
+                                                    <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
+                                                    <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
+                                                    <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
+                                                    <output expression="shipmentCondition[4]" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="i == 6">
+                                                        <then>
+                                                            <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
+                                                            <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
+                                                            <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
+                                                            <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
+                                                            <output expression="shipmentCondition[4] &amp; &quot;, &quot;" newline="False"/>
+                                                            <output expression="shipmentCondition[5]" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="i == 7">
+                                                                <then>
+                                                                    <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
+                                                                    <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
+                                                                    <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
+                                                                    <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
+                                                                    <output expression="shipmentCondition[4] &amp; &quot;, &quot;" newline="False"/>
+                                                                    <output expression="shipmentCondition[5] &amp; &quot;, &quot;" newline="False"/>
+                                                                    <output expression="shipmentCondition[6]" newline="True"/>
+                                                                </then>
+                                                                <else>
+                                                                    <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
+                                                                    <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
+                                                                    <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
+                                                                    <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
+                                                                    <output expression="shipmentCondition[4] &amp; &quot;, &quot;" newline="False"/>
+                                                                    <output expression="shipmentCondition[5] &amp; &quot;, &quot;" newline="False"/>
+                                                                    <output expression="shipmentCondition[6] &amp; &quot;, &quot;" newline="False"/>
+                                                                    <output expression="shipmentCondition[7]" newline="True"/>
+                                                                </else>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Bubble Wrapping Charge: RM&quot; &amp; bubbleWrapCharge" newline="True"/>
+            <output expression="&quot;Shipping Type &amp; Charge: &quot; &amp; shippingType &amp; &quot; - RM&quot; &amp; shippingCharge" newline="True"/>
+            <if expression="discount == 0.05">
+                <then>
+                    <output expression="&quot;Student Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="discount == 1">
+                        <then>
+                            <output expression="&quot;Staff Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="discount == 1">
+                <then>
+                    <output expression="&quot;Total Cost: FREE&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Total Cost: RM&quot; &amp; totalCost" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="calcBubbleWrapCharge" type="Real" variable="bubbleWrapCharge">
+        <parameters>
+            <parameter name="bubbleWrapID" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="bubbleWrapCharge" type="Real" array="False" size=""/>
+            <if expression="bubbleWrapID == &quot;y&quot; or bubbleWrapID == &quot;y&quot;">
+                <then>
+                    <assign variable="bubbleWrapCharge" expression="0"/>
+                </then>
+                <else>
+                    <output expression="&quot;Additional Bubble Wrap Charge: RM1&quot;" newline="True"/>
+                    <output expression="&quot;Would you like bubble wrapping? (Y/N): &quot;" newline="True"/>
+                    <input variable="bubbleWrapID"/>
+                    <if expression="bubbleWrapID == &quot;Y&quot; or bubbleWrapID == &quot;y&quot;">
+                        <then>
+                            <assign variable="bubbleWrapCharge" expression="1.00"/>
+                        </then>
+                        <else>
+                            <assign variable="bubbleWrapCharge" expression="0"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="calcDiscount" type="Real" variable="discount">
+        <parameters/>
+        <body>
+            <declare name="discount" type="Real" array="False" size=""/>
+            <declare name="student, staff" type="String" array="False" size=""/>
+            <output expression="&quot;Are you a UiTM Student? (Y/N): &quot;" newline="True"/>
+            <input variable="student"/>
+            <if expression="student == &quot;Y&quot; or student == &quot;y&quot;">
+                <then>
+                    <assign variable="discount" expression="0.05"/>
+                </then>
+                <else>
+                    <output expression="&quot;Are you a UiTM Staff? (Y/N): &quot;" newline="True"/>
+                    <input variable="staff"/>
+                    <if expression="staff == &quot;Y&quot; or staff == &quot;y&quot;">
+                        <then>
+                            <assign variable="discount" expression="1"/>
+                        </then>
+                        <else>
+                            <assign variable="discount" expression="0"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="calcDistance" type="Real" variable="distance">
+        <parameters>
+            <parameter name="college" type="String" array="False"/>
+            <parameter name="collegeBlock" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="distance" type="Real" array="False" size=""/>
+            <if expression="college == &quot;Cengal&quot;">
+                <then>
+                    <comment text="Cengal College"/>
+                    <if expression="collegeBlock == 1">
+                        <then>
+                            <comment text="Cengal 1"/>
+                            <assign variable="distance" expression="100"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="collegeBlock == 2">
+                        <then>
+                            <comment text="Cengal 2"/>
+                            <assign variable="distance" expression="200"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="collegeBlock == 3">
+                        <then>
+                            <comment text="Cengal 3"/>
+                            <assign variable="distance" expression="220"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="collegeBlock == 4">
+                        <then>
+                            <comment text="Cengal 4"/>
+                            <assign variable="distance" expression="210"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="collegeBlock == 5">
+                        <then>
+                            <comment text="Cengal 5"/>
+                            <assign variable="distance" expression="160"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <if expression="collegeBlock == 6">
+                        <then>
+                            <comment text="Cengal 6"/>
+                            <assign variable="distance" expression="85"/>
+                        </then>
+                        <else>
+                            <comment text="Cengal 7"/>
+                            <assign variable="distance" expression="150"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="college == &quot;Dahlia&quot;">
+                        <then>
+                            <comment text="Dahlia College"/>
+                            <if expression="collegeBlock == 1">
+                                <then>
+                                    <comment text="Dahlia 1"/>
+                                    <assign variable="distance" expression="330"/>
+                                </then>
+                                <else>
+                                    <comment text="Dahlia 2"/>
+                                    <assign variable="distance" expression="345"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="college == &quot;Kesinai&quot;">
+                                <then>
+                                    <comment text="Kesinai College"/>
+                                    <if expression="collegeBlock == 1">
+                                        <then>
+                                            <comment text="Kesinai 1"/>
+                                            <assign variable="distance" expression="80"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                    <if expression="collegeBlock == 2">
+                                        <then>
+                                            <comment text="Kesinai 2"/>
+                                            <assign variable="distance" expression="155"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                    <if expression="collegeBlock == 3">
+                                        <then>
+                                            <comment text="Kesinai 3"/>
+                                            <assign variable="distance" expression="195"/>
+                                        </then>
+                                        <else>
+                                            <comment text="Kesinai 4"/>
+                                            <assign variable="distance" expression="135"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <comment text="Beringin"/>
+                                    <assign variable="distance" expression="400"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="calcShippingCharge" type="Real" variable="shippingCharge">
+        <parameters>
+            <parameter name="shippingType" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="shippingCharge" type="Real" array="False" size=""/>
+            <if expression="shippingType == &quot;Standard Shipping&quot;">
+                <then>
+                    <assign variable="shippingCharge" expression="3"/>
+                </then>
+                <else>
+                    <assign variable="shippingCharge" expression="5"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="calcTotalCost" type="Real" variable="totalCost">
+        <parameters>
+            <parameter name="distance" type="Real" array="False"/>
+            <parameter name="shippingCharge" type="Real" array="False"/>
+            <parameter name="bubbleWrapCharge" type="Real" array="False"/>
+            <parameter name="discount" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="distanceCharge, totalCost" type="Real" array="False" size=""/>
+            <assign variable="distanceCharge" expression="0.01"/>
+            <assign variable="totalCost" expression="((distance * distanceCharge) + shippingCharge + bubbleWrapCharge) * (1 - discount)"/>
+        </body>
+    </function>
+    <function name="setCollege" type="String" variable="college">
+        <parameters>
+            <parameter name="collegeID" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="college" type="String" array="False" size=""/>
+            <while expression="collegeID &lt; 1 or collegeID &gt; 4">
+                <output expression="&quot;Please enter a valid college (1 - 4): &quot;" newline="True"/>
+                <input variable="collegeID"/>
+            </while>
+            <if expression="collegeID == 1">
+                <then>
+                    <assign variable="college" expression="&quot;Cengal&quot;"/>
+                </then>
+                <else>
+                    <if expression="collegeID == 2">
+                        <then>
+                            <assign variable="college" expression="&quot;Dahlia&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="collegeID == 3">
+                                <then>
+                                    <assign variable="college" expression="&quot;Kesinai&quot;"/>
+                                </then>
+                                <else>
+                                    <assign variable="college" expression="&quot;Beringin&quot;"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="setCollegeBlock" type="Integer" variable="collegeBlock">
+        <parameters>
+            <parameter name="college" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="collegeBlock" type="Integer" array="False" size=""/>
+            <if expression="college == &quot;Cengal&quot;">
+                <then>
+                    <comment text="Cengal Block Selection"/>
+                    <output expression="&quot;Which Cengal do you want to deliver to?&quot;" newline="True"/>
+                    <output expression="&quot;Cengal 1 - 7&quot;" newline="True"/>
+                    <output expression="&quot;Please enter Cengal block number (1 - 7): &quot;" newline="True"/>
+                    <input variable="collegeBlock"/>
+                    <while expression="collegeBlock &lt; 1 || collegeBlock &gt; 7">
+                        <output expression="&quot;Please enter a valid Cengal block (1 - 7): &quot;" newline="True"/>
+                        <input variable="collegeBlock"/>
+                    </while>
+                </then>
+                <else>
+                    <if expression="college == &quot;Dahlia&quot;">
+                        <then>
+                            <comment text="Dahlia Block Selection"/>
+                            <output expression="&quot;Which Dahlia do you want to deliver to?&quot;" newline="True"/>
+                            <output expression="&quot;Dahlia 1 - 2&quot;" newline="True"/>
+                            <output expression="&quot;Please enter Dahlia block number (1 - 2): &quot;" newline="True"/>
+                            <input variable="collegeBlock"/>
+                            <while expression="collegeBlock &lt; 1 || collegeBlock &gt; 2">
+                                <output expression="&quot;Please enter a valid Dahlia block (1 - 2): &quot;" newline="True"/>
+                                <input variable="collegeBlock"/>
+                            </while>
+                        </then>
+                        <else>
+                            <if expression="college == &quot;Kesinai&quot;">
+                                <then>
+                                    <comment text="Kesinai Block Selection"/>
+                                    <output expression="&quot;Which Kesinai do you want to deliver to?&quot;" newline="True"/>
+                                    <output expression="&quot;Kesinai 1 - 4&quot;" newline="True"/>
+                                    <output expression="&quot;Please enter Kesinai block number (1 - 4): &quot;" newline="True"/>
+                                    <input variable="collegeBlock"/>
+                                    <while expression="collegeBlock &lt; 1 || collegeBlock &gt; 4">
+                                        <output expression="&quot;Please enter a valid Kesinai block (1 - 4): &quot;" newline="True"/>
+                                        <input variable="collegeBlock"/>
+                                    </while>
+                                </then>
+                                <else>
+                                    <comment text="Beringin Block"/>
+                                    <assign variable="collegeBlock" expression="1"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="setPackagingType" type="String" variable="packagingType">
+        <parameters>
+            <parameter name="packagingTypeID" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="packagingType" type="String" array="False" size=""/>
+            <while expression="packagingTypeID &lt; 1 or packagingTypeID &gt; 5">
+                <output expression="&quot;Please choose correct packaging type (1 - 5): &quot;" newline="True"/>
+                <input variable="packagingTypeID"/>
+            </while>
+            <if expression="packagingTypeID == 1">
+                <then>
+                    <comment text="Cardboard Box"/>
+                    <assign variable="packagingType" expression="&quot;Cardboard Box&quot;"/>
+                </then>
+                <else>
+                    <if expression="packagingTypeID == 2">
+                        <then>
+                            <comment text="Plastic Box"/>
+                            <assign variable="packagingType" expression="&quot;Plastic Box&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="packagingTypeID == 3">
+                                <then>
+                                    <comment text="Plastic Film"/>
+                                    <assign variable="packagingType" expression="&quot;Plastic Film&quot;"/>
+                                </then>
+                                <else>
+                                    <if expression="packagingTypeID == 4">
+                                        <then>
+                                            <comment text="Envelope"/>
+                                            <assign variable="packagingType" expression="&quot;Envelope&quot;"/>
+                                        </then>
+                                        <else>
+                                            <comment text="Others"/>
+                                            <output expression="&quot;Please enter your packaging type&quot;" newline="True"/>
+                                            <input variable="packagingType"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="setShippingType" type="String" variable="shippingType">
+        <parameters>
+            <parameter name="shippingID" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="shippingCharge" type="Real" array="False" size=""/>
+            <declare name="shippingType" type="String" array="False" size=""/>
+            <while expression="shippingID &lt; 1 or shippingID &gt; 2">
+                <output expression="&quot;Please enter the correct shipping Type&quot;" newline="True"/>
+                <input variable="shippingID"/>
+            </while>
+            <if expression="shippingID == 1">
+                <then>
+                    <assign variable="shippingType" expression="&quot;Standard Shipping&quot;"/>
+                </then>
+                <else>
+                    <assign variable="shippingType" expression="&quot;Express Shipping&quot;"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
