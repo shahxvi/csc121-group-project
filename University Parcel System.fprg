@@ -4,13 +4,13 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM, MUHAMMAD FIRDAUS BIN ZAMANEE, MUHAMMAD DANIAL IMAN BIN MOHAMAD"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-19 10:13:40 PM"/>
+        <attribute name="saved" value="2025-06-19 10:53:04 PM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToxODoyMCBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTg7MDk6MTQ6MzggUE07NDc2Mg=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToyNzowMyBQTTsxO1VzZXItUEM7REFOSUFMOzIwMjUtMDYtMTY7MTI6MjE6MjIgQU07MDkuIE1lbWJlcnNoaXAgRGlzY291bnQgRnVuY3Rpb24uZnByZzs4MjU0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODsxMDowODo1OSBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTc7MDk6MTY6MjAgQU07MDguIFNoaXBwaW5nIFR5cGUgRnVuY3Rpb24uZnByZzs3NjE0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMDowNDo1OCBQTTsyO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MDk6Mzg6MjggUE07NDc2OA=="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMDoxMzo0MCBQTTs0NzsyNDUx"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMDo1MzowNCBQTTs1MDsyNDQ5"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -278,28 +278,14 @@
                     <output expression="&quot;Total Cost: RM&quot; &amp; totalCost" newline="True"/>
                 </else>
             </if>
-            <declare name="customer" type="Integer" array="False" size=""/>
-            <declare name="continue" type="String" array="False" size=""/>
-            <declare name="j" type="Integer" array="False" size=""/>
-            <declare name="totalIncome" type="Real" array="False" size=""/>
-            <assign variable="totalIncome" expression="0"/>
-            <assign variable="customer" expression="0"/>
-            <assign variable="j" expression="0"/>
-            <do expression="continue == &quot;Y&quot; or continue == &quot;y&quot;">
-                <assign variable="j" expression="j + 1"/>
-                <assign variable="customer" expression="customer + 1"/>
-                <assign variable="totalIncome" expression="totalIncome + totalCost"/>
-                <output expression="&quot;Continue for another customer? (Y/N): &quot;" newline="False"/>
-                <input variable="continue"/>
-                <if expression="continue == &quot;Y&quot; or continue == &quot;y&quot;">
-                    <then>
-                        <call expression="Main"/>
-                    </then>
-                    <else/>
-                </if>
-            </do>
-            <output expression="&quot;Total Customers: &quot; &amp; customer" newline="True"/>
-            <output expression="&quot;Total Income: RM&quot; &amp; totalIncome" newline="True"/>
+            <output expression="&quot;Continue for another customer? (Y/N): &quot;" newline="False"/>
+            <input variable="continue"/>
+            <if expression="continue == &quot;Y&quot; or continue == &quot;y&quot;">
+                <then>
+                    <call expression="Main"/>
+                </then>
+                <else/>
+            </if>
         </body>
     </function>
     <function name="calcBubbleWrapCharge" type="Real" variable="bubbleWrapCharge">
@@ -308,7 +294,7 @@
         </parameters>
         <body>
             <declare name="bubbleWrapCharge" type="Real" array="False" size=""/>
-            <if expression="bubbleWrapID == &quot;y&quot; or bubbleWrapID == &quot;y&quot;">
+            <if expression="bubbleWrapID == &quot;Y&quot; or bubbleWrapID == &quot;y&quot;">
                 <then>
                     <assign variable="bubbleWrapCharge" expression="0"/>
                 </then>
