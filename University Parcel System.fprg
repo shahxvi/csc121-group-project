@@ -4,20 +4,18 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM, MUHAMMAD FIRDAUS BIN ZAMANEE, MUHAMMAD DANIAL IMAN BIN MOHAMAD"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-19 11:17:50 PM"/>
+        <attribute name="saved" value="2025-06-19 11:28:43 PM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToxODoyMCBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTg7MDk6MTQ6MzggUE07NDc2Mg=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToyNzowMyBQTTsxO1VzZXItUEM7REFOSUFMOzIwMjUtMDYtMTY7MTI6MjE6MjIgQU07MDkuIE1lbWJlcnNoaXAgRGlzY291bnQgRnVuY3Rpb24uZnByZzs4MjU0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODsxMDowODo1OSBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTc7MDk6MTY6MjAgQU07MDguIFNoaXBwaW5nIFR5cGUgRnVuY3Rpb24uZnByZzs3NjE0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMDowNDo1OCBQTTsyO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MDk6Mzg6MjggUE07NDc2OA=="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMToxNzo1MCBQTTs1NTsyNDU2"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMToyODo0MyBQTTs1NjsyNDYx"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
             <comment text="Declaration"/>
-            <declare name="customer" type="Integer" array="False" size=""/>
-            <assign variable="customer" expression="0"/>
             <declare name="senderName, senderNumber" type="String" array="False" size=""/>
             <declare name="recipientName, recipientNumber" type="String" array="False" size=""/>
             <declare name="collegeID, collegeBlock" type="Integer" array="False" size=""/>
@@ -273,8 +271,6 @@
                     <output expression="&quot;Total Cost: RM&quot; &amp; totalCost" newline="True"/>
                 </else>
             </if>
-            <assign variable="customer" expression="customer + 1"/>
-            <call expression="customerCounter(customer)"/>
             <declare name="continue" type="String" array="False" size=""/>
             <output expression="&quot;Continue for another customer? (Y/N): &quot;" newline="False"/>
             <input variable="continue"/>
@@ -282,9 +278,7 @@
                 <then>
                     <call expression="Main"/>
                 </then>
-                <else>
-                    <output expression="&quot;Total Customers: &quot; &amp; customerCounter()" newline="True"/>
-                </else>
+                <else/>
             </if>
         </body>
     </function>
