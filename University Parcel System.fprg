@@ -4,13 +4,13 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM, MUHAMMAD FIRDAUS BIN ZAMANEE, MUHAMMAD DANIAL IMAN BIN MOHAMAD"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-19 10:53:04 PM"/>
+        <attribute name="saved" value="2025-06-19 11:05:00 PM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToxODoyMCBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTg7MDk6MTQ6MzggUE07NDc2Mg=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToyNzowMyBQTTsxO1VzZXItUEM7REFOSUFMOzIwMjUtMDYtMTY7MTI6MjE6MjIgQU07MDkuIE1lbWJlcnNoaXAgRGlzY291bnQgRnVuY3Rpb24uZnByZzs4MjU0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODsxMDowODo1OSBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTc7MDk6MTY6MjAgQU07MDguIFNoaXBwaW5nIFR5cGUgRnVuY3Rpb24uZnByZzs3NjE0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMDowNDo1OCBQTTsyO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MDk6Mzg6MjggUE07NDc2OA=="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMDo1MzowNCBQTTs1MDsyNDQ5"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMTowNTowMCBQTTs1MzsyNDQ2"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -23,6 +23,8 @@
             <declare name="distance" type="Real" array="False" size=""/>
             <declare name="packagingTypeID" type="Integer" array="False" size=""/>
             <declare name="packagingType" type="String" array="False" size=""/>
+            <declare name="CHARGERATE" type="Real" array="False" size=""/>
+            <assign variable="CHARGERATE" expression="0.01"/>
             <comment text="Display Greetings"/>
             <output expression="&quot;Welcome to University Parcel System&quot;" newline="True"/>
             <output expression="&quot;Shipping from: UniStorage, Anjung Siswa&quot;" newline="True"/>
@@ -148,24 +150,15 @@
             <output expression="&quot;Do you have bubble wrapping? (Y/N): &quot;" newline="False"/>
             <input variable="bubbleWrapID"/>
             <assign variable="bubbleWrapCharge" expression="calcBubbleWrapCharge(bubbleWrapID)"/>
-            <comment text="Set Shipping Type"/>
-            <declare name="shippingTypeID" type="Integer" array="False" size=""/>
-            <declare name="shippingType" type="String" array="False" size=""/>
-            <output expression="&quot;Shipping Types: &quot;" newline="True"/>
-            <output expression="&quot;1 - Standard Shipping = RM3&quot;" newline="True"/>
-            <output expression="&quot;2 - Express Shipping = RM5&quot;" newline="True"/>
-            <output expression="&quot;Please choose your shipping type (1 or 2): &quot;" newline="False"/>
-            <input variable="shippingTypeID"/>
-            <assign variable="shippingType" expression="setShippingType(shippingTypeID)"/>
-            <comment text="Calculate Shipping Price"/>
-            <declare name="shippingCharge" type="Real" array="False" size=""/>
-            <assign variable="shippingCharge" expression="calcShippingCharge(shippingType)"/>
             <comment text="Discount"/>
             <declare name="discount" type="Real" array="False" size=""/>
             <assign variable="discount" expression="calcDiscount()"/>
+            <comment text="Shipping Charge"/>
+            <declare name="shippingCharge" type="Real" array="False" size=""/>
+            <assign variable="shippingCharge" expression="calcShippingCharge(distance)"/>
             <comment text="Total Cost"/>
             <declare name="totalCost" type="Real" array="False" size=""/>
-            <assign variable="totalCost" expression="calcTotalCost(distance, shippingCharge, bubbleWrapCharge, discount)"/>
+            <assign variable="totalCost" expression="calcTotalCost(distance, bubbleWrapCharge, discount)"/>
             <comment text="Shipping Details Summary"/>
             <output expression="&quot;Shipping Details Summary:&quot;" newline="True"/>
             <output expression="&quot;Sender's Name: &quot; &amp; senderName" newline="True"/>
@@ -174,6 +167,7 @@
             <output expression="&quot;Recipient's Phone Number: &quot; &amp; recipientNumber" newline="True"/>
             <output expression="&quot;Delivery Destination: &quot; &amp; college &amp; &quot; &quot; &amp; collegeBlock" newline="True"/>
             <output expression="&quot;Total Distance from UniStorage to &quot; &amp; college &amp; &quot; &quot; &amp; collegeBlock &amp; &quot;: &quot; &amp; distance &amp; &quot;m&quot;" newline="True"/>
+            <output expression="&quot;Shipping Charge (RM0.01/m): RM&quot; &amp; shippingCharge" newline="True"/>
             <output expression="&quot;Shipment Condition: &quot;" newline="False"/>
             <if expression="i == 1">
                 <then>
@@ -254,7 +248,6 @@
                 </else>
             </if>
             <output expression="&quot;Bubble Wrapping Charge: RM&quot; &amp; bubbleWrapCharge" newline="True"/>
-            <output expression="&quot;Shipping Type &amp; Charge: &quot; &amp; shippingType &amp; &quot; - RM&quot; &amp; shippingCharge" newline="True"/>
             <if expression="discount == 0.05">
                 <then>
                     <output expression="&quot;Student Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
@@ -278,6 +271,7 @@
                     <output expression="&quot;Total Cost: RM&quot; &amp; totalCost" newline="True"/>
                 </else>
             </if>
+            <declare name="continue" type="String" array="False" size=""/>
             <output expression="&quot;Continue for another customer? (Y/N): &quot;" newline="False"/>
             <input variable="continue"/>
             <if expression="continue == &quot;Y&quot; or continue == &quot;y&quot;">
@@ -453,31 +447,23 @@
     </function>
     <function name="calcShippingCharge" type="Real" variable="shippingCharge">
         <parameters>
-            <parameter name="shippingType" type="String" array="False"/>
+            <parameter name="distance" type="Real" array="False"/>
         </parameters>
         <body>
             <declare name="shippingCharge" type="Real" array="False" size=""/>
-            <if expression="shippingType == &quot;Standard Shipping&quot;">
-                <then>
-                    <assign variable="shippingCharge" expression="3"/>
-                </then>
-                <else>
-                    <assign variable="shippingCharge" expression="5"/>
-                </else>
-            </if>
+            <assign variable="shippingCharge" expression="distance * 0.01"/>
         </body>
     </function>
     <function name="calcTotalCost" type="Real" variable="totalCost">
         <parameters>
             <parameter name="distance" type="Real" array="False"/>
-            <parameter name="shippingCharge" type="Real" array="False"/>
             <parameter name="bubbleWrapCharge" type="Real" array="False"/>
             <parameter name="discount" type="Real" array="False"/>
         </parameters>
         <body>
             <declare name="distanceCharge, totalCost" type="Real" array="False" size=""/>
             <assign variable="distanceCharge" expression="0.01"/>
-            <assign variable="totalCost" expression="((distance * distanceCharge) + shippingCharge + bubbleWrapCharge) * (1 - discount)"/>
+            <assign variable="totalCost" expression="((distance * distanceCharge) + bubbleWrapCharge) * (1 - discount)"/>
         </body>
     </function>
     <function name="collegeMenu" type="None" variable="">
@@ -623,27 +609,6 @@
                             </if>
                         </else>
                     </if>
-                </else>
-            </if>
-        </body>
-    </function>
-    <function name="setShippingType" type="String" variable="shippingType">
-        <parameters>
-            <parameter name="shippingID" type="Integer" array="False"/>
-        </parameters>
-        <body>
-            <declare name="shippingCharge" type="Real" array="False" size=""/>
-            <declare name="shippingType" type="String" array="False" size=""/>
-            <while expression="shippingID &lt; 1 or shippingID &gt; 2">
-                <output expression="&quot;Please enter the correct shipping type (1 - 2): &quot;" newline="True"/>
-                <input variable="shippingID"/>
-            </while>
-            <if expression="shippingID == 1">
-                <then>
-                    <assign variable="shippingType" expression="&quot;Standard Shipping&quot;"/>
-                </then>
-                <else>
-                    <assign variable="shippingType" expression="&quot;Express Shipping&quot;"/>
                 </else>
             </if>
         </body>
