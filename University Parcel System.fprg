@@ -4,109 +4,241 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM, MUHAMMAD FIRDAUS BIN ZAMANEE, MUHAMMAD DANIAL IMAN BIN MOHAMAD"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-19 11:28:43 PM"/>
+        <attribute name="saved" value="2025-06-19 11:35:58 PM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToxODoyMCBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTg7MDk6MTQ6MzggUE07NDc2Mg=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToyNzowMyBQTTsxO1VzZXItUEM7REFOSUFMOzIwMjUtMDYtMTY7MTI6MjE6MjIgQU07MDkuIE1lbWJlcnNoaXAgRGlzY291bnQgRnVuY3Rpb24uZnByZzs4MjU0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODsxMDowODo1OSBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTc7MDk6MTY6MjAgQU07MDguIFNoaXBwaW5nIFR5cGUgRnVuY3Rpb24uZnByZzs3NjE0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMDowNDo1OCBQTTsyO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MDk6Mzg6MjggUE07NDc2OA=="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMToyODo0MyBQTTs1NjsyNDYx"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMTozMjozMSBQTTszO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MTE6MjM6NDIgUE07NDc0NQ=="/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMTozNTo1OCBQTTs1ODsyNDY3"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <comment text="Declaration"/>
-            <declare name="senderName, senderNumber" type="String" array="False" size=""/>
-            <declare name="recipientName, recipientNumber" type="String" array="False" size=""/>
-            <declare name="collegeID, collegeBlock" type="Integer" array="False" size=""/>
-            <declare name="college" type="String" array="False" size=""/>
-            <declare name="distance" type="Real" array="False" size=""/>
-            <declare name="packagingTypeID" type="Integer" array="False" size=""/>
-            <declare name="packagingType" type="String" array="False" size=""/>
-            <declare name="CHARGERATE" type="Real" array="False" size=""/>
-            <assign variable="CHARGERATE" expression="0.01"/>
-            <comment text="Display Greetings"/>
-            <output expression="&quot;Welcome to University Parcel System&quot;" newline="True"/>
-            <output expression="&quot;Shipping from: UniStorage, Anjung Siswa&quot;" newline="True"/>
-            <output expression="&quot;-------------------------------------------------&quot;" newline="True"/>
-            <comment text="Sender's Details"/>
-            <output expression="&quot;Sender's Details:&quot;" newline="True"/>
-            <comment text="Sender's Name"/>
-            <output expression="&quot;Please enter your name: &quot;" newline="False"/>
-            <input variable="senderName"/>
-            <comment text="Sender's Phone Number"/>
-            <output expression="&quot;Please enter your phone number: &quot;" newline="False"/>
-            <input variable="senderNumber"/>
-            <output expression="&quot;-------------------------------------------------&quot;" newline="True"/>
-            <comment text="Recipient's Details"/>
-            <output expression="&quot;Recipient's Details:&quot;" newline="True"/>
-            <comment text="Recipient's Name"/>
-            <output expression="&quot;Enter recipient's name: &quot;" newline="False"/>
-            <input variable="recipientName"/>
-            <comment text="Recipient's Number"/>
-            <output expression="&quot;Please enter the recipient's phone number: &quot;" newline="False"/>
-            <input variable="recipientNumber"/>
-            <comment text="College Delivery Selection"/>
-            <call expression="collegeMenu"/>
-            <input variable="collegeID"/>
-            <comment text="College Initialization"/>
-            <assign variable="college" expression="setCollege(collegeID)"/>
-            <comment text="College Block Initialization"/>
-            <assign variable="collegeBlock" expression="setCollegeBlock(college)"/>
-            <comment text="College Distance (meters) Initialization"/>
-            <assign variable="distance" expression="calcDistance(college, collegeBlock)"/>
-            <comment text="Shipment Condition"/>
-            <call expression="shipmentConditionMenu"/>
-            <declare name="shipmentConditionID" type="Integer" array="False" size=""/>
-            <declare name="choice" type="String" array="False" size=""/>
-            <declare name="shipmentCondition" type="String" array="True" size="8"/>
-            <declare name="i" type="Integer" array="False" size=""/>
-            <assign variable="i" expression="0"/>
-            <assign variable="choice" expression="&quot;y&quot;"/>
-            <while expression="choice == &quot;Y&quot; or choice == &quot;y&quot;">
-                <output expression="&quot;Please enter your shipment condition (1 - 8): &quot;" newline="False"/>
-                <input variable="shipmentConditionID"/>
-                <while expression="shipmentConditionID &lt; 1 or shipmentConditionID &gt; 8">
-                    <output expression="&quot;Please enter a valid shipment category (1 - 8): &quot;" newline="False"/>
+            <declare name="customer" type="Integer" array="False" size=""/>
+            <declare name="totalIncome" type="Real" array="False" size=""/>
+            <assign variable="customer" expression="0"/>
+            <assign variable="totalIncome" expression="0"/>
+            <declare name="continue" type="String" array="False" size=""/>
+            <do expression="continue == &quot;Y&quot; or continue == &quot;y&quot;">
+                <comment text="Declaration"/>
+                <declare name="senderName, senderNumber" type="String" array="False" size=""/>
+                <declare name="recipientName, recipientNumber" type="String" array="False" size=""/>
+                <declare name="collegeID, collegeBlock" type="Integer" array="False" size=""/>
+                <declare name="college" type="String" array="False" size=""/>
+                <declare name="distance" type="Real" array="False" size=""/>
+                <declare name="packagingTypeID" type="Integer" array="False" size=""/>
+                <declare name="packagingType" type="String" array="False" size=""/>
+                <declare name="CHARGERATE" type="Real" array="False" size=""/>
+                <assign variable="CHARGERATE" expression="0.01"/>
+                <comment text="Display Greetings"/>
+                <output expression="&quot;Welcome to University Parcel System&quot;" newline="True"/>
+                <output expression="&quot;Shipping from: UniStorage, Anjung Siswa&quot;" newline="True"/>
+                <output expression="&quot;-------------------------------------------------&quot;" newline="True"/>
+                <comment text="Sender's Details"/>
+                <output expression="&quot;Sender's Details:&quot;" newline="True"/>
+                <comment text="Sender's Name"/>
+                <output expression="&quot;Please enter your name: &quot;" newline="False"/>
+                <input variable="senderName"/>
+                <comment text="Sender's Phone Number"/>
+                <output expression="&quot;Please enter your phone number: &quot;" newline="False"/>
+                <input variable="senderNumber"/>
+                <output expression="&quot;-------------------------------------------------&quot;" newline="True"/>
+                <comment text="Recipient's Details"/>
+                <output expression="&quot;Recipient's Details:&quot;" newline="True"/>
+                <comment text="Recipient's Name"/>
+                <output expression="&quot;Enter recipient's name: &quot;" newline="False"/>
+                <input variable="recipientName"/>
+                <comment text="Recipient's Number"/>
+                <output expression="&quot;Please enter the recipient's phone number: &quot;" newline="False"/>
+                <input variable="recipientNumber"/>
+                <comment text="College Delivery Selection"/>
+                <call expression="collegeMenu"/>
+                <input variable="collegeID"/>
+                <comment text="College Initialization"/>
+                <assign variable="college" expression="setCollege(collegeID)"/>
+                <comment text="College Block Initialization"/>
+                <assign variable="collegeBlock" expression="setCollegeBlock(college)"/>
+                <comment text="College Distance (meters) Initialization"/>
+                <assign variable="distance" expression="calcDistance(college, collegeBlock)"/>
+                <comment text="Shipment Condition"/>
+                <call expression="shipmentConditionMenu"/>
+                <declare name="shipmentConditionID" type="Integer" array="False" size=""/>
+                <declare name="choice" type="String" array="False" size=""/>
+                <declare name="shipmentCondition" type="String" array="True" size="8"/>
+                <declare name="i" type="Integer" array="False" size=""/>
+                <assign variable="i" expression="0"/>
+                <assign variable="choice" expression="&quot;y&quot;"/>
+                <while expression="choice == &quot;Y&quot; or choice == &quot;y&quot;">
+                    <output expression="&quot;Please enter your shipment condition (1 - 8): &quot;" newline="False"/>
                     <input variable="shipmentConditionID"/>
+                    <while expression="shipmentConditionID &lt; 1 or shipmentConditionID &gt; 8">
+                        <output expression="&quot;Please enter a valid shipment category (1 - 8): &quot;" newline="False"/>
+                        <input variable="shipmentConditionID"/>
+                    </while>
+                    <if expression="shipmentConditionID == 1">
+                        <then>
+                            <assign variable="shipmentCondition[i]" expression="&quot;Fragile&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="shipmentConditionID == 2">
+                                <then>
+                                    <assign variable="shipmentCondition[i]" expression="&quot;Delicate&quot;"/>
+                                </then>
+                                <else>
+                                    <if expression="shipmentConditionID == 3">
+                                        <then>
+                                            <assign variable="shipmentCondition[i]" expression="&quot;Liquid&quot;"/>
+                                        </then>
+                                        <else>
+                                            <if expression="shipmentConditionID == 4">
+                                                <then>
+                                                    <assign variable="shipmentCondition[i]" expression="&quot;Perishable&quot;"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="shipmentConditionID == 5">
+                                                        <then>
+                                                            <assign variable="shipmentCondition[i]" expression="&quot;Flammable&quot;"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="shipmentConditionID == 6">
+                                                                <then>
+                                                                    <assign variable="shipmentCondition[i]" expression="&quot;Keep Up-Right&quot;"/>
+                                                                </then>
+                                                                <else>
+                                                                    <if expression="shipmentConditionID == 7">
+                                                                        <then>
+                                                                            <assign variable="shipmentCondition[i]" expression="&quot;Confindential Matarial&quot;"/>
+                                                                        </then>
+                                                                        <else>
+                                                                            <output expression="&quot;Please type in your shipment condition: &quot;" newline="False"/>
+                                                                            <input variable="shipmentCondition[i]"/>
+                                                                        </else>
+                                                                    </if>
+                                                                </else>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <assign variable="i" expression="i + 1"/>
+                    <if expression="i == 8">
+                        <then>
+                            <assign variable="choice" expression="&quot;N&quot;"/>
+                            <comment text="To prevent array overflow"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Do you wish to add more attributes? (Y/N): &quot;" newline="False"/>
+                            <input variable="choice"/>
+                        </else>
+                    </if>
                 </while>
-                <if expression="shipmentConditionID == 1">
+                <output expression="&quot;----------------------------------------------&quot;" newline="True"/>
+                <comment text="Packaging Type"/>
+                <output expression="&quot;Packaging Type: &quot;" newline="True"/>
+                <output expression="&quot;1 - Cardboard Box&quot;" newline="True"/>
+                <output expression="&quot;2 - Plastic Box&quot;" newline="True"/>
+                <output expression="&quot;3 - Plastic Film&quot;" newline="True"/>
+                <output expression="&quot;4 - Envelope&quot;" newline="True"/>
+                <output expression="&quot;5 - Others&quot;" newline="True"/>
+                <output expression="&quot;Please choose your packaging type (1 - 5): &quot;" newline="False"/>
+                <input variable="packagingTypeID"/>
+                <assign variable="packagingType" expression="setPackagingType(packagingTypeID)"/>
+                <comment text="Bubble Wrapping"/>
+                <declare name="bubbleWrapID" type="String" array="False" size=""/>
+                <declare name="bubbleWrapCharge" type="Integer" array="False" size=""/>
+                <output expression="&quot;Do you have bubble wrapping? (Y/N): &quot;" newline="False"/>
+                <input variable="bubbleWrapID"/>
+                <assign variable="bubbleWrapCharge" expression="calcBubbleWrapCharge(bubbleWrapID)"/>
+                <comment text="Discount"/>
+                <declare name="discount" type="Real" array="False" size=""/>
+                <assign variable="discount" expression="calcDiscount()"/>
+                <comment text="Shipping Charge"/>
+                <declare name="shippingCharge" type="Real" array="False" size=""/>
+                <assign variable="shippingCharge" expression="calcShippingCharge(distance)"/>
+                <comment text="Total Cost"/>
+                <declare name="totalCost" type="Real" array="False" size=""/>
+                <assign variable="totalCost" expression="calcTotalCost(distance, bubbleWrapCharge, discount)"/>
+                <comment text="Shipping Details Summary"/>
+                <output expression="&quot;Shipping Details Summary:&quot;" newline="True"/>
+                <output expression="&quot;Sender's Name: &quot; &amp; senderName" newline="True"/>
+                <output expression="&quot;Sender's Phone Number: &quot; &amp; senderNumber" newline="True"/>
+                <output expression="&quot;Recipient's Name: &quot; &amp; recipientName" newline="True"/>
+                <output expression="&quot;Recipient's Phone Number: &quot; &amp; recipientNumber" newline="True"/>
+                <output expression="&quot;Delivery Destination: &quot; &amp; college &amp; &quot; &quot; &amp; collegeBlock" newline="True"/>
+                <output expression="&quot;Total Distance from UniStorage to &quot; &amp; college &amp; &quot; &quot; &amp; collegeBlock &amp; &quot;: &quot; &amp; distance &amp; &quot;m&quot;" newline="True"/>
+                <output expression="&quot;Shipping Charge (RM0.01/m): RM&quot; &amp; shippingCharge" newline="True"/>
+                <output expression="&quot;Shipment Condition: &quot;" newline="False"/>
+                <if expression="i == 1">
                     <then>
-                        <assign variable="shipmentCondition[i]" expression="&quot;Fragile&quot;"/>
+                        <output expression="shipmentCondition[0]" newline="True"/>
                     </then>
                     <else>
-                        <if expression="shipmentConditionID == 2">
+                        <if expression="i == 2">
                             <then>
-                                <assign variable="shipmentCondition[i]" expression="&quot;Delicate&quot;"/>
+                                <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
+                                <output expression="shipmentCondition[1]" newline="True"/>
                             </then>
                             <else>
-                                <if expression="shipmentConditionID == 3">
+                                <if expression="i == 3">
                                     <then>
-                                        <assign variable="shipmentCondition[i]" expression="&quot;Liquid&quot;"/>
+                                        <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
+                                        <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
+                                        <output expression="shipmentCondition[2]" newline="True"/>
                                     </then>
                                     <else>
-                                        <if expression="shipmentConditionID == 4">
+                                        <if expression="i == 4">
                                             <then>
-                                                <assign variable="shipmentCondition[i]" expression="&quot;Perishable&quot;"/>
+                                                <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
+                                                <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
+                                                <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
+                                                <output expression="shipmentCondition[3]" newline="True"/>
                                             </then>
                                             <else>
-                                                <if expression="shipmentConditionID == 5">
+                                                <if expression="i == 5">
                                                     <then>
-                                                        <assign variable="shipmentCondition[i]" expression="&quot;Flammable&quot;"/>
+                                                        <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
+                                                        <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
+                                                        <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
+                                                        <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
+                                                        <output expression="shipmentCondition[4]" newline="True"/>
                                                     </then>
                                                     <else>
-                                                        <if expression="shipmentConditionID == 6">
+                                                        <if expression="i == 6">
                                                             <then>
-                                                                <assign variable="shipmentCondition[i]" expression="&quot;Keep Up-Right&quot;"/>
+                                                                <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
+                                                                <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
+                                                                <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
+                                                                <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
+                                                                <output expression="shipmentCondition[4] &amp; &quot;, &quot;" newline="False"/>
+                                                                <output expression="shipmentCondition[5]" newline="True"/>
                                                             </then>
                                                             <else>
-                                                                <if expression="shipmentConditionID == 7">
+                                                                <if expression="i == 7">
                                                                     <then>
-                                                                        <assign variable="shipmentCondition[i]" expression="&quot;Confindential Matarial&quot;"/>
+                                                                        <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
+                                                                        <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
+                                                                        <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
+                                                                        <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
+                                                                        <output expression="shipmentCondition[4] &amp; &quot;, &quot;" newline="False"/>
+                                                                        <output expression="shipmentCondition[5] &amp; &quot;, &quot;" newline="False"/>
+                                                                        <output expression="shipmentCondition[6]" newline="True"/>
                                                                     </then>
                                                                     <else>
-                                                                        <output expression="&quot;Please type in your shipment condition: &quot;" newline="False"/>
-                                                                        <input variable="shipmentCondition[i]"/>
+                                                                        <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
+                                                                        <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
+                                                                        <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
+                                                                        <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
+                                                                        <output expression="shipmentCondition[4] &amp; &quot;, &quot;" newline="False"/>
+                                                                        <output expression="shipmentCondition[5] &amp; &quot;, &quot;" newline="False"/>
+                                                                        <output expression="shipmentCondition[6] &amp; &quot;, &quot;" newline="False"/>
+                                                                        <output expression="shipmentCondition[7]" newline="True"/>
                                                                     </else>
                                                                 </if>
                                                             </else>
@@ -121,165 +253,37 @@
                         </if>
                     </else>
                 </if>
-                <assign variable="i" expression="i + 1"/>
-                <if expression="i == 8">
+                <output expression="&quot;Bubble Wrapping Charge: RM&quot; &amp; bubbleWrapCharge" newline="True"/>
+                <if expression="discount == 0.05">
                     <then>
-                        <assign variable="choice" expression="&quot;N&quot;"/>
-                        <comment text="To prevent array overflow"/>
+                        <output expression="&quot;Student Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
                     </then>
                     <else>
-                        <output expression="&quot;Do you wish to add more attributes? (Y/N): &quot;" newline="False"/>
-                        <input variable="choice"/>
+                        <if expression="discount == 1">
+                            <then>
+                                <output expression="&quot;Staff Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
+                            </else>
+                        </if>
                     </else>
                 </if>
-            </while>
-            <output expression="&quot;----------------------------------------------&quot;" newline="True"/>
-            <comment text="Packaging Type"/>
-            <output expression="&quot;Packaging Type: &quot;" newline="True"/>
-            <output expression="&quot;1 - Cardboard Box&quot;" newline="True"/>
-            <output expression="&quot;2 - Plastic Box&quot;" newline="True"/>
-            <output expression="&quot;3 - Plastic Film&quot;" newline="True"/>
-            <output expression="&quot;4 - Envelope&quot;" newline="True"/>
-            <output expression="&quot;5 - Others&quot;" newline="True"/>
-            <output expression="&quot;Please choose your packaging type (1 - 5): &quot;" newline="False"/>
-            <input variable="packagingTypeID"/>
-            <assign variable="packagingType" expression="setPackagingType(packagingTypeID)"/>
-            <comment text="Bubble Wrapping"/>
-            <declare name="bubbleWrapID" type="String" array="False" size=""/>
-            <declare name="bubbleWrapCharge" type="Integer" array="False" size=""/>
-            <output expression="&quot;Do you have bubble wrapping? (Y/N): &quot;" newline="False"/>
-            <input variable="bubbleWrapID"/>
-            <assign variable="bubbleWrapCharge" expression="calcBubbleWrapCharge(bubbleWrapID)"/>
-            <comment text="Discount"/>
-            <declare name="discount" type="Real" array="False" size=""/>
-            <assign variable="discount" expression="calcDiscount()"/>
-            <comment text="Shipping Charge"/>
-            <declare name="shippingCharge" type="Real" array="False" size=""/>
-            <assign variable="shippingCharge" expression="calcShippingCharge(distance)"/>
-            <comment text="Total Cost"/>
-            <declare name="totalCost" type="Real" array="False" size=""/>
-            <assign variable="totalCost" expression="calcTotalCost(distance, bubbleWrapCharge, discount)"/>
-            <comment text="Shipping Details Summary"/>
-            <output expression="&quot;Shipping Details Summary:&quot;" newline="True"/>
-            <output expression="&quot;Sender's Name: &quot; &amp; senderName" newline="True"/>
-            <output expression="&quot;Sender's Phone Number: &quot; &amp; senderNumber" newline="True"/>
-            <output expression="&quot;Recipient's Name: &quot; &amp; recipientName" newline="True"/>
-            <output expression="&quot;Recipient's Phone Number: &quot; &amp; recipientNumber" newline="True"/>
-            <output expression="&quot;Delivery Destination: &quot; &amp; college &amp; &quot; &quot; &amp; collegeBlock" newline="True"/>
-            <output expression="&quot;Total Distance from UniStorage to &quot; &amp; college &amp; &quot; &quot; &amp; collegeBlock &amp; &quot;: &quot; &amp; distance &amp; &quot;m&quot;" newline="True"/>
-            <output expression="&quot;Shipping Charge (RM0.01/m): RM&quot; &amp; shippingCharge" newline="True"/>
-            <output expression="&quot;Shipment Condition: &quot;" newline="False"/>
-            <if expression="i == 1">
-                <then>
-                    <output expression="shipmentCondition[0]" newline="True"/>
-                </then>
-                <else>
-                    <if expression="i == 2">
-                        <then>
-                            <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
-                            <output expression="shipmentCondition[1]" newline="True"/>
-                        </then>
-                        <else>
-                            <if expression="i == 3">
-                                <then>
-                                    <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
-                                    <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
-                                    <output expression="shipmentCondition[2]" newline="True"/>
-                                </then>
-                                <else>
-                                    <if expression="i == 4">
-                                        <then>
-                                            <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
-                                            <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
-                                            <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
-                                            <output expression="shipmentCondition[3]" newline="True"/>
-                                        </then>
-                                        <else>
-                                            <if expression="i == 5">
-                                                <then>
-                                                    <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
-                                                    <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
-                                                    <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
-                                                    <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
-                                                    <output expression="shipmentCondition[4]" newline="True"/>
-                                                </then>
-                                                <else>
-                                                    <if expression="i == 6">
-                                                        <then>
-                                                            <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
-                                                            <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
-                                                            <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
-                                                            <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
-                                                            <output expression="shipmentCondition[4] &amp; &quot;, &quot;" newline="False"/>
-                                                            <output expression="shipmentCondition[5]" newline="True"/>
-                                                        </then>
-                                                        <else>
-                                                            <if expression="i == 7">
-                                                                <then>
-                                                                    <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
-                                                                    <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
-                                                                    <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
-                                                                    <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
-                                                                    <output expression="shipmentCondition[4] &amp; &quot;, &quot;" newline="False"/>
-                                                                    <output expression="shipmentCondition[5] &amp; &quot;, &quot;" newline="False"/>
-                                                                    <output expression="shipmentCondition[6]" newline="True"/>
-                                                                </then>
-                                                                <else>
-                                                                    <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
-                                                                    <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
-                                                                    <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
-                                                                    <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
-                                                                    <output expression="shipmentCondition[4] &amp; &quot;, &quot;" newline="False"/>
-                                                                    <output expression="shipmentCondition[5] &amp; &quot;, &quot;" newline="False"/>
-                                                                    <output expression="shipmentCondition[6] &amp; &quot;, &quot;" newline="False"/>
-                                                                    <output expression="shipmentCondition[7]" newline="True"/>
-                                                                </else>
-                                                            </if>
-                                                        </else>
-                                                    </if>
-                                                </else>
-                                            </if>
-                                        </else>
-                                    </if>
-                                </else>
-                            </if>
-                        </else>
-                    </if>
-                </else>
-            </if>
-            <output expression="&quot;Bubble Wrapping Charge: RM&quot; &amp; bubbleWrapCharge" newline="True"/>
-            <if expression="discount == 0.05">
-                <then>
-                    <output expression="&quot;Student Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
-                </then>
-                <else>
-                    <if expression="discount == 1">
-                        <then>
-                            <output expression="&quot;Staff Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
-                        </then>
-                        <else>
-                            <output expression="&quot;Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
-                        </else>
-                    </if>
-                </else>
-            </if>
-            <if expression="discount == 1">
-                <then>
-                    <output expression="&quot;Total Cost: FREE&quot;" newline="True"/>
-                </then>
-                <else>
-                    <output expression="&quot;Total Cost: RM&quot; &amp; totalCost" newline="True"/>
-                </else>
-            </if>
-            <declare name="continue" type="String" array="False" size=""/>
-            <output expression="&quot;Continue for another customer? (Y/N): &quot;" newline="False"/>
-            <input variable="continue"/>
-            <if expression="continue == &quot;Y&quot; or continue == &quot;y&quot;">
-                <then>
-                    <call expression="Main"/>
-                </then>
-                <else/>
-            </if>
+                <if expression="discount == 1">
+                    <then>
+                        <output expression="&quot;Total Cost: FREE&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Total Cost: RM&quot; &amp; totalCost" newline="True"/>
+                    </else>
+                </if>
+                <assign variable="customer" expression="customer + 1"/>
+                <assign variable="totalIncome" expression="totalIncome + totalCost"/>
+                <output expression="&quot;Continue for another customer? (Y/N): &quot;" newline="False"/>
+                <input variable="continue"/>
+            </do>
+            <output expression="&quot;Total Customer: &quot; &amp; customer" newline="True"/>
+            <output expression="&quot;Total Income: RM&quot; &amp; totalIncome" newline="True"/>
         </body>
     </function>
     <function name="calcBubbleWrapCharge" type="Real" variable="bubbleWrapCharge">
