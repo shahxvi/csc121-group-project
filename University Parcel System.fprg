@@ -4,13 +4,13 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM, MUHAMMAD FIRDAUS BIN ZAMANEE, MUHAMMAD DANIAL IMAN BIN MOHAMAD"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-20 02:11:12 AM"/>
+        <attribute name="saved" value="2025-06-20 02:50:22 AM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODsxMDowODo1OSBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTc7MDk6MTY6MjAgQU07MDguIFNoaXBwaW5nIFR5cGUgRnVuY3Rpb24uZnByZzs3NjE0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMDowNDo1OCBQTTsyO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MDk6Mzg6MjggUE07NDc2OA=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMTozMjozMSBQTTszO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MTE6MjM6NDIgUE07NDc0NQ=="/>
         <attribute name="edited" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xOTsxMTo0OTowMiBQTTsxOzI0MjY="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yMDswMjoxMToxMiBBTTs2MDsyNDIx"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yMDswMjo1MDoyMiBBTTs2MTsyNDI2"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -263,12 +263,13 @@
                         <if expression="discount == 1">
                             <then>
                                 <output expression="&quot;Staff Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
+                                <output expression="&quot;Total Cost: FREE&quot;" newline="True"/>
                             </then>
                             <else>
                                 <output expression="&quot;Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
+                                <output expression="&quot;Total Cost: RM&quot; &amp; totalCost" newline="True"/>
                             </else>
                         </if>
-                        <output expression="&quot;Total Cost: FREE&quot;" newline="True"/>
                     </else>
                 </if>
                 <assign variable="customer" expression="customer + 1"/>
