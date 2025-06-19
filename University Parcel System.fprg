@@ -4,13 +4,13 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM, MUHAMMAD FIRDAUS BIN ZAMANEE, MUHAMMAD DANIAL IMAN BIN MOHAMAD"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-19 12:49:15 AM"/>
+        <attribute name="saved" value="2025-06-19 04:33:26 PM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOTowNzo0MyBQTTsyO1VzZXI7TEFQVE9QLUk1OUxKNDFMOzIwMjUtMDYtMTU7MTE6NDc6MDAgUE07MDUuIFNoaXBtZW50IENvbmRpdGlvbiBGdW5jdGlvbi5mcHJnOzg1NzA="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToxODoyMCBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTg7MDk6MTQ6MzggUE07NDc2Mg=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToyNzowMyBQTTsxO1VzZXItUEM7REFOSUFMOzIwMjUtMDYtMTY7MTI6MjE6MjIgQU07MDkuIE1lbWJlcnNoaXAgRGlzY291bnQgRnVuY3Rpb24uZnByZzs4MjU0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODsxMDowODo1OSBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTc7MDk6MTY6MjAgQU07MDguIFNoaXBwaW5nIFR5cGUgRnVuY3Rpb24uZnByZzs3NjE0"/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMjo0OToxNSBBTTs0NDsyNDQ2"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTswNDozMzoyNiBQTTs0NTsyNDU4"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -45,12 +45,7 @@
             <output expression="&quot;Please enter the recipient's phone number: &quot;" newline="False"/>
             <input variable="recipientNumber"/>
             <comment text="College Delivery Selection"/>
-            <output expression="&quot;Delivery to:&quot;" newline="True"/>
-            <output expression="&quot;1 - Cengal&quot;" newline="True"/>
-            <output expression="&quot;2 - Dahlia&quot;" newline="True"/>
-            <output expression="&quot;3 - Kesinai&quot;" newline="True"/>
-            <output expression="&quot;4 - Bringin&quot;" newline="True"/>
-            <output expression="&quot;Please enter your delivery desination: &quot;" newline="False"/>
+            <call expression="collegeMenu"/>
             <input variable="collegeID"/>
             <comment text="College Initialization"/>
             <assign variable="college" expression="setCollege(collegeID)"/>
@@ -483,6 +478,17 @@
             <declare name="distanceCharge, totalCost" type="Real" array="False" size=""/>
             <assign variable="distanceCharge" expression="0.01"/>
             <assign variable="totalCost" expression="((distance * distanceCharge) + shippingCharge + bubbleWrapCharge) * (1 - discount)"/>
+        </body>
+    </function>
+    <function name="collegeMenu" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Delivery to:&quot;" newline="True"/>
+            <output expression="&quot;1 - Cengal&quot;" newline="True"/>
+            <output expression="&quot;2 - Dahlia&quot;" newline="True"/>
+            <output expression="&quot;3 - Kesinai&quot;" newline="True"/>
+            <output expression="&quot;4 - Bringin&quot;" newline="True"/>
+            <output expression="&quot;Please enter your delivery desination: &quot;" newline="False"/>
         </body>
     </function>
     <function name="setCollege" type="String" variable="college">
