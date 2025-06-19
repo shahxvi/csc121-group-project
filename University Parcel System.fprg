@@ -4,13 +4,13 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM, MUHAMMAD FIRDAUS BIN ZAMANEE, MUHAMMAD DANIAL IMAN BIN MOHAMAD"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-19 04:33:26 PM"/>
+        <attribute name="saved" value="2025-06-19 09:38:07 PM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOTowNzo0MyBQTTsyO1VzZXI7TEFQVE9QLUk1OUxKNDFMOzIwMjUtMDYtMTU7MTE6NDc6MDAgUE07MDUuIFNoaXBtZW50IENvbmRpdGlvbiBGdW5jdGlvbi5mcHJnOzg1NzA="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToxODoyMCBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTg7MDk6MTQ6MzggUE07NDc2Mg=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODswOToyNzowMyBQTTsxO1VzZXItUEM7REFOSUFMOzIwMjUtMDYtMTY7MTI6MjE6MjIgQU07MDkuIE1lbWJlcnNoaXAgRGlzY291bnQgRnVuY3Rpb24uZnByZzs4MjU0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODsxMDowODo1OSBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTc7MDk6MTY6MjAgQU07MDguIFNoaXBwaW5nIFR5cGUgRnVuY3Rpb24uZnByZzs3NjE0"/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTswNDozMzoyNiBQTTs0NTsyNDU4"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTswOTozODowNyBQTTs0NjsyNDY4"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -54,15 +54,7 @@
             <comment text="College Distance (meters) Initialization"/>
             <assign variable="distance" expression="calcDistance(college, collegeBlock)"/>
             <comment text="Shipment Condition"/>
-            <output expression="&quot;What is your shipment condition?&quot;" newline="True"/>
-            <output expression="&quot;1 - Fragile&quot;" newline="True"/>
-            <output expression="&quot;2 - Delicate&quot;" newline="True"/>
-            <output expression="&quot;3 - Liquid&quot;" newline="True"/>
-            <output expression="&quot;4 - Perishable&quot;" newline="True"/>
-            <output expression="&quot;5 -  Flammable&quot;" newline="True"/>
-            <output expression="&quot;6 - Keep Up-Right&quot;" newline="True"/>
-            <output expression="&quot;7 - Confindential Material&quot;" newline="True"/>
-            <output expression="&quot;8 - Others&quot;" newline="True"/>
+            <call expression="shipmentConditionMenu"/>
             <declare name="shipmentConditionID" type="Integer" array="False" size=""/>
             <declare name="choice" type="String" array="False" size=""/>
             <declare name="shipmentCondition" type="String" array="True" size="8"/>
@@ -646,6 +638,20 @@
                     <assign variable="shippingType" expression="&quot;Express Shipping&quot;"/>
                 </else>
             </if>
+        </body>
+    </function>
+    <function name="shipmentConditionMenu" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;What is your shipment condition?&quot;" newline="True"/>
+            <output expression="&quot;1 - Fragile&quot;" newline="True"/>
+            <output expression="&quot;2 - Delicate&quot;" newline="True"/>
+            <output expression="&quot;3 - Liquid&quot;" newline="True"/>
+            <output expression="&quot;4 - Perishable&quot;" newline="True"/>
+            <output expression="&quot;5 -  Flammable&quot;" newline="True"/>
+            <output expression="&quot;6 - Keep Up-Right&quot;" newline="True"/>
+            <output expression="&quot;7 - Confindential Material&quot;" newline="True"/>
+            <output expression="&quot;8 - Others&quot;" newline="True"/>
         </body>
     </function>
 </flowgorithm>
