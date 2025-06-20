@@ -4,13 +4,13 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM, MUHAMMAD FIRDAUS BIN ZAMANEE, MUHAMMAD DANIAL IMAN BIN MOHAMAD"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-20 02:50:22 AM"/>
+        <attribute name="saved" value="2025-06-20 09:42:00 AM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xODsxMDowODo1OSBQTTsxO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTc7MDk6MTY6MjAgQU07MDguIFNoaXBwaW5nIFR5cGUgRnVuY3Rpb24uZnByZzs3NjE0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMDowNDo1OCBQTTsyO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MDk6Mzg6MjggUE07NDc2OA=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMTozMjozMSBQTTszO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MTE6MjM6NDIgUE07NDc0NQ=="/>
         <attribute name="edited" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xOTsxMTo0OTowMiBQTTsxOzI0MjY="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yMDswMjo1MDoyMiBBTTs2MTsyNDI2"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yMDswOTo0MjowMCBBTTs2NDsyNDMz"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -141,13 +141,7 @@
                 </while>
                 <output expression="&quot;----------------------------------------------&quot;" newline="True"/>
                 <comment text="Packaging Type"/>
-                <output expression="&quot;Packaging Type: &quot;" newline="True"/>
-                <output expression="&quot;1 - Cardboard Box&quot;" newline="True"/>
-                <output expression="&quot;2 - Plastic Box&quot;" newline="True"/>
-                <output expression="&quot;3 - Plastic Film&quot;" newline="True"/>
-                <output expression="&quot;4 - Envelope&quot;" newline="True"/>
-                <output expression="&quot;5 - Others&quot;" newline="True"/>
-                <output expression="&quot;Please choose your packaging type (1 - 5): &quot;" newline="False"/>
+                <call expression="packagingTypeMenu"/>
                 <input variable="packagingTypeID"/>
                 <assign variable="packagingType" expression="setPackagingType(packagingTypeID)"/>
                 <comment text="Bubble Wrapping"/>
@@ -175,84 +169,10 @@
                 <output expression="&quot;Total Distance from UniStorage to &quot; &amp; college &amp; &quot; &quot; &amp; collegeBlock &amp; &quot;: &quot; &amp; distance &amp; &quot;m&quot;" newline="True"/>
                 <output expression="&quot;Shipping Charge (RM0.01/m): RM&quot; &amp; shippingCharge" newline="True"/>
                 <output expression="&quot;Shipment Condition: &quot;" newline="False"/>
-                <if expression="i == 1">
-                    <then>
-                        <output expression="shipmentCondition[0]" newline="True"/>
-                    </then>
-                    <else>
-                        <if expression="i == 2">
-                            <then>
-                                <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
-                                <output expression="shipmentCondition[1]" newline="True"/>
-                            </then>
-                            <else>
-                                <if expression="i == 3">
-                                    <then>
-                                        <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
-                                        <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
-                                        <output expression="shipmentCondition[2]" newline="True"/>
-                                    </then>
-                                    <else>
-                                        <if expression="i == 4">
-                                            <then>
-                                                <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
-                                                <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
-                                                <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
-                                                <output expression="shipmentCondition[3]" newline="True"/>
-                                            </then>
-                                            <else>
-                                                <if expression="i == 5">
-                                                    <then>
-                                                        <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
-                                                        <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
-                                                        <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
-                                                        <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
-                                                        <output expression="shipmentCondition[4]" newline="True"/>
-                                                    </then>
-                                                    <else>
-                                                        <if expression="i == 6">
-                                                            <then>
-                                                                <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
-                                                                <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
-                                                                <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
-                                                                <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
-                                                                <output expression="shipmentCondition[4] &amp; &quot;, &quot;" newline="False"/>
-                                                                <output expression="shipmentCondition[5]" newline="True"/>
-                                                            </then>
-                                                            <else>
-                                                                <if expression="i == 7">
-                                                                    <then>
-                                                                        <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
-                                                                        <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
-                                                                        <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
-                                                                        <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
-                                                                        <output expression="shipmentCondition[4] &amp; &quot;, &quot;" newline="False"/>
-                                                                        <output expression="shipmentCondition[5] &amp; &quot;, &quot;" newline="False"/>
-                                                                        <output expression="shipmentCondition[6]" newline="True"/>
-                                                                    </then>
-                                                                    <else>
-                                                                        <output expression="shipmentCondition[0] &amp; &quot;, &quot;" newline="False"/>
-                                                                        <output expression="shipmentCondition[1] &amp; &quot;, &quot;" newline="False"/>
-                                                                        <output expression="shipmentCondition[2] &amp; &quot;, &quot;" newline="False"/>
-                                                                        <output expression="shipmentCondition[3] &amp; &quot;, &quot;" newline="False"/>
-                                                                        <output expression="shipmentCondition[4] &amp; &quot;, &quot;" newline="False"/>
-                                                                        <output expression="shipmentCondition[5] &amp; &quot;, &quot;" newline="False"/>
-                                                                        <output expression="shipmentCondition[6] &amp; &quot;, &quot;" newline="False"/>
-                                                                        <output expression="shipmentCondition[7]" newline="True"/>
-                                                                    </else>
-                                                                </if>
-                                                            </else>
-                                                        </if>
-                                                    </else>
-                                                </if>
-                                            </else>
-                                        </if>
-                                    </else>
-                                </if>
-                            </else>
-                        </if>
-                    </else>
-                </if>
+                <declare name="u" type="Integer" array="False" size=""/>
+                <for variable="u" start="0" end="i - 1" direction="inc" step="1">
+                    <output expression="shipmentCondition[u] &amp; &quot; &quot;" newline="False"/>
+                </for>
                 <output expression="&quot;Bubble Wrapping Charge: RM&quot; &amp; bubbleWrapCharge" newline="True"/>
                 <if expression="discount == 0.05">
                     <then>
@@ -474,6 +394,18 @@
             <output expression="&quot;3 - Kesinai&quot;" newline="True"/>
             <output expression="&quot;4 - Bringin&quot;" newline="True"/>
             <output expression="&quot;Please enter your delivery desination: &quot;" newline="False"/>
+        </body>
+    </function>
+    <function name="packagingTypeMenu" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Packaging Type: &quot;" newline="True"/>
+            <output expression="&quot;1 - Cardboard Box&quot;" newline="True"/>
+            <output expression="&quot;2 - Plastic Box&quot;" newline="True"/>
+            <output expression="&quot;3 - Plastic Film&quot;" newline="True"/>
+            <output expression="&quot;4 - Envelope&quot;" newline="True"/>
+            <output expression="&quot;5 - Others&quot;" newline="True"/>
+            <output expression="&quot;Please choose your packaging type (1 - 5): &quot;" newline="False"/>
         </body>
     </function>
     <function name="setCollege" type="String" variable="college">
