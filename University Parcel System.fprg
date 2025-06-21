@@ -4,13 +4,13 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM, MUHAMMAD FIRDAUS BIN ZAMANEE, MUHAMMAD DANIAL IMAN BIN MOHAMAD"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-21 12:31:03 PM"/>
+        <attribute name="saved" value="2025-06-21 12:35:05 PM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMDowNDo1OCBQTTsyO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MDk6Mzg6MjggUE07NDc2OA=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMTozMjozMSBQTTszO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MTE6MjM6NDIgUE07NDc0NQ=="/>
         <attribute name="edited" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xOTsxMTo0OTowMiBQTTsxOzI0MjY="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yMTsxMTo1MjowMiBBTTsyO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMjE7MTE6MDQ6MTUgQU07U2hpcG1lbnQgQ29uZGl0aW9uIEZ1bmN0aW9ucy5mcHJnOzgwMjc="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yMTsxMjozMTowMyBQTTs3MTsyNDQy"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yMTsxMjozNTowNSBQTTs3MjsyNDQ5"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -109,7 +109,7 @@
                 <if expression="discount == 0.05">
                     <then>
                         <output expression="&quot;Student Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
-                        <output expression="&quot;Total Cost: RM&quot; &amp; totalCost" newline="True"/>
+                        <output expression="&quot;Total Cost: RM&quot; &amp; ToFixed(totalCost, 2)" newline="True"/>
                     </then>
                     <else>
                         <if expression="discount == 1">
@@ -119,7 +119,7 @@
                             </then>
                             <else>
                                 <output expression="&quot;Discount: &quot; &amp; (discount * 100) &amp; &quot;%&quot;" newline="True"/>
-                                <output expression="&quot;Total Cost: RM&quot; &amp; totalCost" newline="True"/>
+                                <output expression="&quot;Total Cost: RM&quot; &amp; ToFixed(totalCost, 2)" newline="True"/>
                             </else>
                         </if>
                     </else>
