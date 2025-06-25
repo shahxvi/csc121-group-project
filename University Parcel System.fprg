@@ -4,30 +4,46 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM, MUHAMMAD FIRDAUS BIN ZAMANEE, MUHAMMAD DANIAL IMAN BIN MOHAMAD"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-21 12:35:05 PM"/>
+        <attribute name="saved" value="2025-06-25 04:00:23 PM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMDowNDo1OCBQTTsyO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MDk6Mzg6MjggUE07NDc2OA=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMTozMjozMSBQTTszO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MTE6MjM6NDIgUE07NDc0NQ=="/>
         <attribute name="edited" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xOTsxMTo0OTowMiBQTTsxOzI0MjY="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yMTsxMTo1MjowMiBBTTsyO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMjE7MTE6MDQ6MTUgQU07U2hpcG1lbnQgQ29uZGl0aW9uIEZ1bmN0aW9ucy5mcHJnOzgwMjc="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yMTsxMjozNTowNSBQTTs3MjsyNDQ5"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yNTswNDowMDoyMyBQTTs3NTsyNDQ5"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
+            <comment text="Sender's Details Declaration"/>
+            <declare name="senderName, senderNumber" type="String" array="False" size=""/>
+            <declare name="recipientName, recipientNumber" type="String" array="False" size=""/>
+            <comment text="College Details Decleration"/>
+            <declare name="collegeID, collegeBlock" type="Integer" array="False" size=""/>
+            <declare name="college" type="String" array="False" size=""/>
+            <declare name="distance" type="Real" array="False" size=""/>
+            <comment text="Shipment Condition"/>
+            <declare name="shipmentConditionID" type="Integer" array="False" size=""/>
+            <declare name="shipmentCondition" type="String" array="True" size="8"/>
+            <comment text="Packaging Type"/>
+            <declare name="packagingTypeID" type="Integer" array="False" size=""/>
+            <declare name="packagingType" type="String" array="False" size=""/>
+            <comment text="Bubble Wrapping"/>
+            <declare name="bubbleWrapCharge" type="Real" array="False" size=""/>
+            <comment text="Discount"/>
+            <declare name="discount" type="Real" array="False" size=""/>
+            <comment text="Shipping Charge"/>
+            <declare name="shippingCharge" type="Real" array="False" size=""/>
+            <comment text="Total Cost"/>
+            <declare name="totalCost" type="Real" array="False" size=""/>
+            <comment text="Customer Count"/>
             <declare name="customer" type="Integer" array="False" size=""/>
-            <declare name="totalIncome" type="Real" array="False" size=""/>
             <assign variable="customer" expression="0"/>
+            <comment text="totalIncome"/>
+            <declare name="totalIncome" type="Real" array="False" size=""/>
             <assign variable="totalIncome" expression="0"/>
             <declare name="continue" type="String" array="False" size=""/>
             <do expression="continue == &quot;Y&quot; or continue == &quot;y&quot;">
-                <comment text="Declaration"/>
-                <declare name="senderName, senderNumber" type="String" array="False" size=""/>
-                <declare name="recipientName, recipientNumber" type="String" array="False" size=""/>
-                <declare name="collegeID, collegeBlock" type="Integer" array="False" size=""/>
-                <declare name="college" type="String" array="False" size=""/>
-                <declare name="distance" type="Real" array="False" size=""/>
-                <comment text="Display Greetings"/>
                 <call expression="greetings"/>
                 <output expression="&quot;Sender's Details:&quot;" newline="True"/>
                 <output expression="&quot;Please enter your name: &quot;" newline="False"/>
@@ -50,8 +66,6 @@
                 <comment text="College Distance (meters) Initialization"/>
                 <assign variable="distance" expression="calcDistance(college, collegeBlock)"/>
                 <comment text="Shipment Condition"/>
-                <declare name="shipmentConditionID" type="Integer" array="False" size=""/>
-                <declare name="shipmentCondition" type="String" array="True" size="8"/>
                 <declare name="i" type="Integer" array="False" size=""/>
                 <assign variable="i" expression="0"/>
                 <declare name="choice" type="String" array="False" size=""/>
@@ -74,22 +88,16 @@
                 </while>
                 <output expression="&quot;----------------------------------------------&quot;" newline="True"/>
                 <comment text="Packaging Type"/>
-                <declare name="packagingTypeID" type="Integer" array="False" size=""/>
-                <declare name="packagingType" type="String" array="False" size=""/>
                 <call expression="menuPackagingType"/>
                 <input variable="packagingTypeID"/>
                 <assign variable="packagingType" expression="setPackagingType(packagingTypeID)"/>
                 <comment text="Bubble Wrapping"/>
-                <declare name="bubbleWrapCharge" type="Real" array="False" size=""/>
                 <assign variable="bubbleWrapCharge" expression="calcBubbleWrapCharge()"/>
                 <comment text="Discount"/>
-                <declare name="discount" type="Real" array="False" size=""/>
                 <assign variable="discount" expression="calcDiscount()"/>
                 <comment text="Shipping Charge"/>
-                <declare name="shippingCharge" type="Real" array="False" size=""/>
                 <assign variable="shippingCharge" expression="calcShippingCharge(distance)"/>
                 <comment text="Total Cost"/>
-                <declare name="totalCost" type="Real" array="False" size=""/>
                 <assign variable="totalCost" expression="calcTotalCost(distance, bubbleWrapCharge, discount)"/>
                 <comment text="Shipping Details Summary"/>
                 <output expression="&quot;Shipping Details Summary:&quot;" newline="True"/>
@@ -130,7 +138,7 @@
                 <input variable="continue"/>
             </do>
             <output expression="&quot;Total Customer: &quot; &amp; customer" newline="True"/>
-            <output expression="&quot;Total Income: RM&quot; &amp; totalIncome" newline="True"/>
+            <output expression="&quot;Total Income: RM&quot; &amp; ToFixed(totalIncome, 2)" newline="True"/>
         </body>
     </function>
     <function name="calcBubbleWrapCharge" type="Real" variable="bubbleWrapCharge">
