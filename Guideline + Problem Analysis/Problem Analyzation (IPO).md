@@ -1,9 +1,27 @@
 # Input:
-Sender's Name, Sender's Phone Number
+senderName, senderNumber
 
-Recipient's Name, Sender's Phone Number, Sender's Block, Sender's Block Number
+recipientName, recipientNumber
 
-Item Type (Glass, Electronic, Food, Drinks)
+collegeID (1 - 4), collegeBlock
+
+shipmentConditionID (1 - 8) / shipmentCondition (8 Only)
+
+choice
+
+packagingTypeID (1 - 5) / packagingType (5 Only)
+
+bubbleWrapID (Y/N)
+
+student (Y/N)
+
+staff (Y/N)
+
+continue (Y/N)
+# Process:
+
+
+# Output:
 
 Item Condition (Fragile, Delicate, Liquid, Perishable, Flammable, Keep Up-Right, Confindential Material)
  - (Multiple Selections Allowed)
