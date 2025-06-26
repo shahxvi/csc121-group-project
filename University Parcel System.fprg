@@ -4,13 +4,13 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM, MUHAMMAD FIRDAUS BIN ZAMANEE, MUHAMMAD DANIAL IMAN BIN MOHAMAD"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-25 04:43:15 PM"/>
+        <attribute name="saved" value="2025-06-26 09:59:05 PM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMDowNDo1OCBQTTsyO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MDk6Mzg6MjggUE07NDc2OA=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMTozMjozMSBQTTszO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MTE6MjM6NDIgUE07NDc0NQ=="/>
         <attribute name="edited" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xOTsxMTo0OTowMiBQTTsxOzI0MjY="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yMTsxMTo1MjowMiBBTTsyO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMjE7MTE6MDQ6MTUgQU07U2hpcG1lbnQgQ29uZGl0aW9uIEZ1bmN0aW9ucy5mcHJnOzgwMjc="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yNTswNDo0MzoxNSBQTTs3ODsyNDYw"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yNjswOTo1OTowNSBQTTs3OTsyNDcz"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -107,7 +107,7 @@
                 <comment text="Shipping Charge"/>
                 <assign variable="shippingCharge" expression="calcShippingCharge(distance)"/>
                 <comment text="Total Cost"/>
-                <assign variable="totalCost" expression="calcTotalCost(distance, bubbleWrapCharge, discount)"/>
+                <assign variable="totalCost" expression="calcTotalCost(shippingCharge, bubbleWrapCharge, discount)"/>
                 <comment text="Shipping Details Summary"/>
                 <output expression="&quot;Shipping Details Summary:&quot;" newline="True"/>
                 <output expression="&quot;Sender's Name: &quot; &amp; senderName" newline="True"/>
@@ -325,15 +325,14 @@
     </function>
     <function name="calcTotalCost" type="Real" variable="totalCost">
         <parameters>
-            <parameter name="distance" type="Real" array="False"/>
+            <parameter name="shippingCharge" type="Real" array="False"/>
             <parameter name="bubbleWrapCharge" type="Real" array="False"/>
             <parameter name="discount" type="Real" array="False"/>
         </parameters>
         <body>
-            <declare name="distanceCharge, totalCost" type="Real" array="False" size=""/>
-            <declare name="CHARGERATE" type="Real" array="False" size=""/>
+            <declare name="CHARGERATE, totalCost" type="Real" array="False" size=""/>
             <assign variable="CHARGERATE" expression="0.01"/>
-            <assign variable="totalCost" expression="((distance * CHARGERATE) + bubbleWrapCharge) * (1 - discount)"/>
+            <assign variable="totalCost" expression="(shippingCharge + bubbleWrapCharge) * (1 - discount)"/>
         </body>
     </function>
     <function name="greetings" type="None" variable="">
