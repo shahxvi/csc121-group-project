@@ -4,13 +4,13 @@
         <attribute name="name" value="CSC121 Assignment v2.0"/>
         <attribute name="authors" value="IRFAN SHAH BIN MAIZUL HISHAM, MUHAMMAD FIRDAUS BIN ZAMANEE, MUHAMMAD DANIAL IMAN BIN MOHAMAD"/>
         <attribute name="about" value="RCDCS1101A Group 3 CSC121 Assignment (University Parcel System)"/>
-        <attribute name="saved" value="2025-06-27 10:38:33 AM"/>
+        <attribute name="saved" value="2025-06-27 10:48:32 AM"/>
         <attribute name="created" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0wMzsxMTowODozNyBBTTsyMjc0"/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMDowNDo1OCBQTTsyO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MDk6Mzg6MjggUE07NDc2OA=="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0xOTsxMTozMjozMSBQTTszO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMTk7MTE6MjM6NDIgUE07NDc0NQ=="/>
         <attribute name="edited" value="VXNlci1QQztEQU5JQUw7MjAyNS0wNi0xOTsxMTo0OTowMiBQTTsxOzI0MjY="/>
         <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yMTsxMTo1MjowMiBBTTsyO1NoYWg7WDEtQ0FSQk9OOzIwMjUtMDYtMjE7MTE6MDQ6MTUgQU07U2hpcG1lbnQgQ29uZGl0aW9uIEZ1bmN0aW9ucy5mcHJnOzgwMjc="/>
-        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yNzsxMDozODozMyBBTTs4MDsyNDQx"/>
+        <attribute name="edited" value="U2hhaDtYMS1DQVJCT047MjAyNS0wNi0yNzsxMDo0ODozMiBBTTs4MTsyNDQy"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -49,7 +49,7 @@
             <assign variable="totalIncome" expression="0"/>
             <declare name="continue" type="String" array="False" size=""/>
             <do expression="continue == &quot;Y&quot; or continue == &quot;y&quot;">
-                <call expression="greetings"/>
+                <call expression="Greetings"/>
                 <output expression="&quot;Sender's Details:&quot;" newline="True"/>
                 <comment text="Sender's Name"/>
                 <output expression="&quot;Please enter your name: &quot;" newline="False"/>
@@ -334,7 +334,7 @@
             <assign variable="totalCost" expression="(shippingCharge + bubbleWrapCharge) * (1 - discount)"/>
         </body>
     </function>
-    <function name="greetings" type="None" variable="">
+    <function name="Greetings" type="None" variable="">
         <parameters/>
         <body>
             <output expression="&quot;Welcome to University Parcel System&quot;" newline="True"/>
